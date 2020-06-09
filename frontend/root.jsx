@@ -11,7 +11,7 @@ class Root extends React.Component {
         return(
             <div id="main">
                 <div id="title">
-                    <h2>Dialing In Throttling Up</h2>
+                    <h2>Bay Area Weather</h2>
                 </div>
                 <div id="components">
                     <Map />

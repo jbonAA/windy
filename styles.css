@@ -14,6 +14,8 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    background-color: #4a4848;
 }
 
 h2 {
@@ -22,14 +24,16 @@ h2 {
 
 #title {
     width: 100%;
-    height: 5%
+    height: 5%;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #components {
     display: flex;
     flex-direction: row;
     height: 95%;
-    width: 100%
+    width: 100%;
 }
 
 #mapDiv {
@@ -37,4 +41,54 @@ h2 {
     width: 52%;
     border: 1px solid black;
     margin: 2%;
+    background-color: white;
+}
+
+#forecastDiv {
+    height: 92%;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 1px solid black;
+}
+
+#forecastTitle {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 6%;
+    margin-top: 2%;
+    margin-bottom: 2%; 
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+}
+
+h3 {
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+
+#forecastItem {
+    height: 25%;
+    width: 96%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#links {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 8%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 1px solid black;
+    background-color: white;
 }
