@@ -13,6 +13,7 @@ class Map extends React.Component {
         return (
             <div id="mapDiv">
                 <p>map component</p>
+                
             </div>
         )
     }

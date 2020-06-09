@@ -10,8 +10,13 @@ class Root extends React.Component {
     render() {
         return(
             <div id="main">
-                <div id="title">
-                    <h2>Bay Area Weather</h2>
+                <div id="header">
+                    <div id="headButton">
+                        <button>Apply Wind Data</button>
+                    </div>
+                    <div id="h2">
+                        <h2>Bay Area Weather</h2>
+                    </div>
                 </div>
                 <div id="components">
                     <Map />

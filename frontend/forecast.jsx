@@ -12,6 +12,10 @@ class Forecast extends React.Component {
                 <div id="forecastTitle">
                     <h3>Local Forecast</h3>
                 </div>
+
+                {/* forecast items should turn into forecast index */}
+                {/* props passed through root component */}
+
                 <div id="forecastItem">
 
                 </div>
@@ -21,6 +25,9 @@ class Forecast extends React.Component {
                 <div id="forecastItem">
 
                 </div>
+
+
+
                 <div id="links">
                     <div id="icons">
 
