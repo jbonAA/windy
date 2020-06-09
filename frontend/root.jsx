@@ -13,6 +13,9 @@ class Root extends React.Component {
                 <div id="header">
                     <div id="headButton">
                         <button>Apply Wind Data</button>
+                        {/* if there is a canvas over the map
+                        remove and reapply logic with lnglat from map
+                        bounds, use forecast for map center */}
                     </div>
                     <div id="h2">
                         <h2>Bay Area Weather</h2>
