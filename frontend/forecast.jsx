@@ -22,7 +22,13 @@ class Forecast extends React.Component {
 
                 </div>
                 <div id="links">
+                    <div id="icons">
 
+                    </div>
+                    <p>Repo Available on Github and LinkedIn</p>
+                    <div id="icons">
+
+                    </div>
                 </div>
             </div>
         )
