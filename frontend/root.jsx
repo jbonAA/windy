@@ -10,7 +10,9 @@ class Root extends React.Component {
     render() {
         return(
             <div id="main">
-                <h2>Dialing In Throttling Up</h2>
+                <div id="title">
+                    <h2>Dialing In Throttling Up</h2>
+                </div>
                 <div id="components">
                     <Map />
                     <Forecast />
