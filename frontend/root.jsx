@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Map from './map.jsx';
+import Forecast from './forecast.jsx';
 
 class Root extends React.Component {
     constructor(props){
@@ -7,8 +9,12 @@ class Root extends React.Component {
 
     render() {
         return(
-            <div>
-                <h1>Dialing In Throttling Up</h1>
+            <div id="main">
+                <h2>Dialing In Throttling Up</h2>
+                <div id="components">
+                    <Map />
+                    <Forecast />
+                </div>
             </div>
         )
     }
