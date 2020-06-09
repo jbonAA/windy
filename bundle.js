@@ -339,23 +339,45 @@ var Root = /*#__PURE__*/function (_React$Component) {
         hash: true
       });
       map.on("load", function () {
+        var marker = new mapbox_gl__WEBPACK_IMPORTED_MODULE_3__["Marker"]();
+        marker.setLngLat([start[0], start[1]]);
+        marker._draggable = Boolean(true);
+        marker.addTo(map);
+        map.on("click", function (e) {
+          e.preventDefault();
+          var moveLng = e.lngLat.lng;
+          var moveLat = e.lngLat.lat;
+          marker.remove();
+          marker = new mapbox_gl__WEBPACK_IMPORTED_MODULE_3__["Marker"]();
+          marker.setLngLat([moveLng, moveLat]);
+          marker.addTo(map);
+        });
+
         _this2.setState({
           mapObj: map
         });
+      });
+      map.on("click", function () {
+        console.log(map);
       });
     }
   }, {
     key: "handleClick",
     value: function handleClick() {
-      var mapObj = this.state.mapObj;
+      var mapObj = this.state.mapObj; //resizing the window for visualization
+
+      var resize = [];
+      var hash = window.location.hash;
+      var split = hash.split("/");
+      resize.push("#9", split[1], split[2]);
+      window.location.hash = resize.join("/"); //
+
       var lng = mapObj.getCenter().lng.toFixed(4);
       var lat = mapObj.getCenter().lat.toFixed(4);
       var bounds = mapObj.getBounds();
-      mapObj.setZoom(9);
       console.log(bounds);
       this.setState({
         start: [lng, lat],
-        zoom: 9,
         mapObj: mapObj
       });
     }

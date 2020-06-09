@@ -1,7 +1,7 @@
 import React from 'react';
 import Map from './map.jsx';
 import Forecast from './forecast.jsx';
-import { LngLat } from 'mapbox-gl';
+import { LngLat, Marker } from 'mapbox-gl';
 const mapboxgl = require('mapbox-gl')
 
 class Root extends React.Component {
@@ -33,9 +33,33 @@ class Root extends React.Component {
 
         map.on("load", () => {
             
+            let marker = new Marker();
+            marker.setLngLat([start[0], start[1]])
+            marker._draggable = Boolean(true)
+            marker.addTo(map)
+            
+        
+            map.on("click", (e) => {
+                e.preventDefault();
+                let moveLng = e.lngLat.lng;
+                let moveLat = e.lngLat.lat;
+
+                marker.remove()
+
+                marker = new Marker()
+                marker.setLngLat([moveLng, moveLat])
+                marker.addTo(map)
+            })
+
             this.setState({
                 mapObj: map
             })
+        })
+
+        map.on("click", () => {
+
+            console.log(map)
+
         })
 
     }
@@ -43,16 +67,24 @@ class Root extends React.Component {
     handleClick() {
         const {mapObj} = this.state
 
+        //resizing the window for visualization
+
+        let resize = [];
+        let hash = window.location.hash
+        let split = hash.split("/")
+        resize.push("#9", split[1], split[2])
+        window.location.hash = resize.join("/")
+
+        //
+
         let lng = mapObj.getCenter().lng.toFixed(4)
         let lat = mapObj.getCenter().lat.toFixed(4)
         let bounds = mapObj.getBounds();
-        mapObj.setZoom(9)
         console.log(bounds)
 
 
         this.setState({
             start: [lng, lat],
-            zoom: 9,
             mapObj: mapObj
         })
     }
