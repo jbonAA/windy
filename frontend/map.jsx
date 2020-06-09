@@ -11,9 +11,8 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div id="mapDiv">
-                <p>map component</p>
-                
+            <div id="mapDiv" ref={el => this.mapContainer = el}>
+
             </div>
         )
     }
