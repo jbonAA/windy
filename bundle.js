@@ -270,6 +270,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _map_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.jsx */ "./frontend/map.jsx");
 /* harmony import */ var _forecast_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./forecast.jsx */ "./frontend/forecast.jsx");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -296,6 +298,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var mapboxgl = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 
 var Root = /*#__PURE__*/function (_React$Component) {
@@ -314,6 +317,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
       zoom: 9,
       mapObj: {}
     };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -334,18 +338,25 @@ var Root = /*#__PURE__*/function (_React$Component) {
         zoom: this.state.zoom,
         hash: true
       });
-      map.on("move", function () {
-        var lng = map.getCenter().lng.toFixed(4);
-        var lat = map.getCenter().lat.toFixed(4);
-        var checkZoom = map.getZoom().toFixed(2);
-        console.log("on map move");
-        console.log(_this2.state);
-
+      map.on("load", function () {
         _this2.setState({
-          start: [lng, lat],
-          zoom: checkZoom,
           mapObj: map
         });
+      });
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      var mapObj = this.state.mapObj;
+      var lng = mapObj.getCenter().lng.toFixed(4);
+      var lat = mapObj.getCenter().lat.toFixed(4);
+      var bounds = mapObj.getBounds();
+      mapObj.setZoom(9);
+      console.log(bounds);
+      this.setState({
+        start: [lng, lat],
+        zoom: 9,
+        mapObj: mapObj
       });
     }
   }, {
@@ -360,7 +371,9 @@ var Root = /*#__PURE__*/function (_React$Component) {
         id: "header"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "headButton"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Apply Wind Data")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleClick
+      }, "Apply Wind Data")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "h2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Bay Area Weather"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "components"

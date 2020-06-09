@@ -1,6 +1,7 @@
 import React from 'react';
 import Map from './map.jsx';
 import Forecast from './forecast.jsx';
+import { LngLat } from 'mapbox-gl';
 const mapboxgl = require('mapbox-gl')
 
 class Root extends React.Component {
@@ -12,6 +13,8 @@ class Root extends React.Component {
             zoom: 9,
             mapObj: {}
         }
+
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
@@ -28,21 +31,30 @@ class Root extends React.Component {
             hash: true
         })
 
-        map.on("move", () => {
-            let lng = map.getCenter().lng.toFixed(4)
-            let lat = map.getCenter().lat.toFixed(4)
-            let checkZoom = map.getZoom().toFixed(2)
-
-            console.log("on map move")
-            console.log(this.state)
-
+        map.on("load", () => {
+            
             this.setState({
-                start: [lng, lat],
-                zoom: checkZoom,
                 mapObj: map
             })
         })
 
+    }
+
+    handleClick() {
+        const {mapObj} = this.state
+
+        let lng = mapObj.getCenter().lng.toFixed(4)
+        let lat = mapObj.getCenter().lat.toFixed(4)
+        let bounds = mapObj.getBounds();
+        mapObj.setZoom(9)
+        console.log(bounds)
+
+
+        this.setState({
+            start: [lng, lat],
+            zoom: 9,
+            mapObj: mapObj
+        })
     }
 
     render() {
@@ -52,7 +64,7 @@ class Root extends React.Component {
             <div id="main">
                 <div id="header">
                     <div id="headButton">
-                        <button>Apply Wind Data</button>
+                        <button onClick={this.handleClick}>Apply Wind Data</button>
                         {/* if there is a canvas over the map
                         remove and reapply logic with lnglat from map
                         bounds, use forecast for map start */}
