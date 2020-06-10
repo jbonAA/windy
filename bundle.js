@@ -459,6 +459,7 @@ var WindDirections = /*#__PURE__*/function () {
     this.quadrants = {};
     this.getWind();
     this.getWeather();
+    this.tomorrow();
   }
 
   _createClass(WindDirections, [{
@@ -481,6 +482,7 @@ var WindDirections = /*#__PURE__*/function () {
                   forecast.json().then(function (res) {
                     //using an object to thwart asynchronicity
                     _this.quadrants[i] = res.wind; //iterating through quadrants left to right top to bottom
+                    //also use this forecast to find weather tomorrow in area
                   });
 
                 case 4:
@@ -497,9 +499,9 @@ var WindDirections = /*#__PURE__*/function () {
       }());
     }
   }, {
-    key: "getWeather",
+    key: "tomorrow",
     value: function () {
-      var _getWeather = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      var _tomorrow = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
         var _this2 = this;
 
         var _ref2, lng, lat, currentWeather;
@@ -510,13 +512,12 @@ var WindDirections = /*#__PURE__*/function () {
               case 0:
                 _ref2 = [this.state.center[0], this.state.center[1]], lng = _ref2[0], lat = _ref2[1];
                 _context2.next = 3;
-                return fetch("https://api.openweathermap.org/data/2.5/weather?lat=".concat(lat, "&lon=").concat(lng, "&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial"));
+                return fetch("https://api.openweathermap.org/data/2.5/forecast?lat=".concat(lat, "&lon=").concat(lng, "&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial"));
 
               case 3:
                 currentWeather = _context2.sent;
                 currentWeather.json().then(function (res) {
-                  console.log("currentWeather");
-                  var _ref3 = [res.wind.speed, res.wind.deg, res.clouds.all, res.main.temp, res.main.feels_like, res.main.humidity, res.weather],
+                  var _ref3 = [res.list[3].wind.speed, res.list[3].wind.deg, res.list[3].clouds.all, res.list[3].main.temp, res.list[3].main.feels_like, res.list[3].main.humidity, res.list[3].weather],
                       windSpeed = _ref3[0],
                       windDirDeg = _ref3[1],
                       cloudCover = _ref3[2],
@@ -524,7 +525,7 @@ var WindDirections = /*#__PURE__*/function () {
                       feels_like = _ref3[4],
                       humidity = _ref3[5],
                       weather = _ref3[6];
-                  _this2.forecastNow = {
+                  _this2.forecastTomorrow = {
                     windSpeed: windSpeed,
                     windDirDeg: windDirDeg,
                     cloudCover: cloudCover,
@@ -541,6 +542,58 @@ var WindDirections = /*#__PURE__*/function () {
             }
           }
         }, _callee2, this);
+      }));
+
+      function tomorrow() {
+        return _tomorrow.apply(this, arguments);
+      }
+
+      return tomorrow;
+    }()
+  }, {
+    key: "getWeather",
+    value: function () {
+      var _getWeather = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+        var _this3 = this;
+
+        var _ref4, lng, lat, currentWeather;
+
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _ref4 = [this.state.center[0], this.state.center[1]], lng = _ref4[0], lat = _ref4[1];
+                _context3.next = 3;
+                return fetch("https://api.openweathermap.org/data/2.5/weather?lat=".concat(lat, "&lon=").concat(lng, "&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial"));
+
+              case 3:
+                currentWeather = _context3.sent;
+                currentWeather.json().then(function (res) {
+                  var _ref5 = [res.wind.speed, res.wind.deg, res.clouds.all, res.main.temp, res.main.feels_like, res.main.humidity, res.weather],
+                      windSpeed = _ref5[0],
+                      windDirDeg = _ref5[1],
+                      cloudCover = _ref5[2],
+                      temp = _ref5[3],
+                      feels_like = _ref5[4],
+                      humidity = _ref5[5],
+                      weather = _ref5[6];
+                  _this3.forecastNow = {
+                    windSpeed: windSpeed,
+                    windDirDeg: windDirDeg,
+                    cloudCover: cloudCover,
+                    temp: temp,
+                    feels_like: feels_like,
+                    humidity: humidity,
+                    weather: weather
+                  };
+                });
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
       }));
 
       function getWeather() {
