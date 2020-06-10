@@ -340,8 +340,9 @@ var Root = /*#__PURE__*/function (_React$Component) {
         hash: true
       });
       map.on("load", function () {
+        var startPos = map.getCenter();
         var marker = new mapbox_gl__WEBPACK_IMPORTED_MODULE_3__["Marker"]();
-        marker.setLngLat([start[0], start[1]]);
+        marker.setLngLat([startPos.lng, startPos.lat]);
         marker._draggable = Boolean(true);
         marker.addTo(map);
         map.on("click", function (e) {
@@ -377,7 +378,6 @@ var Root = /*#__PURE__*/function (_React$Component) {
         zoom: 9
       });
       var bounds = mapObj.getBounds();
-      console.log(bounds);
       var nE = bounds.getNorthEast();
       var nW = bounds.getNorthWest();
       var sE = bounds.getSouthEast();

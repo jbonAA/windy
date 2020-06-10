@@ -33,9 +33,11 @@ class Root extends React.Component {
         })
 
         map.on("load", () => {
+
+            let startPos = map.getCenter()
             
             let marker = new Marker();
-            marker.setLngLat([start[0], start[1]])
+            marker.setLngLat([startPos.lng, startPos.lat])
             marker._draggable = Boolean(true)
             marker.addTo(map)
             
@@ -74,8 +76,8 @@ class Root extends React.Component {
             center: [newLng, newLat],
             zoom: 9
         })
+
         let bounds = mapObj.getBounds();
-        console.log(bounds)
 
         let nE = bounds.getNorthEast();
         let nW = bounds.getNorthWest();
