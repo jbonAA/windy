@@ -369,31 +369,27 @@ var Root = /*#__PURE__*/function (_React$Component) {
     value: function handleClick() {
       var _this$state2 = this.state,
           mapObj = _this$state2.mapObj,
-          marker = _this$state2.marker; //resizing the window for visualization
-      // let resize = [];
-      // let hash = window.location.hash
-      // let split = hash.split("/")
-      // resize.push("#9", split[1], split[2])
-      // window.location.hash = resize.join("/")
-      //
-
+          marker = _this$state2.marker;
       var newLng = marker._lngLat.lng;
       var newLat = marker._lngLat.lat;
-      mapObj.flyTo({
+      mapObj.jumpTo({
         center: [newLng, newLat],
-        zoom: 9,
-        speed: 2,
-        curve: 1
+        zoom: 9
       });
-      console.log(marker); // let lng = mapObj.getCenter().lng.toFixed(4)
-      // let lat = mapObj.getCenter().lat.toFixed(4)
-
       var bounds = mapObj.getBounds();
       console.log(bounds);
-      this.setState({
-        start: [lng, lat],
-        mapObj: mapObj
-      });
+      var nE = bounds.getNorthEast();
+      var nW = bounds.getNorthWest();
+      var sE = bounds.getSouthEast();
+      var sW = bounds.getSouthWest();
+      var infoGather = {
+        nE: nE,
+        nW: nW,
+        sE: sE,
+        sW: sW,
+        center: [newLng, newLat]
+      };
+      console.log(infoGather);
     }
   }, {
     key: "render",

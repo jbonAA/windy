@@ -67,38 +67,32 @@ class Root extends React.Component {
     handleClick() {
         const {mapObj, marker} = this.state
 
-        //resizing the window for visualization
-
-        // let resize = [];
-        // let hash = window.location.hash
-        // let split = hash.split("/")
-        // resize.push("#9", split[1], split[2])
-        // window.location.hash = resize.join("/")
-
-        //
-
         let newLng = marker._lngLat.lng;
         let newLat = marker._lngLat.lat;
 
-        mapObj.flyTo({
+        mapObj.jumpTo({
             center: [newLng, newLat],
-            zoom: 9,
-            speed: 2,
-            curve: 1
+            zoom: 9
         })
-
-        console.log(marker)
-
-        // let lng = mapObj.getCenter().lng.toFixed(4)
-        // let lat = mapObj.getCenter().lat.toFixed(4)
         let bounds = mapObj.getBounds();
         console.log(bounds)
 
+        let nE = bounds.getNorthEast();
+        let nW = bounds.getNorthWest();
+        let sE = bounds.getSouthEast();
+        let sW = bounds.getSouthWest();
 
-        this.setState({
-            start: [lng, lat],
-            mapObj: mapObj
-        })
+        const infoGather = {
+            nE,
+            nW,
+            sE,
+            sW,
+            center: [newLng, newLat]
+        }
+
+        console.log(infoGather)
+
+        
     }
 
     render() {
