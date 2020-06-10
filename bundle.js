@@ -456,7 +456,7 @@ var WindDirections = /*#__PURE__*/function () {
     this.state = object;
     this.forecastNow = {};
     this.forecastTomorrow = {};
-    this.quadrants = [];
+    this.quadrants = {};
     this.getWind();
     this.getWeather();
   }
@@ -464,6 +464,8 @@ var WindDirections = /*#__PURE__*/function () {
   _createClass(WindDirections, [{
     key: "getWind",
     value: function getWind() {
+      var _this = this;
+
       this.state.allStations.forEach( /*#__PURE__*/function () {
         var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(el, i) {
           var forecast;
@@ -472,12 +474,13 @@ var WindDirections = /*#__PURE__*/function () {
               switch (_context.prev = _context.next) {
                 case 0:
                   _context.next = 2;
-                  return fetch("https://api.openweathermap.org/data/2.5/forecast?lat=".concat(el.lat, "&lon=").concat(el.lng, "&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial"));
+                  return fetch("https://api.openweathermap.org/data/2.5/weather?lat=".concat(el.lat, "&lon=").concat(el.lng, "&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial"));
 
                 case 2:
                   forecast = _context.sent;
                   forecast.json().then(function (res) {
-                    console.log(res);
+                    //using an object to thwart asynchronicity
+                    _this.quadrants[i] = res.wind; //iterating through quadrants left to right top to bottom
                   });
 
                 case 4:
@@ -497,7 +500,7 @@ var WindDirections = /*#__PURE__*/function () {
     key: "getWeather",
     value: function () {
       var _getWeather = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        var _this = this;
+        var _this2 = this;
 
         var _ref2, lng, lat, currentWeather;
 
@@ -521,7 +524,7 @@ var WindDirections = /*#__PURE__*/function () {
                       feels_like = _ref3[4],
                       humidity = _ref3[5],
                       weather = _ref3[6];
-                  _this.forecastNow = {
+                  _this2.forecastNow = {
                     windSpeed: windSpeed,
                     windDirDeg: windDirDeg,
                     cloudCover: cloudCover,

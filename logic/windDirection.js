@@ -3,7 +3,7 @@ class WindDirections {
         this.state = object;
         this.forecastNow = {};
         this.forecastTomorrow = {};
-        this.quadrants = [];
+        this.quadrants = {};
 
         this.getWind()
         this.getWeather()
@@ -11,9 +11,11 @@ class WindDirections {
 
     getWind() {
         this.state.allStations.forEach(async (el, i) => {
-            let forecast = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${el.lat}&lon=${el.lng}&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial`)
+            let forecast = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${el.lat}&lon=${el.lng}&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial`)
             forecast.json().then((res) => {
-                console.log(res)
+                //using an object to thwart asynchronicity
+                this.quadrants[i] = res.wind
+                //iterating through quadrants left to right top to bottom
             })
         })
         
