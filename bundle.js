@@ -315,7 +315,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       start: [-87.6298, 41.8781],
       zoom: 9,
-      mapObj: {}
+      mapObj: {},
+      marker: {}
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
@@ -351,29 +352,42 @@ var Root = /*#__PURE__*/function (_React$Component) {
           marker = new mapbox_gl__WEBPACK_IMPORTED_MODULE_3__["Marker"]();
           marker.setLngLat([moveLng, moveLat]);
           marker.addTo(map);
+
+          _this2.setState({
+            marker: marker
+          });
         });
 
         _this2.setState({
+          marker: marker,
           mapObj: map
         });
-      });
-      map.on("click", function () {
-        console.log(map);
       });
     }
   }, {
     key: "handleClick",
     value: function handleClick() {
-      var mapObj = this.state.mapObj; //resizing the window for visualization
+      var _this$state2 = this.state,
+          mapObj = _this$state2.mapObj,
+          marker = _this$state2.marker; //resizing the window for visualization
+      // let resize = [];
+      // let hash = window.location.hash
+      // let split = hash.split("/")
+      // resize.push("#9", split[1], split[2])
+      // window.location.hash = resize.join("/")
+      //
 
-      var resize = [];
-      var hash = window.location.hash;
-      var split = hash.split("/");
-      resize.push("#9", split[1], split[2]);
-      window.location.hash = resize.join("/"); //
+      var newLng = marker._lngLat.lng;
+      var newLat = marker._lngLat.lat;
+      mapObj.flyTo({
+        center: [newLng, newLat],
+        zoom: 9,
+        speed: 2,
+        curve: 1
+      });
+      console.log(marker); // let lng = mapObj.getCenter().lng.toFixed(4)
+      // let lat = mapObj.getCenter().lat.toFixed(4)
 
-      var lng = mapObj.getCenter().lng.toFixed(4);
-      var lat = mapObj.getCenter().lat.toFixed(4);
       var bounds = mapObj.getBounds();
       console.log(bounds);
       this.setState({
@@ -384,9 +398,9 @@ var Root = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$state2 = this.state,
-          start = _this$state2.start,
-          map = _this$state2.map;
+      var _this$state3 = this.state,
+          start = _this$state3.start,
+          map = _this$state3.map;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

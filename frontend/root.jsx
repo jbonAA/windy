@@ -11,7 +11,8 @@ class Root extends React.Component {
         this.state = {
             start: [-87.6298, 41.8781],
             zoom: 9,
-            mapObj: {}
+            mapObj: {},
+            marker: {}
         }
 
         this.handleClick = this.handleClick.bind(this)
@@ -49,36 +50,47 @@ class Root extends React.Component {
                 marker = new Marker()
                 marker.setLngLat([moveLng, moveLat])
                 marker.addTo(map)
+
+                this.setState({
+                    marker
+                })
             })
 
             this.setState({
+                marker,
                 mapObj: map
             })
-        })
-
-        map.on("click", () => {
-
-            console.log(map)
-
         })
 
     }
 
     handleClick() {
-        const {mapObj} = this.state
+        const {mapObj, marker} = this.state
 
         //resizing the window for visualization
 
-        let resize = [];
-        let hash = window.location.hash
-        let split = hash.split("/")
-        resize.push("#9", split[1], split[2])
-        window.location.hash = resize.join("/")
+        // let resize = [];
+        // let hash = window.location.hash
+        // let split = hash.split("/")
+        // resize.push("#9", split[1], split[2])
+        // window.location.hash = resize.join("/")
 
         //
 
-        let lng = mapObj.getCenter().lng.toFixed(4)
-        let lat = mapObj.getCenter().lat.toFixed(4)
+        let newLng = marker._lngLat.lng;
+        let newLat = marker._lngLat.lat;
+
+        mapObj.flyTo({
+            center: [newLng, newLat],
+            zoom: 9,
+            speed: 2,
+            curve: 1
+        })
+
+        console.log(marker)
+
+        // let lng = mapObj.getCenter().lng.toFixed(4)
+        // let lat = mapObj.getCenter().lat.toFixed(4)
         let bounds = mapObj.getBounds();
         console.log(bounds)
 
