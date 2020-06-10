@@ -272,6 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forecast_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./forecast.jsx */ "./frontend/forecast.jsx");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../logic/windDirection */ "./logic/windDirection.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -293,6 +294,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -377,19 +379,26 @@ var Root = /*#__PURE__*/function (_React$Component) {
         center: [newLng, newLat],
         zoom: 9
       });
-      var bounds = mapObj.getBounds();
+      var bounds = mapObj.getBounds(); //mapbox object representing corners
+
       var nE = bounds.getNorthEast();
       var nW = bounds.getNorthWest();
       var sE = bounds.getSouthEast();
-      var sW = bounds.getSouthWest();
+      var sW = bounds.getSouthWest(); //grab height width of mapDiv for canvas/vis sizing
+
+      var mD = document.getElementById("mapDiv");
       var infoGather = {
         nE: nE,
         nW: nW,
         sE: sE,
         sW: sW,
-        center: [newLng, newLat]
-      };
-      console.log(infoGather);
+        center: [newLng, newLat],
+        width: mD.clientWidth,
+        height: mD.clientHeight
+      }; //create initial Wind Object
+
+      var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
+      console.log(wind);
     }
   }, {
     key: "render",
@@ -421,6 +430,27 @@ var Root = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./logic/windDirection.js":
+/*!********************************!*\
+  !*** ./logic/windDirection.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var WindDirections = function WindDirections(object) {
+  _classCallCheck(this, WindDirections);
+
+  this.state = object;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (WindDirections);
 
 /***/ }),
 

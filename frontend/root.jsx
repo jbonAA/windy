@@ -2,7 +2,9 @@ import React from 'react';
 import Map from './map.jsx';
 import Forecast from './forecast.jsx';
 import { LngLat, Marker } from 'mapbox-gl';
-const mapboxgl = require('mapbox-gl')
+import WindDirection from '../logic/windDirection';
+
+const mapboxgl = require('mapbox-gl');
 
 class Root extends React.Component {
     constructor(props){
@@ -79,22 +81,31 @@ class Root extends React.Component {
 
         let bounds = mapObj.getBounds();
 
+        //mapbox object representing corners
+
         let nE = bounds.getNorthEast();
         let nW = bounds.getNorthWest();
         let sE = bounds.getSouthEast();
         let sW = bounds.getSouthWest();
+
+        //grab height width of mapDiv for canvas/vis sizing
+
+        let mD = document.getElementById("mapDiv")
+        
 
         const infoGather = {
             nE,
             nW,
             sE,
             sW,
-            center: [newLng, newLat]
+            center: [newLng, newLat],
+            width: mD.clientWidth,
+            height: mD.clientHeight
         }
 
-        console.log(infoGather)
-
-        
+        //create initial Wind Object
+        const wind = new WindDirection(infoGather)
+        console.log(wind)
     }
 
     render() {
