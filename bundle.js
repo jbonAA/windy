@@ -388,10 +388,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
       var mD = document.getElementById("mapDiv");
       var infoGather = {
-        nE: nE,
-        nW: nW,
-        sE: sE,
-        sW: sW,
+        allStations: [nE, nW, sE, sW],
         center: [newLng, newLat],
         width: mD.clientWidth,
         height: mD.clientHeight

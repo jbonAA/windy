@@ -94,10 +94,7 @@ class Root extends React.Component {
         
 
         const infoGather = {
-            nE,
-            nW,
-            sE,
-            sW,
+            allStations: [nE, nW, sE, sW],
             center: [newLng, newLat],
             width: mD.clientWidth,
             height: mD.clientHeight
