@@ -134,7 +134,6 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Forecast);
 
     _this = _super.call(this, props);
-    console.log(_this.props);
     _this.state = {
       weatherStation: _this.props.weatherStation,
       tomorrowForecast: _this.props.tomorrowForecast,
@@ -151,6 +150,7 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
       console.log(nextState);
 
       if (this.state.weatherStation !== nextState.weatherStation) {
+        console.log("check");
         return true;
       } else {
         return false;
@@ -159,12 +159,13 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.state);
       var display;
 
       if (this.props.weatherStation) {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast near ", this.props.weatherStation), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           weather: this.props.currentForecast
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           weather: this.props.tomorrowForecast
@@ -511,7 +512,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
           tomorrowFor: wind.forecastTomorrow,
           quadrants: wind.quadrants
         });
-      }, 200);
+      }, 400);
     }
   }, {
     key: "render",

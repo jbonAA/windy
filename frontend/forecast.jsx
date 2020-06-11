@@ -4,7 +4,7 @@ import ForecastIndexItem from './forecastIndexItem';
 class Forecast extends React.Component {
     constructor(props){
         super(props)
-        console.log(this.props)
+
         this.state = {
             weatherStation: this.props.weatherStation,
             tomorrowForecast: this.props.tomorrowForecast,
@@ -19,8 +19,8 @@ class Forecast extends React.Component {
     shouldComponentUpdate(nextState, nextProps) {
         console.log(this.state)
         console.log(nextState)
-
         if(this.state.weatherStation !== nextState.weatherStation){
+            console.log("check")
             return true
         }else{
             return false
@@ -29,12 +29,15 @@ class Forecast extends React.Component {
 
 
     render() {
+
+        console.log(this.state)
+        
         let display;
 
         if(this.props.weatherStation){
             display = (
                 <div id="forecastTitle">
-                    <h3>Local Forecast</h3>
+                    <h3>Local Forecast near {this.props.weatherStation}</h3>
                     <ForecastIndexItem weather={this.props.currentForecast}/>
                     <ForecastIndexItem weather={this.props.tomorrowForecast}/>
                 </div>
