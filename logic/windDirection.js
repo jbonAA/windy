@@ -17,10 +17,6 @@ class WindDirections {
             forecast.json().then((res) => {
                 //using an object to thwart asynchronicity
                 this.quadrants[i] = res.wind
-                
-                if(!this.weatherStation){
-                    this.weatherStation = res.name
-                }
                 //iterating through quadrants left to right top to bottom
                 //also use this forecast to find weather tomorrow in area
 
@@ -68,7 +64,7 @@ class WindDirections {
         let [lng, lat] = [this.state.center[0], this.state.center[1]]
         let currentWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial`)
         currentWeather.json().then((res) => {
-
+            
             let [
                 windSpeed,
                 windDirDeg, 
@@ -96,6 +92,7 @@ class WindDirections {
                 humidity,
                 weather
             }
+            this.weatherStation = res.name
 
         })
     }

@@ -97,6 +97,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forecastIndexItem */ "./frontend/forecastIndexItem.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -121,28 +122,35 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Forecast = /*#__PURE__*/function (_React$Component) {
   _inherits(Forecast, _React$Component);
 
   var _super = _createSuper(Forecast);
 
   function Forecast(props) {
+    var _this;
+
     _classCallCheck(this, Forecast);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    console.log(_this.props);
+    _this.state = {
+      weatherStation: _this.props.weatherStation,
+      tomorrowForecast: _this.props.tomorrowForecast,
+      currentForecast: _this.props.currentForecast,
+      quadrants: _this.props.quadrants
+    };
+    return _this;
   }
 
   _createClass(Forecast, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      console.log(this.props);
-    }
-  }, {
     key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(nextProps, nextState) {
-      console.log(nextProps);
+    value: function shouldComponentUpdate(nextState, nextProps) {
+      console.log(this.state);
+      console.log(nextState);
 
-      if (nextProps.weatherStation !== this.props.weatherStation) {
+      if (this.state.weatherStation !== nextState.weatherStation) {
         return true;
       } else {
         return false;
@@ -151,15 +159,25 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var display;
+
+      if (this.props.weatherStation) {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "forecastTitle"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          weather: this.props.currentForecast
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          weather: this.props.tomorrowForecast
+        }));
+      } else {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "defaultInfo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Nagivate around the map, marker will center the data and can be adjusted by clicking desired location on map."));
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastDiv"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "forecastTitle"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "forecastItem"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "forecastItem"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, display, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "links"
@@ -175,6 +193,68 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Forecast);
+
+/***/ }),
+
+/***/ "./frontend/forecastIndexItem.jsx":
+/*!****************************************!*\
+  !*** ./frontend/forecastIndexItem.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(ForecastIndexItem, _React$Component);
+
+  var _super = _createSuper(ForecastIndexItem);
+
+  function ForecastIndexItem(props) {
+    _classCallCheck(this, ForecastIndexItem);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(ForecastIndexItem, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "forecastItem"
+      });
+    }
+  }]);
+
+  return ForecastIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ForecastIndexItem);
 
 /***/ }),
 
@@ -337,7 +417,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
       marker: {},
       location: "",
       currentFor: {},
-      tomorrowFor: {}
+      tomorrowFor: {},
+      quadrants: {}
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
@@ -389,6 +470,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleClick",
     value: function handleClick() {
+      var _this3 = this;
+
       var _this$state2 = this.state,
           mapObj = _this$state2.mapObj,
           marker = _this$state2.marker;
@@ -413,23 +496,33 @@ var Root = /*#__PURE__*/function (_React$Component) {
         width: mD.clientWidth,
         height: mD.clientHeight
       }; //create initial Wind Object
+      // const wind = new Promise((resolve, reject) => {
+      //     resolve(new WindDirection(infoGather))
+      // })
 
       var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
-      console.log(wind);
-      this.setState({
-        currentFor: wind.forecastNow,
-        tomorrowFor: wind.forecastTomorrow,
-        location: wind.weatherStation
-      });
+      setTimeout(function () {
+        console.log(wind);
+        console.log(wind.forecastTomorrow);
+
+        _this3.setState({
+          location: wind.weatherStation,
+          currentFor: wind.forecastNow,
+          tomorrowFor: wind.forecastTomorrow,
+          quadrants: wind.quadrants
+        });
+      }, 200);
     }
   }, {
     key: "render",
     value: function render() {
+      console.log(this.state);
       var _this$state3 = this.state,
           currentFor = _this$state3.currentFor,
           map = _this$state3.map,
-          weatherStation = _this$state3.weatherStation,
-          tomorrowFor = _this$state3.tomorrowFor;
+          location = _this$state3.location,
+          tomorrowFor = _this$state3.tomorrowFor,
+          quadrants = _this$state3.quadrants;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -447,7 +540,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecast_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         currentForecast: currentFor,
         tomorrowForecast: tomorrowFor,
-        weatherStation: weatherStation
+        weatherStation: location,
+        quadrants: quadrants
       })));
     }
   }]);
@@ -511,13 +605,8 @@ var WindDirections = /*#__PURE__*/function () {
                   forecast = _context.sent;
                   forecast.json().then(function (res) {
                     //using an object to thwart asynchronicity
-                    _this.quadrants[i] = res.wind;
-
-                    if (!_this.weatherStation) {
-                      _this.weatherStation = res.name;
-                    } //iterating through quadrants left to right top to bottom
+                    _this.quadrants[i] = res.wind; //iterating through quadrants left to right top to bottom
                     //also use this forecast to find weather tomorrow in area
-
                   });
 
                 case 4:
@@ -621,6 +710,7 @@ var WindDirections = /*#__PURE__*/function () {
                     humidity: humidity,
                     weather: weather
                   };
+                  _this3.weatherStation = res.name;
                 });
 
               case 5:

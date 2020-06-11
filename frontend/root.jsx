@@ -17,10 +17,12 @@ class Root extends React.Component {
             marker: {},
             location: "",
             currentFor: {},
-            tomorrowFor: {}
+            tomorrowFor: {},
+            quadrants: {}
         }
 
         this.handleClick = this.handleClick.bind(this)
+
     }
 
     componentDidMount() {
@@ -107,20 +109,29 @@ class Root extends React.Component {
         }
 
         //create initial Wind Object
-        const wind = new WindDirection(infoGather)
-        console.log(wind)
+        // const wind = new Promise((resolve, reject) => {
+        //     resolve(new WindDirection(infoGather))
+        // })
 
-        this.setState({
-            currentFor: wind.forecastNow,
-            tomorrowFor: wind.forecastTomorrow,
-            location: wind.weatherStation
-        })
-        
+        const wind = new WindDirection(infoGather)
+        setTimeout(() => {
+            console.log(wind)
+            console.log(wind.forecastTomorrow)
+            this.setState({
+                location: wind.weatherStation,
+                currentFor: wind.forecastNow,
+                tomorrowFor: wind.forecastTomorrow,
+                quadrants: wind.quadrants
+            })
+        }, 200)
+    
     }
+   
 
     render() {
-        const {currentFor, map, weatherStation, tomorrowFor} = this.state
-
+        console.log(this.state)
+        const {currentFor, map, location, tomorrowFor, quadrants} = this.state
+        
         return(
             <div id="main">
                 <div id="header">
@@ -139,7 +150,8 @@ class Root extends React.Component {
                     <Forecast 
                     currentForecast={currentFor}
                     tomorrowForecast={tomorrowFor}
-                    weatherStation={weatherStation}
+                    weatherStation={location}
+                    quadrants={quadrants}
                     />
                 </div>
             </div>
