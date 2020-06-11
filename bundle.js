@@ -133,6 +133,22 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Forecast, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      console.log(this.props);
+    }
+  }, {
+    key: "shouldComponentUpdate",
+    value: function shouldComponentUpdate(nextProps, nextState) {
+      console.log(nextProps);
+
+      if (nextProps.weatherStation !== this.props.weatherStation) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -318,7 +334,10 @@ var Root = /*#__PURE__*/function (_React$Component) {
       start: [-87.6298, 41.8781],
       zoom: 9,
       mapObj: {},
-      marker: {}
+      marker: {},
+      location: "",
+      currentFor: {},
+      tomorrowFor: {}
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
@@ -380,6 +399,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
         zoom: 9
       });
       var bounds = mapObj.getBounds(); //mapbox object representing corners
+      //objectively we can say that the set up for this project
 
       var nE = bounds.getNorthEast();
       var nW = bounds.getNorthWest();
@@ -396,13 +416,20 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
       var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
       console.log(wind);
+      this.setState({
+        currentFor: wind.forecastNow,
+        tomorrowFor: wind.forecastTomorrow,
+        location: wind.weatherStation
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var _this$state3 = this.state,
-          start = _this$state3.start,
-          map = _this$state3.map;
+          currentFor = _this$state3.currentFor,
+          map = _this$state3.map,
+          weatherStation = _this$state3.weatherStation,
+          tomorrowFor = _this$state3.tomorrowFor;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -418,7 +445,9 @@ var Root = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         map: map
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecast_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        start: start
+        currentForecast: currentFor,
+        tomorrowForecast: tomorrowFor,
+        weatherStation: weatherStation
       })));
     }
   }]);
@@ -457,6 +486,7 @@ var WindDirections = /*#__PURE__*/function () {
     this.forecastNow = {};
     this.forecastTomorrow = {};
     this.quadrants = {};
+    this.weatherStation = false;
     this.getWind();
     this.getWeather();
     this.tomorrow();
@@ -481,8 +511,13 @@ var WindDirections = /*#__PURE__*/function () {
                   forecast = _context.sent;
                   forecast.json().then(function (res) {
                     //using an object to thwart asynchronicity
-                    _this.quadrants[i] = res.wind; //iterating through quadrants left to right top to bottom
+                    _this.quadrants[i] = res.wind;
+
+                    if (!_this.weatherStation) {
+                      _this.weatherStation = res.name;
+                    } //iterating through quadrants left to right top to bottom
                     //also use this forecast to find weather tomorrow in area
+
                   });
 
                 case 4:

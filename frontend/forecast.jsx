@@ -6,6 +6,23 @@ class Forecast extends React.Component {
 
     }
 
+
+    componentDidMount(){
+        console.log(this.props)
+    }
+
+
+
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(nextProps)
+        if(nextProps.weatherStation !== this.props.weatherStation){
+            return true
+        }else{
+            return false
+        }
+    }
+
     render() {
         return (
             <div id="forecastDiv">

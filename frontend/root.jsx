@@ -14,7 +14,10 @@ class Root extends React.Component {
             start: [-87.6298, 41.8781],
             zoom: 9,
             mapObj: {},
-            marker: {}
+            marker: {},
+            location: "",
+            currentFor: {},
+            tomorrowFor: {}
         }
 
         this.handleClick = this.handleClick.bind(this)
@@ -82,6 +85,9 @@ class Root extends React.Component {
         let bounds = mapObj.getBounds();
 
         //mapbox object representing corners
+        
+        //objectively we can say that the set up for this project
+
 
         let nE = bounds.getNorthEast();
         let nW = bounds.getNorthWest();
@@ -103,10 +109,17 @@ class Root extends React.Component {
         //create initial Wind Object
         const wind = new WindDirection(infoGather)
         console.log(wind)
+
+        this.setState({
+            currentFor: wind.forecastNow,
+            tomorrowFor: wind.forecastTomorrow,
+            location: wind.weatherStation
+        })
+        
     }
 
     render() {
-        const {start, map} = this.state
+        const {currentFor, map, weatherStation, tomorrowFor} = this.state
 
         return(
             <div id="main">
@@ -123,7 +136,11 @@ class Root extends React.Component {
                 </div>
                 <div id="components">
                     <Map map={map}/>
-                    <Forecast start={start}/>
+                    <Forecast 
+                    currentForecast={currentFor}
+                    tomorrowForecast={tomorrowFor}
+                    weatherStation={weatherStation}
+                    />
                 </div>
             </div>
         )
