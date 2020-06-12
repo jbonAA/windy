@@ -74,11 +74,7 @@ body {
 
 #forecastTitle {
     width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
     height: 8%;
-    margin-top: 2%;
-    margin-bottom: 2%; 
     background-color: white;
     display: flex;
     justify-content: center;
@@ -93,7 +89,7 @@ h3 {
 }
 
 #forecastItem {
-    height: 40%;
+    height: 42%;
     width: 96%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -101,6 +97,23 @@ h3 {
     margin-right: 2%;
     border: 1px solid black;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#top {
+    height: 90%;
+    width: 56%;
+    border: 1px solid black;
+    margin: 1%;
+}
+
+#bottom {
+    height: 90%;
+    width: 40%;
+    border: 1px solid black;
+    margin: 1%;
 }
 
 #links {

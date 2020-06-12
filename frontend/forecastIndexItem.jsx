@@ -22,7 +22,12 @@ class ForecastIndexItem extends React.Component {
 
         return (
             <div id="forecastItem">
-                <p>{this.state.cloudCover}</p>
+                <div id="top">
+
+                </div>
+                <div id="bottom">
+
+                </div>
             </div>
         )
     }
