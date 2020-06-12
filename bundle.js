@@ -159,13 +159,14 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state);
       var display;
 
       if (this.props.weatherStation) {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "defaultInfo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast near ", this.props.weatherStation), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           weather: this.props.currentForecast
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           weather: this.props.tomorrowForecast
@@ -179,8 +180,8 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastDiv"
       }, display, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "forecastItem"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "projectInfo"
+      }, "description of the project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
@@ -238,17 +239,30 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(ForecastIndexItem);
 
   function ForecastIndexItem(props) {
+    var _this;
+
     _classCallCheck(this, ForecastIndexItem);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      cloudCover: _this.props.weather.cloudCover,
+      feels_like: _this.props.weather.feels_like,
+      humidity: _this.props.weather.humidity,
+      temp: Math.floor(_this.props.weather.temp),
+      weather: _this.props.weather.weather,
+      windSpeed: _this.props.weather.windSpeed,
+      windDirDeg: _this.props.weather.windDirDeg
+    };
+    return _this;
   }
 
   _createClass(ForecastIndexItem, [{
     key: "render",
     value: function render() {
+      console.log(this.state);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
-      });
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.cloudCover));
     }
   }]);
 

@@ -29,15 +29,15 @@ class Forecast extends React.Component {
 
 
     render() {
-
-        console.log(this.state)
         
         let display;
 
         if(this.props.weatherStation){
             display = (
-                <div id="forecastTitle">
-                    <h3>Local Forecast near {this.props.weatherStation}</h3>
+                <div id="defaultInfo">
+                    <div id="forecastTitle">
+                        <h3>Local Forecast near {this.props.weatherStation}</h3>
+                    </div>
                     <ForecastIndexItem weather={this.props.currentForecast}/>
                     <ForecastIndexItem weather={this.props.tomorrowForecast}/>
                 </div>
@@ -58,8 +58,8 @@ class Forecast extends React.Component {
 
                 {display}
 
-                <div id="forecastItem">
-
+                <div id="projectInfo">
+                    description of the project
                 </div>
 
                 <div id="links">

@@ -76,21 +76,24 @@ body {
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
-    height: 6%;
+    height: 8%;
     margin-top: 2%;
     margin-bottom: 2%; 
-    border: 1px solid black;
-    text-align: center;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h3 {
-    margin-top: 2%;
-    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 1%;
+    text-align: center;
 }
 
 #forecastItem {
-    height: 25%;
+    height: 40%;
     width: 96%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -146,6 +149,20 @@ h3 {
     margin-bottom: 2%;
     margin-left: 2%;
     margin-right: 2%;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#forecastIndex {
+    height: 56%;
+    width: 96%;
+    margin: 1%;
+}
+
+#projectInfo {
+    height: 22%;
+    width: 96%;
+    margin: 2%;
     border: 1px solid black;
     background-color: white;
 }
