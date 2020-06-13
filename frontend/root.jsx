@@ -136,7 +136,7 @@ class Root extends React.Component {
             <div id="main">
                 <div id="header">
                     <div id="headButton">
-                        <button onClick={this.handleClick}>Apply Wind Data</button>
+                        <button onClick={this.handleClick}>Check Current Conditions</button>
                         {/* if there is a canvas over the map
                         remove and reapply logic with lnglat from map
                         bounds, use forecast for map start */}
