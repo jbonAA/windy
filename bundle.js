@@ -146,11 +146,14 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   _createClass(Forecast, [{
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextState, nextProps) {
-      console.log(this.state);
+      // console.log(this.state)
       console.log(nextState);
 
       if (this.state.weatherStation !== nextState.weatherStation) {
         console.log("check");
+        return true;
+      } else if (this.state.currentForecast !== nextState.currentForecast) {
+        console.log;
         return true;
       } else {
         return false;
@@ -167,11 +170,15 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Current Conditions near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          weather: this.props.currentForecast
+          key: this.props.weatherStation,
+          weather: this.props.currentForecast,
+          station: this.props.weatherStation
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           id: "future"
         }, "Tomorrow's Conditions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          weather: this.props.tomorrowForecast
+          key: this.props.currentForecast.weatherStation,
+          weather: this.props.tomorrowForecast,
+          station: this.props.weatherStation
         }));
       } else {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -253,7 +260,8 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
       temp: Math.floor(_this.props.weather.temp),
       weather: _this.props.weather.weather,
       windSpeed: _this.props.weather.windSpeed,
-      windDirDeg: _this.props.weather.windDirDeg
+      windDirDeg: _this.props.weather.windDirDeg,
+      station: _this.props.station
     };
     _this.format = _this.format.bind(_assertThisInitialized(_this));
     _this.degreeToCardinal = _this.degreeToCardinal.bind(_assertThisInitialized(_this));
@@ -275,7 +283,6 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "degreeToCardinal",
     value: function degreeToCardinal(n) {
-      console.log(_typeof(n));
       var formatted = [];
 
       switch (n >= 0) {
@@ -351,8 +358,17 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
           return formatted;
       }
 
-      console.log(formatted);
       return formatted[0];
+    } //need a shouldComponentUpdate 
+
+  }, {
+    key: "shouldComponentUpdate",
+    value: function shouldComponentUpdate(nextState, nextProps) {
+      if (this.state.station !== nextState.station) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }, {
     key: "render",
@@ -366,19 +382,17 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
           weather = _this$state.weather,
           windSpeed = _this$state.windSpeed,
           windDirDeg = _this$state.windDirDeg;
-      console.log(windDirDeg);
       var description = this.format(weather[0].description);
       var direction = this.degreeToCardinal(windDirDeg);
-      console.log(direction);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "left"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "image"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "icon")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "description"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp, "\xB0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cloud Cover: ", cloudCover, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Humidity: ", humidity, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Speed: ", windSpeed), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Direction: ", direction))));
     }
@@ -635,9 +649,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
       var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
       setTimeout(function () {
-        console.log(wind);
-        console.log(wind.forecastTomorrow);
-
+        // console.log(wind)
+        // console.log(wind.forecastTomorrow)
         _this3.setState({
           location: wind.weatherStation,
           currentFor: wind.forecastNow,
@@ -649,7 +662,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state);
+      // console.log(this.state)
       var _this$state3 = this.state,
           currentFor = _this$state3.currentFor,
           map = _this$state3.map,

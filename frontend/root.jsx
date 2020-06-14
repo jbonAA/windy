@@ -115,8 +115,8 @@ class Root extends React.Component {
 
         const wind = new WindDirection(infoGather)
         setTimeout(() => {
-            console.log(wind)
-            console.log(wind.forecastTomorrow)
+            // console.log(wind)
+            // console.log(wind.forecastTomorrow)
             this.setState({
                 location: wind.weatherStation,
                 currentFor: wind.forecastNow,
@@ -129,7 +129,7 @@ class Root extends React.Component {
    
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         const {currentFor, map, location, tomorrowFor, quadrants} = this.state
         
         return(

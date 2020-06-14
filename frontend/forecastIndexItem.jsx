@@ -11,7 +11,8 @@ class ForecastIndexItem extends React.Component {
             temp: Math.floor(this.props.weather.temp), 
             weather: this.props.weather.weather,
             windSpeed: this.props.weather.windSpeed,
-            windDirDeg: this.props.weather.windDirDeg
+            windDirDeg: this.props.weather.windDirDeg,
+            station: this.props.station
         }
 
         this.format = this.format.bind(this)
@@ -32,7 +33,7 @@ class ForecastIndexItem extends React.Component {
     }
 
     degreeToCardinal(n) {
-        console.log(typeof n)
+
         let formatted = [];
 
         switch(n >= 0){
@@ -91,35 +92,44 @@ class ForecastIndexItem extends React.Component {
                 return formatted
         }
 
-        console.log(formatted)
-
         return formatted[0]
     }
 
+    //need a shouldComponentUpdate 
+    shouldComponentUpdate(nextState, nextProps) {
+        
+        if(this.state.station !== nextState.station){
+            return true
+        }else{
+            return false
+        }
+    }
 
     render() {
+
         console.log(this.state)
         const {
             cloudCover, feels_like,
             humidity, temp,
             weather, windSpeed, windDirDeg
-        } = this.state
-
-        console.log(windDirDeg)
+        } = this.state;
 
 
-        let description = this.format(weather[0].description)
+        let description = this.format(weather[0].description);
+        let direction = this.degreeToCardinal(windDirDeg);
 
-        let direction = this.degreeToCardinal(windDirDeg)
-
-        console.log(direction)
         return (
             <div id="forecastItem">
                 <div id="left">
                     {/* VVVVV div for now but will be the image asset */}
-                    <div id="image"></div>
+                    <div id="image"><p>icon</p></div>
                     <div id="description">
-                        <h4>{description}</h4>
+                        <ul>
+                            <p>{temp}°</p>
+                            <p>{description}</p>
+                            <p>Feels Like: {Math.floor(feels_like)}°</p>
+
+                        </ul>
                     </div>
                 </div>
                 <div id="right">
