@@ -173,13 +173,13 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Current Conditions near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: this.props.currentForecast.weather[0].description,
+          key: this.props.currentForecast.weather[0].id,
           weather: this.props.currentForecast,
           station: this.props.weatherStation
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           id: "future"
         }, "Tomorrow's Conditions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: this.props.tomorrowForecast.weather[0].description,
+          key: this.props.tomorrowForecast.weather[0].id,
           weather: this.props.tomorrowForecast,
           station: this.props.weatherStation
         }));

@@ -45,9 +45,9 @@ class Forecast extends React.Component {
                     <div id="forecastTitle">
                         <h3>Current Conditions near {this.props.weatherStation}</h3>
                     </div>
-                    <ForecastIndexItem key={this.props.currentForecast.weather[0].description} weather={this.props.currentForecast} station={this.props.weatherStation}/>
+                    <ForecastIndexItem key={this.props.currentForecast.weather[0].id} weather={this.props.currentForecast} station={this.props.weatherStation}/>
                         <h3 id="future">Tomorrow's Conditions</h3>
-                    <ForecastIndexItem key={this.props.tomorrowForecast.weather[0].description} weather={this.props.tomorrowForecast} station={this.props.weatherStation}/>
+                    <ForecastIndexItem key={this.props.tomorrowForecast.weather[0].id} weather={this.props.tomorrowForecast} station={this.props.weatherStation}/>
                 </div>
             )
         }else{
