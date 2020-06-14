@@ -36,9 +36,10 @@ class Forecast extends React.Component {
             display = (
                 <div id="defaultInfo">
                     <div id="forecastTitle">
-                        <h3>Local Forecast near {this.props.weatherStation}</h3>
+                        <h3>Current Conditions near {this.props.weatherStation}</h3>
                     </div>
                     <ForecastIndexItem weather={this.props.currentForecast}/>
+                        <h3 id="future">Tomorrow's Conditions</h3>
                     <ForecastIndexItem weather={this.props.tomorrowForecast}/>
                 </div>
             )

@@ -44,8 +44,6 @@ body {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-
-
 #components {
     display: flex;
     flex-direction: row;
@@ -89,12 +87,9 @@ h3 {
 }
 
 #forecastItem {
-    height: 42%;
+    height: 37%;
     width: 96%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 2%;
     border: 1px solid black;
     background-color: white;
     display: flex;
@@ -102,15 +97,41 @@ h3 {
 
 }
 
-#top {
+#left {
     height: 96%;
     width: 58%;
     border-right: 1px solid black;
     margin-top: 1%;
-    margin-bottom: 1%
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-#bottom {
+#future {
+    height: 2%;
+    width: 100%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+
+#image {
+    height: 76%;
+    margin: 2%;
+    width: 45%;
+    border: 1px solid black;
+}
+
+#description {
+    width: 51%;
+    height: 76%;
+    border: 1px solid black;
+    margin: 2%;
+}
+
+
+#right {
     height: 96%;
     width: 42%;
     margin-top: 1%;

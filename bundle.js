@@ -166,9 +166,11 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Local Forecast near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Current Conditions near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           weather: this.props.currentForecast
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          id: "future"
+        }, "Tomorrow's Conditions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           weather: this.props.tomorrowForecast
         }));
       } else {
@@ -253,20 +255,128 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
       windSpeed: _this.props.weather.windSpeed,
       windDirDeg: _this.props.weather.windDirDeg
     };
+    _this.format = _this.format.bind(_assertThisInitialized(_this));
+    _this.degreeToCardinal = _this.degreeToCardinal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(ForecastIndexItem, [{
+    key: "format",
+    value: function format(string) {
+      var words = string.split(" ");
+      var formatted = [];
+      words.forEach(function (word) {
+        var temp = word.split("");
+        temp[0] = temp[0].toUpperCase();
+        formatted.push(temp.join(""));
+      });
+      return formatted.join(" ");
+    }
+  }, {
+    key: "degreeToCardinal",
+    value: function degreeToCardinal(n) {
+      console.log(_typeof(n));
+      var formatted = "testing";
+
+      switch (n) {
+        case n < 11:
+          formatted = "N";
+          break;
+
+        case n < 33:
+          formatted = "NNE";
+          break;
+
+        case n < 56:
+          formatted = "NE";
+          break;
+
+        case n < 78:
+          formatted = "ENE";
+          break;
+
+        case n < 101:
+          formatted = "E";
+          break;
+
+        case n < 123:
+          formatted = "ESE";
+          break;
+
+        case n < 146:
+          formatted = "SE";
+          break;
+
+        case n < 168:
+          formatted = "SSE";
+          break;
+
+        case n < 191:
+          formatted = "S";
+          break;
+
+        case n < 213:
+          formatted = "SSW";
+          break;
+
+        case n < 236:
+          formatted = "SW";
+          break;
+
+        case n < 258:
+          formatted = "WSW";
+          break;
+
+        case n < 281:
+          formatted = "W";
+          break;
+
+        case n < 303:
+          formatted = "WNW";
+          break;
+
+        case n < 326:
+          formatted = "NW";
+          break;
+
+        case n < 348:
+          formatted = "NNW";
+          break;
+
+        case n < 361:
+          formatted = "N";
+          break;
+      }
+
+      return formatted;
+    }
+  }, {
     key: "render",
     value: function render() {
       console.log(this.state);
+      var _this$state = this.state,
+          cloudCover = _this$state.cloudCover,
+          feels_like = _this$state.feels_like,
+          humidity = _this$state.humidity,
+          temp = _this$state.temp,
+          weather = _this$state.weather,
+          windSpeed = _this$state.windSpeed,
+          windDirDeg = _this$state.windDirDeg;
+      console.log(windDirDeg);
+      var description = this.format(weather[0].description);
+      var direction = this.degreeToCardinal(windDirDeg);
+      console.log(direction);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "top"
+        id: "left"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "bottom"
-      }));
+        id: "description"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cloud Cover: ", cloudCover, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Humidity: ", humidity, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Speed: ", windSpeed), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Direction: ", direction))));
     }
   }]);
 
@@ -550,7 +660,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
         id: "headButton"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick
-      }, "Check Current Conditions")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Check Local Forecast")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "h2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Bay Area Weather"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "components"
