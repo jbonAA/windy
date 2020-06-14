@@ -164,19 +164,22 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var display;
 
-      if (this.props.weatherStation) {
+      if (this.props.currentForecast.weather) {
+        console.log(this.state);
+        console.log("_______");
+        console.log(this.props);
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Current Conditions near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: this.props.weatherStation,
+          key: this.props.currentForecast.weather[0].description,
           weather: this.props.currentForecast,
           station: this.props.weatherStation
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           id: "future"
         }, "Tomorrow's Conditions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: this.props.currentForecast.weatherStation,
+          key: this.props.tomorrowForecast.weather[0].description,
           weather: this.props.tomorrowForecast,
           station: this.props.weatherStation
         }));
@@ -648,6 +651,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
       // })
 
       var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
+      console.log(wind);
       setTimeout(function () {
         // console.log(wind)
         // console.log(wind.forecastTomorrow)

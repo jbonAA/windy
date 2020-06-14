@@ -114,6 +114,8 @@ class Root extends React.Component {
         // })
 
         const wind = new WindDirection(infoGather)
+        console.log(wind)
+
         setTimeout(() => {
             // console.log(wind)
             // console.log(wind.forecastTomorrow)
