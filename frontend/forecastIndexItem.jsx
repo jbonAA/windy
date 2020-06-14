@@ -33,63 +33,67 @@ class ForecastIndexItem extends React.Component {
 
     degreeToCardinal(n) {
         console.log(typeof n)
-        let formatted = "testing"
+        let formatted = [];
 
-        switch(n){
+        switch(n >= 0){
             case n < 11:
-                formatted = "N"
+                formatted.push("N")
                 break;
             case n < 33:
-                formatted = "NNE"
+                formatted.push("NNE")
                 break;
             case n < 56: 
-                formatted = "NE"
+                formatted.push("NE")
                 break;
             case n < 78:
-                formatted = "ENE"
+                formatted.push("ENE")
                 break;
             case n < 101:
-                formatted = "E"
+                formatted.push("E")
                 break;
             case n < 123:
-                formatted = "ESE"
+                formatted.push("ESE")
                 break;
             case n < 146:
-                formatted = "SE"
+                formatted.push("SE")
                 break;
             case n < 168:
-                formatted = "SSE"
+                formatted.push("SSE")
                 break;
             case n < 191:
-                formatted = "S"
+                formatted.push("S")
                 break;
             case n < 213:
-                formatted = "SSW"
+                formatted.push("SSW")
                 break;
             case n < 236:
-                formatted = "SW"
+                formatted.push("SW")
                 break;
             case n < 258:
-                formatted = "WSW"
+                formatted.push("WSW")
                 break;
             case n < 281:
-                formatted = "W"
+                formatted.push("W")
                 break;
             case n < 303:
-                formatted = "WNW"
+                formatted.push("WNW")
                 break;
             case n < 326:
-                formatted = "NW"
+                formatted.push("NW")
                 break;
             case n < 348:
-                formatted = "NNW"
+                formatted.push("NNW")
                 break;
             case n < 361:
-                formatted = "N"
+                formatted.push("N")
                 break;
+            default:
+                return formatted
         }
 
-        return formatted
+        console.log(formatted)
+
+        return formatted[0]
     }
 
 
