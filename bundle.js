@@ -221,6 +221,10 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg */ "./frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg");
+/* harmony import */ var _frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/lib/index.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -242,6 +246,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
 
 
 
@@ -391,9 +397,9 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "image"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "icon")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        src: _frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1___default.a
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "description"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp, "\xB0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"
@@ -405,6 +411,17 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ForecastIndexItem);
+
+/***/ }),
+
+/***/ "./frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg":
+/*!***************************************************************************!*\
+  !*** ./frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewbox=\"0 0 64 64\"><defs><filter id=\"blur\" width=\"200%\" height=\"200%\"><feGaussianBlur in=\"SourceAlpha\" stdDeviation=\"3\"></feGaussianBlur><feOffset dx=\"0\" dy=\"4\" result=\"offsetblur\"></feOffset><feComponentTransfer><feFuncA type=\"linear\" slope=\"0.05\"></feFuncA></feComponentTransfer><feMerge><feMergeNode></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><style type=\"text/css\">"
 
 /***/ }),
 
@@ -11930,6 +11947,54 @@ __webpack_require__(/*! ./modules/web.timers */ "./node_modules/core-js/modules/
 __webpack_require__(/*! ./modules/web.immediate */ "./node_modules/core-js/modules/web.immediate.js");
 __webpack_require__(/*! ./modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
 module.exports = __webpack_require__(/*! ./modules/_core */ "./node_modules/core-js/modules/_core.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/exenv/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/exenv/index.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2015 Jed Watson.
+  Based on code that is Copyright 2013-2015, Facebook, Inc.
+  All rights reserved.
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var canUseDOM = !!(
+		typeof window !== 'undefined' &&
+		window.document &&
+		window.document.createElement
+	);
+
+	var ExecutionEnvironment = {
+
+		canUseDOM: canUseDOM,
+
+		canUseWorkers: typeof Worker !== 'undefined',
+
+		canUseEventListeners:
+			canUseDOM && !!(window.addEventListener || window.attachEvent),
+
+		canUseViewport: canUseDOM && !!window.screen
+
+	};
+
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return ExecutionEnvironment;
+		}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+
+}());
 
 
 /***/ }),
@@ -37290,6 +37355,1060 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-from-dom/esm/helpers.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-from-dom/esm/helpers.js ***!
+  \****************************************************/
+/*! exports provided: styleToObject, noTextChildNodes, possibleStandardNames */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styleToObject", function() { return styleToObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noTextChildNodes", function() { return noTextChildNodes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "possibleStandardNames", function() { return possibleStandardNames; });
+var __read = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var styleToObject = function (input) {
+    var attributes = input.split(/ ?; ?/);
+    return attributes.reduce(function (acc, d) {
+        var _a = __read(d.split(/ ?: ?/), 2), key = _a[0], value = _a[1];
+        if (key && value) {
+            acc[key.replace(/-(\w)/g, function (_$0, $1) { return $1.toUpperCase(); })] = Number.isNaN(Number(value))
+                ? value
+                : Number(value);
+        }
+        return acc;
+    }, {});
+};
+var noTextChildNodes = [
+    'br',
+    'col',
+    'colgroup',
+    'dl',
+    'hr',
+    'iframe',
+    'img',
+    'input',
+    'link',
+    'menuitem',
+    'meta',
+    'ol',
+    'param',
+    'select',
+    'table',
+    'tbody',
+    'tfoot',
+    'thead',
+    'tr',
+    'ul',
+    'wbr',
+];
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+// Taken from https://raw.githubusercontent.com/facebook/react/baff5cc2f69d30589a5dc65b089e47765437294b/packages/react-dom/src/shared/possibleStandardNames.js
+// tslint:disable:object-literal-sort-keys
+var possibleStandardNames = {
+    // HTML
+    'accept-charset': 'acceptCharset',
+    acceptcharset: 'acceptCharset',
+    accesskey: 'accessKey',
+    allowfullscreen: 'allowFullScreen',
+    autocapitalize: 'autoCapitalize',
+    autocomplete: 'autoComplete',
+    autocorrect: 'autoCorrect',
+    autofocus: 'autoFocus',
+    autoplay: 'autoPlay',
+    autosave: 'autoSave',
+    cellpadding: 'cellPadding',
+    cellspacing: 'cellSpacing',
+    charset: 'charSet',
+    class: 'className',
+    classid: 'classID',
+    classname: 'className',
+    colspan: 'colSpan',
+    contenteditable: 'contentEditable',
+    contextmenu: 'contextMenu',
+    controlslist: 'controlsList',
+    crossorigin: 'crossOrigin',
+    dangerouslysetinnerhtml: 'dangerouslySetInnerHTML',
+    datetime: 'dateTime',
+    defaultchecked: 'defaultChecked',
+    defaultvalue: 'defaultValue',
+    enctype: 'encType',
+    for: 'htmlFor',
+    formmethod: 'formMethod',
+    formaction: 'formAction',
+    formenctype: 'formEncType',
+    formnovalidate: 'formNoValidate',
+    formtarget: 'formTarget',
+    frameborder: 'frameBorder',
+    hreflang: 'hrefLang',
+    htmlfor: 'htmlFor',
+    httpequiv: 'httpEquiv',
+    'http-equiv': 'httpEquiv',
+    icon: 'icon',
+    innerhtml: 'innerHTML',
+    inputmode: 'inputMode',
+    itemid: 'itemID',
+    itemprop: 'itemProp',
+    itemref: 'itemRef',
+    itemscope: 'itemScope',
+    itemtype: 'itemType',
+    keyparams: 'keyParams',
+    keytype: 'keyType',
+    marginwidth: 'marginWidth',
+    marginheight: 'marginHeight',
+    maxlength: 'maxLength',
+    mediagroup: 'mediaGroup',
+    minlength: 'minLength',
+    nomodule: 'noModule',
+    novalidate: 'noValidate',
+    playsinline: 'playsInline',
+    radiogroup: 'radioGroup',
+    readonly: 'readOnly',
+    referrerpolicy: 'referrerPolicy',
+    rowspan: 'rowSpan',
+    spellcheck: 'spellCheck',
+    srcdoc: 'srcDoc',
+    srclang: 'srcLang',
+    srcset: 'srcSet',
+    tabindex: 'tabIndex',
+    usemap: 'useMap',
+    // SVG
+    accentheight: 'accentHeight',
+    'accent-height': 'accentHeight',
+    alignmentbaseline: 'alignmentBaseline',
+    'alignment-baseline': 'alignmentBaseline',
+    allowreorder: 'allowReorder',
+    arabicform: 'arabicForm',
+    'arabic-form': 'arabicForm',
+    attributename: 'attributeName',
+    attributetype: 'attributeType',
+    autoreverse: 'autoReverse',
+    basefrequency: 'baseFrequency',
+    baselineshift: 'baselineShift',
+    'baseline-shift': 'baselineShift',
+    baseprofile: 'baseProfile',
+    calcmode: 'calcMode',
+    capheight: 'capHeight',
+    'cap-height': 'capHeight',
+    clippath: 'clipPath',
+    'clip-path': 'clipPath',
+    clippathunits: 'clipPathUnits',
+    cliprule: 'clipRule',
+    'clip-rule': 'clipRule',
+    colorinterpolation: 'colorInterpolation',
+    'color-interpolation': 'colorInterpolation',
+    colorinterpolationfilters: 'colorInterpolationFilters',
+    'color-interpolation-filters': 'colorInterpolationFilters',
+    colorprofile: 'colorProfile',
+    'color-profile': 'colorProfile',
+    colorrendering: 'colorRendering',
+    'color-rendering': 'colorRendering',
+    contentscripttype: 'contentScriptType',
+    contentstyletype: 'contentStyleType',
+    diffuseconstant: 'diffuseConstant',
+    dominantbaseline: 'dominantBaseline',
+    'dominant-baseline': 'dominantBaseline',
+    edgemode: 'edgeMode',
+    enablebackground: 'enableBackground',
+    'enable-background': 'enableBackground',
+    externalresourcesrequired: 'externalResourcesRequired',
+    fillopacity: 'fillOpacity',
+    'fill-opacity': 'fillOpacity',
+    fillrule: 'fillRule',
+    'fill-rule': 'fillRule',
+    filterres: 'filterRes',
+    filterunits: 'filterUnits',
+    floodopacity: 'floodOpacity',
+    'flood-opacity': 'floodOpacity',
+    floodcolor: 'floodColor',
+    'flood-color': 'floodColor',
+    fontfamily: 'fontFamily',
+    'font-family': 'fontFamily',
+    fontsize: 'fontSize',
+    'font-size': 'fontSize',
+    fontsizeadjust: 'fontSizeAdjust',
+    'font-size-adjust': 'fontSizeAdjust',
+    fontstretch: 'fontStretch',
+    'font-stretch': 'fontStretch',
+    fontstyle: 'fontStyle',
+    'font-style': 'fontStyle',
+    fontvariant: 'fontVariant',
+    'font-variant': 'fontVariant',
+    fontweight: 'fontWeight',
+    'font-weight': 'fontWeight',
+    glyphname: 'glyphName',
+    'glyph-name': 'glyphName',
+    glyphorientationhorizontal: 'glyphOrientationHorizontal',
+    'glyph-orientation-horizontal': 'glyphOrientationHorizontal',
+    glyphorientationvertical: 'glyphOrientationVertical',
+    'glyph-orientation-vertical': 'glyphOrientationVertical',
+    glyphref: 'glyphRef',
+    gradienttransform: 'gradientTransform',
+    gradientunits: 'gradientUnits',
+    horizadvx: 'horizAdvX',
+    'horiz-adv-x': 'horizAdvX',
+    horizoriginx: 'horizOriginX',
+    'horiz-origin-x': 'horizOriginX',
+    imagerendering: 'imageRendering',
+    'image-rendering': 'imageRendering',
+    kernelmatrix: 'kernelMatrix',
+    kernelunitlength: 'kernelUnitLength',
+    keypoints: 'keyPoints',
+    keysplines: 'keySplines',
+    keytimes: 'keyTimes',
+    lengthadjust: 'lengthAdjust',
+    letterspacing: 'letterSpacing',
+    'letter-spacing': 'letterSpacing',
+    lightingcolor: 'lightingColor',
+    'lighting-color': 'lightingColor',
+    limitingconeangle: 'limitingConeAngle',
+    markerend: 'markerEnd',
+    'marker-end': 'markerEnd',
+    markerheight: 'markerHeight',
+    markermid: 'markerMid',
+    'marker-mid': 'markerMid',
+    markerstart: 'markerStart',
+    'marker-start': 'markerStart',
+    markerunits: 'markerUnits',
+    markerwidth: 'markerWidth',
+    maskcontentunits: 'maskContentUnits',
+    maskunits: 'maskUnits',
+    numoctaves: 'numOctaves',
+    overlineposition: 'overlinePosition',
+    'overline-position': 'overlinePosition',
+    overlinethickness: 'overlineThickness',
+    'overline-thickness': 'overlineThickness',
+    paintorder: 'paintOrder',
+    'paint-order': 'paintOrder',
+    'panose-1': 'panose1',
+    pathlength: 'pathLength',
+    patterncontentunits: 'patternContentUnits',
+    patterntransform: 'patternTransform',
+    patternunits: 'patternUnits',
+    pointerevents: 'pointerEvents',
+    'pointer-events': 'pointerEvents',
+    pointsatx: 'pointsAtX',
+    pointsaty: 'pointsAtY',
+    pointsatz: 'pointsAtZ',
+    preservealpha: 'preserveAlpha',
+    preserveaspectratio: 'preserveAspectRatio',
+    primitiveunits: 'primitiveUnits',
+    refx: 'refX',
+    refy: 'refY',
+    renderingintent: 'renderingIntent',
+    'rendering-intent': 'renderingIntent',
+    repeatcount: 'repeatCount',
+    repeatdur: 'repeatDur',
+    requiredextensions: 'requiredExtensions',
+    requiredfeatures: 'requiredFeatures',
+    shaperendering: 'shapeRendering',
+    'shape-rendering': 'shapeRendering',
+    specularconstant: 'specularConstant',
+    specularexponent: 'specularExponent',
+    spreadmethod: 'spreadMethod',
+    startoffset: 'startOffset',
+    stddeviation: 'stdDeviation',
+    stitchtiles: 'stitchTiles',
+    stopcolor: 'stopColor',
+    'stop-color': 'stopColor',
+    stopopacity: 'stopOpacity',
+    'stop-opacity': 'stopOpacity',
+    strikethroughposition: 'strikethroughPosition',
+    'strikethrough-position': 'strikethroughPosition',
+    strikethroughthickness: 'strikethroughThickness',
+    'strikethrough-thickness': 'strikethroughThickness',
+    strokedasharray: 'strokeDasharray',
+    'stroke-dasharray': 'strokeDasharray',
+    strokedashoffset: 'strokeDashoffset',
+    'stroke-dashoffset': 'strokeDashoffset',
+    strokelinecap: 'strokeLinecap',
+    'stroke-linecap': 'strokeLinecap',
+    strokelinejoin: 'strokeLinejoin',
+    'stroke-linejoin': 'strokeLinejoin',
+    strokemiterlimit: 'strokeMiterlimit',
+    'stroke-miterlimit': 'strokeMiterlimit',
+    strokewidth: 'strokeWidth',
+    'stroke-width': 'strokeWidth',
+    strokeopacity: 'strokeOpacity',
+    'stroke-opacity': 'strokeOpacity',
+    suppresscontenteditablewarning: 'suppressContentEditableWarning',
+    suppresshydrationwarning: 'suppressHydrationWarning',
+    surfacescale: 'surfaceScale',
+    systemlanguage: 'systemLanguage',
+    tablevalues: 'tableValues',
+    targetx: 'targetX',
+    targety: 'targetY',
+    textanchor: 'textAnchor',
+    'text-anchor': 'textAnchor',
+    textdecoration: 'textDecoration',
+    'text-decoration': 'textDecoration',
+    textlength: 'textLength',
+    textrendering: 'textRendering',
+    'text-rendering': 'textRendering',
+    underlineposition: 'underlinePosition',
+    'underline-position': 'underlinePosition',
+    underlinethickness: 'underlineThickness',
+    'underline-thickness': 'underlineThickness',
+    unicodebidi: 'unicodeBidi',
+    'unicode-bidi': 'unicodeBidi',
+    unicoderange: 'unicodeRange',
+    'unicode-range': 'unicodeRange',
+    unitsperem: 'unitsPerEm',
+    'units-per-em': 'unitsPerEm',
+    unselectable: 'unselectable',
+    valphabetic: 'vAlphabetic',
+    'v-alphabetic': 'vAlphabetic',
+    vectoreffect: 'vectorEffect',
+    'vector-effect': 'vectorEffect',
+    vertadvy: 'vertAdvY',
+    'vert-adv-y': 'vertAdvY',
+    vertoriginx: 'vertOriginX',
+    'vert-origin-x': 'vertOriginX',
+    vertoriginy: 'vertOriginY',
+    'vert-origin-y': 'vertOriginY',
+    vhanging: 'vHanging',
+    'v-hanging': 'vHanging',
+    videographic: 'vIdeographic',
+    'v-ideographic': 'vIdeographic',
+    viewbox: 'viewBox',
+    viewtarget: 'viewTarget',
+    vmathematical: 'vMathematical',
+    'v-mathematical': 'vMathematical',
+    wordspacing: 'wordSpacing',
+    'word-spacing': 'wordSpacing',
+    writingmode: 'writingMode',
+    'writing-mode': 'writingMode',
+    xchannelselector: 'xChannelSelector',
+    xheight: 'xHeight',
+    'x-height': 'xHeight',
+    xlinkactuate: 'xlinkActuate',
+    'xlink:actuate': 'xlinkActuate',
+    xlinkarcrole: 'xlinkArcrole',
+    'xlink:arcrole': 'xlinkArcrole',
+    xlinkhref: 'xlinkHref',
+    'xlink:href': 'xlinkHref',
+    xlinkrole: 'xlinkRole',
+    'xlink:role': 'xlinkRole',
+    xlinkshow: 'xlinkShow',
+    'xlink:show': 'xlinkShow',
+    xlinktitle: 'xlinkTitle',
+    'xlink:title': 'xlinkTitle',
+    xlinktype: 'xlinkType',
+    'xlink:type': 'xlinkType',
+    xmlbase: 'xmlBase',
+    'xml:base': 'xmlBase',
+    xmllang: 'xmlLang',
+    'xml:lang': 'xmlLang',
+    'xml:space': 'xmlSpace',
+    xmlnsxlink: 'xmlnsXlink',
+    'xmlns:xlink': 'xmlnsXlink',
+    xmlspace: 'xmlSpace',
+    ychannelselector: 'yChannelSelector',
+    zoomandpan: 'zoomAndPan',
+    // event handlers
+    onblur: 'onBlur',
+    onchange: 'onChange',
+    onclick: 'onClick',
+    oncontextmenu: 'onContextMenu',
+    ondoubleclick: 'onDoubleClick',
+    ondrag: 'onDrag',
+    ondragend: 'onDragEnd',
+    ondragenter: 'onDragEnter',
+    ondragexit: 'onDragExit',
+    ondragleave: 'onDragLeave',
+    ondragover: 'onDragOver',
+    ondragstart: 'onDragStart',
+    ondrop: 'onDrop',
+    onerror: 'onError',
+    onfocus: 'onFocus',
+    oninput: 'onInput',
+    oninvalid: 'onInvalid',
+    onkeydown: 'onKeyDown',
+    onkeypress: 'onKeyPress',
+    onkeyup: 'onKeyUp',
+    onload: 'onLoad',
+    onmousedown: 'onMouseDown',
+    onmouseenter: 'onMouseEnter',
+    onmouseleave: 'onMouseLeave',
+    onmousemove: 'onMouseMove',
+    onmouseout: 'onMouseOut',
+    onmouseover: 'onMouseOver',
+    onmouseup: 'onMouseUp',
+    onscroll: 'onScroll',
+    onsubmit: 'onSubmit',
+    ontouchcancel: 'onTouchCancel',
+    ontouchend: 'onTouchEnd',
+    ontouchmove: 'onTouchMove',
+    ontouchstart: 'onTouchStart',
+    onwheel: 'onWheel',
+};
+//# sourceMappingURL=helpers.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-from-dom/esm/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-from-dom/esm/index.js ***!
+  \**************************************************/
+/*! exports provided: convertFromNode, convertFromString, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertFromNode", function() { return convertFromNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertFromString", function() { return convertFromString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return convert; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ "./node_modules/react-from-dom/esm/helpers.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __read = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (undefined && undefined.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+/* eslint-disable @typescript-eslint/no-use-before-define */
+
+
+function parseAttributes(node, reactKey) {
+    var attributes = {
+        key: reactKey,
+    };
+    /* istanbul ignore else */
+    if (node instanceof Element) {
+        var nodeClassNames = node.getAttribute('class');
+        if (nodeClassNames) {
+            attributes.className = nodeClassNames;
+        }
+        __spread(node.attributes).forEach(function (d) {
+            switch (d.name) {
+                // these are manually handled above, so break;
+                case 'class':
+                    break;
+                case 'style':
+                    attributes[d.name] = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["styleToObject"])(d.value);
+                    break;
+                case 'checked':
+                case 'disabled':
+                case 'selected':
+                case 'autoplay':
+                case 'controls':
+                    attributes[d.name] = d.name;
+                    break;
+                default:
+                    attributes[_helpers__WEBPACK_IMPORTED_MODULE_1__["possibleStandardNames"][d.name] || d.name] = d.value;
+            }
+        });
+    }
+    return attributes;
+}
+function parseChildren(childNodeList, level, options) {
+    var children = __spread(childNodeList).map(function (node, index) {
+        return convertFromNode(node, __assign(__assign({}, options), { index: index, level: level + 1 }));
+    })
+        .filter(Boolean);
+    if (!children.length) {
+        return null;
+    }
+    return children;
+}
+function parseName(nodeName) {
+    if (/[a-z]+[A-Z]+[a-z]+/.test(nodeName)) {
+        return nodeName;
+    }
+    return nodeName.toLowerCase();
+}
+function convertFromNode(input, options) {
+    if (options === void 0) { options = {}; }
+    if (!input || !(input instanceof Node)) {
+        return null;
+    }
+    var _a = options.actions, actions = _a === void 0 ? [] : _a, _b = options.index, index = _b === void 0 ? 0 : _b, _c = options.level, level = _c === void 0 ? 0 : _c;
+    var node = input;
+    var key = level + "-" + index;
+    var result = [];
+    /* istanbul ignore else */
+    if (Array.isArray(actions)) {
+        actions.forEach(function (action) {
+            if (action.condition(node, key, level)) {
+                if (typeof action.pre === 'function') {
+                    node = action.pre(node, key, level);
+                    if (!(node instanceof Node)) {
+                        node = input;
+                        /* istanbul ignore else */
+                        if (true) {
+                            // eslint-disable-next-line no-console
+                            console.warn('The `pre`-method always must return a valid DomNode (instanceof Node) - your modification will be ignored (Hint: if you want to render a React-component, use the `action`-method instead)');
+                        }
+                    }
+                }
+                if (typeof action.post === 'function') {
+                    result.push(action.post(node, key, level));
+                }
+            }
+        });
+    }
+    if (result.length) {
+        return result;
+    }
+    switch (node.nodeType) {
+        case 1: {
+            // regular dom-node
+            return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](parseName(node.nodeName), parseAttributes(node, key), parseChildren(node.childNodes, level, options));
+        }
+        case 3: {
+            // textnode
+            var nodeText = node.nodeValue.toString();
+            /* istanbul ignore else */
+            if (/^\s+$/.test(nodeText)) {
+                return null;
+            }
+            /* istanbul ignore next */
+            if (!node.parentNode) {
+                return nodeText;
+            }
+            var parentNodeName = node.parentNode.nodeName.toLowerCase();
+            if (_helpers__WEBPACK_IMPORTED_MODULE_1__["noTextChildNodes"].indexOf(parentNodeName) !== -1) {
+                /* istanbul ignore else */
+                if (/\S/.test(nodeText)) {
+                    // eslint-disable-next-line no-console
+                    console.warn("A textNode is not allowed inside '" + parentNodeName + "'. Your text \"" + nodeText + "\" will be ignored");
+                }
+                return null;
+            }
+            return nodeText;
+        }
+        case 8: {
+            // html-comment
+            return null;
+        }
+        /* istanbul ignore next */
+        default: {
+            return null;
+        }
+    }
+}
+function convertFromString(input, options) {
+    if (options === void 0) { options = {}; }
+    if (!input || typeof input !== 'string') {
+        return null;
+    }
+    var _a = options.nodeOnly, nodeOnly = _a === void 0 ? false : _a, _b = options.selector, selector = _b === void 0 ? 'body > *' : _b, _c = options.type, type = _c === void 0 ? 'text/html' : _c;
+    try {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(input, type);
+        var node = doc.querySelector(selector);
+        if (!(node instanceof Node)) {
+            throw new Error('Error parsing input');
+        }
+        if (nodeOnly) {
+            return node;
+        }
+        return convertFromNode(node, options);
+    }
+    catch (error) {
+        /* istanbul ignore else */
+        if (true) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+        }
+    }
+    return null;
+}
+function convert(input, options) {
+    if (options === void 0) { options = {}; }
+    if (typeof input === 'string') {
+        return convertFromString(input, options);
+    }
+    if (input instanceof Node) {
+        return convertFromNode(input, options);
+    }
+    return null;
+}
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-inlinesvg/lib/helpers.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-inlinesvg/lib/helpers.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var exenv_1 = __webpack_require__(/*! exenv */ "./node_modules/exenv/index.js");
+exports.canUseDOM = function () { return exenv_1.canUseDOM; };
+exports.supportsInlineSVG = function () {
+    /* istanbul ignore next */
+    if (!document) {
+        return false;
+    }
+    var div = document.createElement('div');
+    div.innerHTML = '<svg />';
+    return div.firstChild && div.firstChild.namespaceURI === 'http://www.w3.org/2000/svg';
+};
+// tslint:disable-next-line:no-shadowed-variable
+var InlineSVGError = /** @class */ (function (_super) {
+    __extends(InlineSVGError, _super);
+    function InlineSVGError(message, data) {
+        var _this = _super.call(this) || this;
+        _this.name = 'InlineSVGError';
+        _this.message = message;
+        _this.data = data;
+        return _this;
+    }
+    return InlineSVGError;
+}(Error));
+exports.InlineSVGError = InlineSVGError;
+exports.isSupportedEnvironment = function () {
+    return exports.supportsInlineSVG() && typeof window !== 'undefined' && window !== null;
+};
+exports.randomString = function (length) {
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var numbers = '1234567890';
+    var charset = "" + letters + letters.toUpperCase() + numbers;
+    var randomCharacter = function (character) {
+        return character[Math.floor(Math.random() * character.length)];
+    };
+    var R = '';
+    for (var i = 0; i < length; i++) {
+        R += randomCharacter(charset);
+    }
+    return R;
+};
+//# sourceMappingURL=helpers.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-inlinesvg/lib/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-inlinesvg/lib/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_from_dom_1 = __webpack_require__(/*! react-from-dom */ "./node_modules/react-from-dom/esm/index.js");
+var helpers_1 = __webpack_require__(/*! ./helpers */ "./node_modules/react-inlinesvg/lib/helpers.js");
+exports.STATUS = {
+    FAILED: 'failed',
+    LOADED: 'loaded',
+    LOADING: 'loading',
+    PENDING: 'pending',
+    READY: 'ready',
+    UNSUPPORTED: 'unsupported',
+};
+var cacheStore = Object.create(null);
+var InlineSVG = /** @class */ (function (_super) {
+    __extends(InlineSVG, _super);
+    function InlineSVG(props) {
+        var _this = _super.call(this, props) || this;
+        // tslint:disable-next-line:variable-name
+        _this._isMounted = false;
+        _this.handleLoad = function (content) {
+            /* istanbul ignore else */
+            if (_this._isMounted) {
+                _this.setState({
+                    content: content,
+                    status: exports.STATUS.LOADED,
+                }, _this.getElement);
+            }
+        };
+        _this.handleError = function (error) {
+            var onError = _this.props.onError;
+            var status = error.message === 'Browser does not support SVG' ? exports.STATUS.UNSUPPORTED : exports.STATUS.FAILED;
+            /* istanbul ignore else */
+            if (true) {
+                // tslint:disable-next-line:no-console
+                console.error(error);
+            }
+            /* istanbul ignore else */
+            if (_this._isMounted) {
+                _this.setState({ status: status }, function () {
+                    /* istanbul ignore else */
+                    if (typeof onError === 'function') {
+                        onError(error);
+                    }
+                });
+            }
+        };
+        _this.request = function () {
+            var _a = _this.props, cacheRequests = _a.cacheRequests, src = _a.src;
+            try {
+                if (cacheRequests) {
+                    cacheStore[src] = { content: '', status: exports.STATUS.LOADING, queue: [] };
+                }
+                return fetch(src)
+                    .then(function (response) {
+                    var contentType = response.headers.get('content-type');
+                    var _a = __read((contentType || '').split(/ ?; ?/), 1), fileType = _a[0];
+                    if (response.status > 299) {
+                        throw new helpers_1.InlineSVGError('Not Found');
+                    }
+                    if (!['image/svg+xml', 'text/plain'].some(function (d) { return fileType.indexOf(d) >= 0; })) {
+                        throw new helpers_1.InlineSVGError("Content type isn't valid: " + fileType);
+                    }
+                    return response.text();
+                })
+                    .then(function (content) {
+                    _this.handleLoad(content);
+                    /* istanbul ignore else */
+                    if (cacheRequests) {
+                        var cache = cacheStore[src];
+                        /* istanbul ignore else */
+                        if (cache) {
+                            cache.content = content;
+                            cache.status = exports.STATUS.LOADED;
+                            cache.queue = cache.queue.filter(function (cb) {
+                                cb(content);
+                                return false;
+                            });
+                        }
+                    }
+                })
+                    .catch(function (error) {
+                    /* istanbul ignore else */
+                    if (cacheRequests) {
+                        delete cacheStore[src];
+                    }
+                    _this.handleError(error);
+                });
+            }
+            catch (error) {
+                _this.handleError(new helpers_1.InlineSVGError(error.message));
+            }
+        };
+        _this.state = {
+            content: '',
+            element: null,
+            hasCache: !!props.cacheRequests && !!cacheStore[props.src],
+            status: exports.STATUS.PENDING,
+        };
+        _this.hash = props.uniqueHash || helpers_1.randomString(8);
+        return _this;
+    }
+    InlineSVG.prototype.componentDidMount = function () {
+        this._isMounted = true;
+        if (!helpers_1.canUseDOM()) {
+            this.handleError(new helpers_1.InlineSVGError('No DOM'));
+            return;
+        }
+        var status = this.state.status;
+        var src = this.props.src;
+        try {
+            /* istanbul ignore else */
+            if (status === exports.STATUS.PENDING) {
+                /* istanbul ignore else */
+                if (!helpers_1.isSupportedEnvironment()) {
+                    throw new helpers_1.InlineSVGError('Browser does not support SVG');
+                }
+                /* istanbul ignore else */
+                if (!src) {
+                    throw new helpers_1.InlineSVGError('Missing src');
+                }
+                this.load();
+            }
+        }
+        catch (error) {
+            this.handleError(error);
+        }
+    };
+    InlineSVG.prototype.componentDidUpdate = function (prevProps, prevState) {
+        if (!helpers_1.canUseDOM()) {
+            return;
+        }
+        var _a = this.state, hasCache = _a.hasCache, status = _a.status;
+        var _b = this.props, onLoad = _b.onLoad, src = _b.src;
+        if (prevState.status !== exports.STATUS.READY && status === exports.STATUS.READY) {
+            /* istanbul ignore else */
+            if (onLoad) {
+                onLoad(src, hasCache);
+            }
+        }
+        if (prevProps.src !== src) {
+            if (!src) {
+                this.handleError(new helpers_1.InlineSVGError('Missing src'));
+                return;
+            }
+            this.load();
+        }
+    };
+    InlineSVG.prototype.componentWillUnmount = function () {
+        this._isMounted = false;
+    };
+    InlineSVG.prototype.processSVG = function () {
+        var content = this.state.content;
+        var preProcessor = this.props.preProcessor;
+        if (preProcessor) {
+            return preProcessor(content);
+        }
+        return content;
+    };
+    InlineSVG.prototype.updateSVGAttributes = function (node) {
+        var _this = this;
+        var _a = this.props, _b = _a.baseURL, baseURL = _b === void 0 ? '' : _b, uniquifyIDs = _a.uniquifyIDs;
+        var replaceableAttributes = ['id', 'href', 'xlink:href', 'xlink:role', 'xlink:arcrole'];
+        var linkAttributes = ['href', 'xlink:href'];
+        var isDataValue = function (name, value) {
+            return linkAttributes.indexOf(name) >= 0 && (value ? value.indexOf('#') < 0 : false);
+        };
+        if (!uniquifyIDs) {
+            return node;
+        }
+        __spread(node.children).map(function (d) {
+            if (d.attributes && d.attributes.length) {
+                var attributes_1 = Object.values(d.attributes);
+                attributes_1.forEach(function (a) {
+                    var match = a.value.match(/url\((.*?)\)/);
+                    if (match && match[1]) {
+                        a.value = a.value.replace(match[0], "url(" + baseURL + match[1] + "__" + _this.hash + ")");
+                    }
+                });
+                replaceableAttributes.forEach(function (r) {
+                    var attribute = attributes_1.find(function (a) { return a.name === r; });
+                    if (attribute && !isDataValue(r, attribute.value)) {
+                        attribute.value = attribute.value + "__" + _this.hash;
+                    }
+                });
+            }
+            if (d.children.length) {
+                d = _this.updateSVGAttributes(d);
+            }
+            return d;
+        });
+        return node;
+    };
+    InlineSVG.prototype.getNode = function () {
+        var _a = this.props, description = _a.description, title = _a.title;
+        try {
+            var svgText = this.processSVG();
+            var node = react_from_dom_1.default(svgText, { nodeOnly: true });
+            if (!node || !(node instanceof SVGSVGElement)) {
+                throw new helpers_1.InlineSVGError('Could not convert the src to a DOM Node');
+            }
+            var svg = this.updateSVGAttributes(node);
+            if (description) {
+                var originalDesc = svg.querySelector('desc');
+                if (originalDesc && originalDesc.parentNode) {
+                    originalDesc.parentNode.removeChild(originalDesc);
+                }
+                var descElement = document.createElement('desc');
+                descElement.innerHTML = description;
+                svg.prepend(descElement);
+            }
+            if (title) {
+                var originalTitle = svg.querySelector('title');
+                if (originalTitle && originalTitle.parentNode) {
+                    originalTitle.parentNode.removeChild(originalTitle);
+                }
+                var titleElement = document.createElement('title');
+                titleElement.innerHTML = title;
+                svg.prepend(titleElement);
+            }
+            return svg;
+        }
+        catch (error) {
+            this.handleError(error);
+        }
+    };
+    InlineSVG.prototype.getElement = function () {
+        try {
+            var node = this.getNode();
+            var element = react_from_dom_1.default(node);
+            if (!element || !React.isValidElement(element)) {
+                throw new helpers_1.InlineSVGError('Could not convert the src to a React element');
+            }
+            this.setState({
+                element: element,
+                status: exports.STATUS.READY,
+            });
+        }
+        catch (error) {
+            this.handleError(new helpers_1.InlineSVGError(error.message));
+        }
+    };
+    InlineSVG.prototype.load = function () {
+        var _this = this;
+        /* istanbul ignore else */
+        if (this._isMounted) {
+            this.setState({
+                content: '',
+                element: null,
+                status: exports.STATUS.LOADING,
+            }, function () {
+                var _a = _this.props, cacheRequests = _a.cacheRequests, src = _a.src;
+                var cache = cacheRequests && cacheStore[src];
+                if (cache) {
+                    /* istanbul ignore else */
+                    if (cache.status === exports.STATUS.LOADING) {
+                        cache.queue.push(_this.handleLoad);
+                    }
+                    else if (cache.status === exports.STATUS.LOADED) {
+                        _this.handleLoad(cache.content);
+                    }
+                    return;
+                }
+                var dataURI = src.match(/data:image\/svg[^,]*?(;base64)?,(.*)/);
+                var inlineSrc;
+                if (dataURI) {
+                    inlineSrc = dataURI[1] ? atob(dataURI[2]) : decodeURIComponent(dataURI[2]);
+                }
+                else if (src.indexOf('<svg') >= 0) {
+                    inlineSrc = src;
+                }
+                if (inlineSrc) {
+                    _this.handleLoad(inlineSrc);
+                    return;
+                }
+                _this.request();
+            });
+        }
+    };
+    InlineSVG.prototype.render = function () {
+        if (!helpers_1.canUseDOM()) {
+            return null;
+        }
+        var _a = this.state, element = _a.element, status = _a.status;
+        var _b = this.props, baseURL = _b.baseURL, cacheRequests = _b.cacheRequests, _c = _b.children, children = _c === void 0 ? null : _c, description = _b.description, innerRef = _b.innerRef, _d = _b.loader, loader = _d === void 0 ? null : _d, onError = _b.onError, onLoad = _b.onLoad, preProcessor = _b.preProcessor, src = _b.src, title = _b.title, uniqueHash = _b.uniqueHash, uniquifyIDs = _b.uniquifyIDs, rest = __rest(_b, ["baseURL", "cacheRequests", "children", "description", "innerRef", "loader", "onError", "onLoad", "preProcessor", "src", "title", "uniqueHash", "uniquifyIDs"]);
+        if (element) {
+            return React.cloneElement(element, __assign({ ref: innerRef }, rest));
+        }
+        if ([exports.STATUS.UNSUPPORTED, exports.STATUS.FAILED].indexOf(status) > -1) {
+            return children;
+        }
+        return loader;
+    };
+    InlineSVG.defaultProps = {
+        cacheRequests: true,
+        uniquifyIDs: false,
+    };
+    return InlineSVG;
+}(React.PureComponent));
+exports.default = InlineSVG;
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 

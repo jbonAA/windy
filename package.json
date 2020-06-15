@@ -29,5 +29,9 @@
     "react-dom": "^16.13.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "react-inlinesvg": "^1.2.0",
+    "svg-inline-loader": "^0.8.2"
   }
 }

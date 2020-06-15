@@ -18,6 +18,10 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     },
