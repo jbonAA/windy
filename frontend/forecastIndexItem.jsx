@@ -109,6 +109,10 @@ class ForecastIndexItem extends React.Component {
 
     //need a shouldComponentUpdate 
     shouldComponentUpdate(nextState, nextProps) {
+        console.log("nextStateIndexItem")
+        console.log(nextState)
+        console.log("this.state")
+        console.log(this.state)
         
         if(this.state.station !== nextState.station){
             return true
@@ -131,13 +135,12 @@ class ForecastIndexItem extends React.Component {
         let description = this.format(weather[0].description);
         let direction = this.degreeToCardinal(windDirDeg);
 
-        console.log(TempComponent)
-        console.log("______")
+        // console.log(TempComponent)
+        // console.log("______")
 
         return (
             <div id="forecastItem">
                 <div id="left">
-                    {/* VVVVV div for now but will be the image asset */}
                     <TempComponent />
                     <div id="description">
                         <ul>

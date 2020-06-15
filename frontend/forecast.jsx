@@ -21,10 +21,6 @@ class Forecast extends React.Component {
         console.log(this.state)
         if(this.state.weatherStation !== nextState.weatherStation){
             return true
-        }else if(this.state.currentForecast !== nextState.currentForecast){
-            return true
-        }else if(this.state.tomorrowForecast !== nextState.tomorrowForecast){
-            return true
         }else{
             return false
         }
@@ -32,19 +28,31 @@ class Forecast extends React.Component {
 
 
     render() {
-        
+
+        //iterate through forecasts and take a date with them
+        //instead of tomorrows conditions
+
+        const {
+            currentForecast,
+            tomorrowForecast,
+            weatherStation
+        } = this.props;
+
         let display;
 
-        if(this.props.currentForecast.weather && this.props.tomorrowForecast.weather){
+        if(currentForecast.weather && tomorrowForecast.weather){
 
+            console.log(currentForecast)
+            console.log("_______")
+            console.log(tomorrowForecast)
             display = (
                 <div id="defaultInfo">
                     <div id="forecastTitle">
-                        <h3>Current Conditions near {this.props.weatherStation}</h3>
+                        <h3>Current Conditions near {weatherStation}</h3>
                     </div>
-                    <ForecastIndexItem key={this.props.currentForecast.weather[0].id} weather={this.props.currentForecast} station={this.props.weatherStation}/>
+                    <ForecastIndexItem key={currentForecast.temp} weather={currentForecast} station={weatherStation}/>
                         <h3 id="future">Tomorrow's Conditions</h3>
-                    <ForecastIndexItem key={this.props.tomorrowForecast.weather[0].id} weather={this.props.tomorrowForecast} station={this.props.weatherStation}/>
+                    <ForecastIndexItem key={tomorrowForecast.temp} weather={tomorrowForecast} station={weatherStation}/>
                 </div>
             )
         }else{

@@ -30,6 +30,8 @@ class WindDirections {
         let [lng, lat] = [this.state.center[0], this.state.center[1]]
         let currentWeather = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial`)
         currentWeather.json().then((res) => {
+            // console.log(res)
+            // console.log("tomorrowset")
             let [
                 windSpeed,
                 windDirDeg,
@@ -37,7 +39,9 @@ class WindDirections {
                 temp,
                 feels_like,
                 humidity,
-                weather
+                weather,
+                name,
+                dateTime
             ] = [
                 res.list[3].wind.speed,
                 res.list[3].wind.deg,
@@ -45,7 +49,9 @@ class WindDirections {
                 res.list[3].main.temp,
                 res.list[3].main.feels_like,
                 res.list[3].main.humidity,
-                res.list[3].weather
+                res.list[3].weather,
+                res.city.name,
+                res.list[3].dt_txt
             ]
 
             this.forecastTomorrow = {
@@ -55,7 +61,9 @@ class WindDirections {
                 temp,
                 feels_like,
                 humidity,
-                weather
+                weather,
+                name,
+                dateTime
             }
         })
     }
@@ -64,7 +72,8 @@ class WindDirections {
         let [lng, lat] = [this.state.center[0], this.state.center[1]]
         let currentWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2e14d65f0b3ac59338aec11f11a66da5&units=imperial`)
         currentWeather.json().then((res) => {
-            
+            // console.log(res)
+            // console.log('currentForecaset')
             let [
                 windSpeed,
                 windDirDeg, 
@@ -72,7 +81,8 @@ class WindDirections {
                 temp, 
                 feels_like,
                 humidity,
-                weather
+                weather,
+                name
             ] = [
                 res.wind.speed,
                 res.wind.deg,
@@ -80,7 +90,8 @@ class WindDirections {
                 res.main.temp,
                 res.main.feels_like,
                 res.main.humidity,
-                res.weather
+                res.weather,
+                res.name
             ]
 
             this.forecastNow = {
@@ -90,7 +101,8 @@ class WindDirections {
                 temp,
                 feels_like,
                 humidity,
-                weather
+                weather,
+                name
             }
             this.weatherStation = res.name
 

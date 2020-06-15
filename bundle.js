@@ -2293,10 +2293,6 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
 
       if (this.state.weatherStation !== nextState.weatherStation) {
         return true;
-      } else if (this.state.currentForecast !== nextState.currentForecast) {
-        return true;
-      } else if (this.state.tomorrowForecast !== nextState.tomorrowForecast) {
-        return true;
       } else {
         return false;
       }
@@ -2304,23 +2300,32 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      //iterate through forecasts and take a date with them
+      //instead of tomorrows conditions
+      var _this$props = this.props,
+          currentForecast = _this$props.currentForecast,
+          tomorrowForecast = _this$props.tomorrowForecast,
+          weatherStation = _this$props.weatherStation;
       var display;
 
-      if (this.props.currentForecast.weather && this.props.tomorrowForecast.weather) {
+      if (currentForecast.weather && tomorrowForecast.weather) {
+        console.log(currentForecast);
+        console.log("_______");
+        console.log(tomorrowForecast);
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "forecastTitle"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Current Conditions near ", this.props.weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: this.props.currentForecast.weather[0].id,
-          weather: this.props.currentForecast,
-          station: this.props.weatherStation
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Current Conditions near ", weatherStation)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: currentForecast.temp,
+          weather: currentForecast,
+          station: weatherStation
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           id: "future"
         }, "Tomorrow's Conditions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: this.props.tomorrowForecast.weather[0].id,
-          weather: this.props.tomorrowForecast,
-          station: this.props.weatherStation
+          key: tomorrowForecast.temp,
+          weather: tomorrowForecast,
+          station: weatherStation
         }));
       } else {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2520,6 +2525,11 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextState, nextProps) {
+      console.log("nextStateIndexItem");
+      console.log(nextState);
+      console.log("this.state");
+      console.log(this.state);
+
       if (this.state.station !== nextState.station) {
         return true;
       } else {
@@ -2540,9 +2550,9 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
           windDirDeg = _this$state.windDirDeg;
       var TempComponent = this.gatherIcon(weather[0].icon);
       var description = this.format(weather[0].description);
-      var direction = this.degreeToCardinal(windDirDeg);
-      console.log(TempComponent);
-      console.log("______");
+      var direction = this.degreeToCardinal(windDirDeg); // console.log(TempComponent)
+      // console.log("______")
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2945,14 +2955,18 @@ var WindDirections = /*#__PURE__*/function () {
               case 3:
                 currentWeather = _context2.sent;
                 currentWeather.json().then(function (res) {
-                  var _ref3 = [res.list[3].wind.speed, res.list[3].wind.deg, res.list[3].clouds.all, res.list[3].main.temp, res.list[3].main.feels_like, res.list[3].main.humidity, res.list[3].weather],
+                  // console.log(res)
+                  // console.log("tomorrowset")
+                  var _ref3 = [res.list[3].wind.speed, res.list[3].wind.deg, res.list[3].clouds.all, res.list[3].main.temp, res.list[3].main.feels_like, res.list[3].main.humidity, res.list[3].weather, res.city.name, res.list[3].dt_txt],
                       windSpeed = _ref3[0],
                       windDirDeg = _ref3[1],
                       cloudCover = _ref3[2],
                       temp = _ref3[3],
                       feels_like = _ref3[4],
                       humidity = _ref3[5],
-                      weather = _ref3[6];
+                      weather = _ref3[6],
+                      name = _ref3[7],
+                      dateTime = _ref3[8];
                   _this2.forecastTomorrow = {
                     windSpeed: windSpeed,
                     windDirDeg: windDirDeg,
@@ -2960,7 +2974,9 @@ var WindDirections = /*#__PURE__*/function () {
                     temp: temp,
                     feels_like: feels_like,
                     humidity: humidity,
-                    weather: weather
+                    weather: weather,
+                    name: name,
+                    dateTime: dateTime
                   };
                 });
 
@@ -2997,14 +3013,17 @@ var WindDirections = /*#__PURE__*/function () {
               case 3:
                 currentWeather = _context3.sent;
                 currentWeather.json().then(function (res) {
-                  var _ref5 = [res.wind.speed, res.wind.deg, res.clouds.all, res.main.temp, res.main.feels_like, res.main.humidity, res.weather],
+                  // console.log(res)
+                  // console.log('currentForecaset')
+                  var _ref5 = [res.wind.speed, res.wind.deg, res.clouds.all, res.main.temp, res.main.feels_like, res.main.humidity, res.weather, res.name],
                       windSpeed = _ref5[0],
                       windDirDeg = _ref5[1],
                       cloudCover = _ref5[2],
                       temp = _ref5[3],
                       feels_like = _ref5[4],
                       humidity = _ref5[5],
-                      weather = _ref5[6];
+                      weather = _ref5[6],
+                      name = _ref5[7];
                   _this3.forecastNow = {
                     windSpeed: windSpeed,
                     windDirDeg: windDirDeg,
@@ -3012,7 +3031,8 @@ var WindDirections = /*#__PURE__*/function () {
                     temp: temp,
                     feels_like: feels_like,
                     humidity: humidity,
-                    weather: weather
+                    weather: weather,
+                    name: name
                   };
                   _this3.weatherStation = res.name;
                 });
