@@ -1,6 +1,6 @@
 import React from 'react';
 import SVG from 'react-inlinesvg';
-import ClearDay from '../iconAssets/day'
+import ClearDay from './SvgComponents/collection/01/clearDay'
 
 class ForecastIndexItem extends React.Component {
     constructor(props){
