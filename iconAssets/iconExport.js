@@ -1,6 +1,6 @@
 //import the files in the same format as the api
 
-import clearDay from '../iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg'
+
 
 //link to index item for access to icons
 
@@ -16,6 +16,4 @@ import clearDay from '../iconAssets/amcharts_weather_icons_1.0.0/animated/day.sv
 // 13d.png 	13n.png 	snow
 // 50d.png 	50n.png 	mist
 
-const day = encodeURIComponent(clearDay)
 
-export default day

@@ -1,6 +1,6 @@
 import React from 'react';
-import day from '../frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg';
 import SVG from 'react-inlinesvg';
+import ClearDay from '../iconAssets/day'
 
 class ForecastIndexItem extends React.Component {
     constructor(props){
@@ -124,7 +124,7 @@ class ForecastIndexItem extends React.Component {
             <div id="forecastItem">
                 <div id="left">
                     {/* VVVVV div for now but will be the image asset */}
-                    <SVG src={day} />
+                    <ClearDay />
                     <div id="description">
                         <ul>
                             <p>{temp}°</p>

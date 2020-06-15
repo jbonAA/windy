@@ -221,10 +221,9 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg */ "./frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg");
-/* harmony import */ var _frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/lib/index.js");
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/lib/index.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _iconAssets_day__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../iconAssets/day */ "./iconAssets/day.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -397,9 +396,7 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        src: _frontend_iconAssets_amcharts_weather_icons_1_0_0_animated_day_svg__WEBPACK_IMPORTED_MODULE_1___default.a
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_iconAssets_day__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "description"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp, "\xB0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"
@@ -411,17 +408,6 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ForecastIndexItem);
-
-/***/ }),
-
-/***/ "./frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg":
-/*!***************************************************************************!*\
-  !*** ./frontend/iconAssets/amcharts_weather_icons_1.0.0/animated/day.svg ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewbox=\"0 0 64 64\"><defs><filter id=\"blur\" width=\"200%\" height=\"200%\"><feGaussianBlur in=\"SourceAlpha\" stdDeviation=\"3\"></feGaussianBlur><feOffset dx=\"0\" dy=\"4\" result=\"offsetblur\"></feOffset><feComponentTransfer><feFuncA type=\"linear\" slope=\"0.05\"></feFuncA></feComponentTransfer><feMerge><feMergeNode></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter><style type=\"text/css\">"
 
 /***/ }),
 
@@ -717,6 +703,157 @@ var Root = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./iconAssets/day.js":
+/*!***************************!*\
+  !*** ./iconAssets/day.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var ClearDay = function ClearDay() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewbox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "day"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(32,32)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    "class": "am-weather-sun am-weather-sun-shiny am-weather-easing-ease-in-out"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    "stroke-linecap": "round",
+    "stroke-width": "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    "stroke-width": "2"
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ClearDay);
 
 /***/ }),
 
