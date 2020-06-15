@@ -2289,14 +2289,13 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
   _createClass(Forecast, [{
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextState, nextProps) {
-      // console.log(this.state)
-      console.log(nextState);
+      console.log(this.state);
 
       if (this.state.weatherStation !== nextState.weatherStation) {
-        console.log("check");
         return true;
       } else if (this.state.currentForecast !== nextState.currentForecast) {
-        console.log;
+        return true;
+      } else if (this.state.tomorrowForecast !== nextState.tomorrowForecast) {
         return true;
       } else {
         return false;
@@ -2308,9 +2307,6 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
       var display;
 
       if (this.props.currentForecast.weather && this.props.tomorrowForecast.weather) {
-        console.log(this.state);
-        console.log("_______");
-        console.log(this.props);
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2819,7 +2815,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
           tomorrowFor: wind.forecastTomorrow,
           quadrants: wind.quadrants
         });
-      }, 400);
+      }, 500);
     }
   }, {
     key: "render",
@@ -2889,9 +2885,9 @@ var WindDirections = /*#__PURE__*/function () {
     this.forecastTomorrow = {};
     this.quadrants = {};
     this.weatherStation = false;
-    this.getWind();
     this.getWeather();
     this.tomorrow();
+    this.getWind();
   }
 
   _createClass(WindDirections, [{

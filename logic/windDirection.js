@@ -6,9 +6,9 @@ class WindDirections {
         this.quadrants = {};
         this.weatherStation = false;
 
-        this.getWind()
         this.getWeather()
         this.tomorrow()
+        this.getWind()
     }
 
     getWind() {

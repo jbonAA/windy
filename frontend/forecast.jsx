@@ -18,13 +18,12 @@ class Forecast extends React.Component {
 
 
     shouldComponentUpdate(nextState, nextProps) {
-        // console.log(this.state)
-        console.log(nextState)
+        console.log(this.state)
         if(this.state.weatherStation !== nextState.weatherStation){
-            console.log("check")
             return true
         }else if(this.state.currentForecast !== nextState.currentForecast){
-            console.log
+            return true
+        }else if(this.state.tomorrowForecast !== nextState.tomorrowForecast){
             return true
         }else{
             return false
@@ -37,9 +36,7 @@ class Forecast extends React.Component {
         let display;
 
         if(this.props.currentForecast.weather && this.props.tomorrowForecast.weather){
-            console.log(this.state)
-            console.log("_______")
-            console.log(this.props)
+
             display = (
                 <div id="defaultInfo">
                     <div id="forecastTitle">

@@ -125,7 +125,7 @@ class Root extends React.Component {
                 tomorrowFor: wind.forecastTomorrow,
                 quadrants: wind.quadrants
             })
-        }, 400)
+        }, 500)
     
     }
    
