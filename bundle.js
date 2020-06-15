@@ -725,7 +725,7 @@ var ClearDay = function ClearDay() {
     xmlns: "http://www.w3.org/2000/svg",
     width: "64",
     height: "64",
-    viewbox: "0 0 64 64"
+    viewBox: "0 0 64 64"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
     id: "blur",
     width: "200%",
@@ -748,12 +748,12 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
     transform: "translate(32,32)"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
-    "class": "am-weather-sun am-weather-sun-shiny am-weather-easing-ease-in-out"
+    className: "am-weather-sun am-weather-sun-shiny am-weather-easing-ease-in-out"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -764,8 +764,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -776,8 +776,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -788,8 +788,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -800,8 +800,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -812,8 +812,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -824,8 +824,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -836,8 +836,8 @@ var ClearDay = function ClearDay() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
     fill: "none",
     stroke: "orange",
-    "stroke-linecap": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeWidth: "2",
     transform: "translate(0,9)",
     x1: "0",
     x2: "0",
@@ -849,7 +849,7 @@ var ClearDay = function ClearDay() {
     fill: "orange",
     r: "5",
     stroke: "orange",
-    "stroke-width": "2"
+    strokeWidth: "2"
   }))));
 };
 
