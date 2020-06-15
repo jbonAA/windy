@@ -38,7 +38,7 @@ const iconComponents = {
     '10d': Rainy1Day,
     '10n': Rainy7Night,
     '11d': Thunder,
-    '11n': Thunder
+    '11n': Thunder,
     '13d': Snowy3Day,
     '13n': Snowy6Night,
     '50d': Cloudy,

@@ -1,6 +1,12 @@
 import React from 'react';
 import SVG from 'react-inlinesvg';
+
+//test
 import ClearDay from './SvgComponents/collection/01/clearDay'
+//try importing component obj
+
+import iconComponents from '../frontend/SvgComponents/iconExport';
+
 
 class ForecastIndexItem extends React.Component {
     constructor(props){
@@ -97,6 +103,10 @@ class ForecastIndexItem extends React.Component {
         return formatted[0]
     }
 
+    gatherIcon(string) {
+        return iconComponents[string]
+    }
+
     //need a shouldComponentUpdate 
     shouldComponentUpdate(nextState, nextProps) {
         
@@ -117,14 +127,18 @@ class ForecastIndexItem extends React.Component {
         } = this.state;
 
 
+        let TempComponent = this.gatherIcon(weather[0].icon)
         let description = this.format(weather[0].description);
         let direction = this.degreeToCardinal(windDirDeg);
+
+        console.log(TempComponent)
+        console.log("______")
 
         return (
             <div id="forecastItem">
                 <div id="left">
                     {/* VVVVV div for now but will be the image asset */}
-                    <ClearDay />
+                    <TempComponent />
                     <div id="description">
                         <ul>
                             <p>{temp}°</p>

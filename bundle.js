@@ -237,6 +237,1998 @@ var ClearDay = function ClearDay() {
 
 /***/ }),
 
+/***/ "./frontend/SvgComponents/collection/01/clearNight01n.js":
+/*!***************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/01/clearNight01n.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var ClearNight = function ClearNight() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "night"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,20)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10",
+    transform: "translate(20,10)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M14.5,13.2c0-3.7,2-6.9,5-8.7   c-1.5-0.9-3.2-1.3-5-1.3c-5.5,0-10,4.5-10,10s4.5,10,10,10c1.8,0,3.5-0.5,5-1.3C16.5,20.2,14.5,16.9,14.5,13.2z",
+    fill: "orange",
+    stroke: "orange",
+    strokeLinejoin: "round",
+    strokeWidth: "2"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ClearNight);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/02/cloudyDay-1-02d.js":
+/*!*****************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/02/cloudyDay-1-02d.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy1Day = function Cloudy1Day() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy-day-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(0,16)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-sun"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    strokeWidth: "2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#C6DEFF",
+    stroke: "white",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy1Day);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/02/cloudyNight-1-02n.js":
+/*!*******************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/02/cloudyNight-1-02n.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy1Night = function Cloudy1Night() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy-night-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(16,4), scale(0.8)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10",
+    transform: "translate(20,10)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M14.5,13.2c0-3.7,2-6.9,5-8.7   c-1.5-0.9-3.2-1.3-5-1.3c-5.5,0-10,4.5-10,10s4.5,10,10,10c1.8,0,3.5-0.5,5-1.3C16.5,20.2,14.5,16.9,14.5,13.2z",
+    fill: "orange",
+    stroke: "orange",
+    strokeLinejoin: "round",
+    strokeWidth: "2"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4    c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#C6DEFF",
+    stroke: "white",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy1Night);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/03/cloudyDay-2-03d.js":
+/*!*****************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/03/cloudyDay-2-03d.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy2Day = function Cloudy2Day() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy-day-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(0,16)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-sun"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    strokeWidth: "2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#91C0F8",
+    stroke: "white",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy2Day);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/03/cloudyNight-2.js":
+/*!***************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/03/cloudyNight-2.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy2Night = function Cloudy2Night() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy-night-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(16,4), scale(0.8)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10",
+    transform: "translate(20,10)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M14.5,13.2c0-3.7,2-6.9,5-8.7   c-1.5-0.9-3.2-1.3-5-1.3c-5.5,0-10,4.5-10,10s4.5,10,10,10c1.8,0,3.5-0.5,5-1.3C16.5,20.2,14.5,16.9,14.5,13.2z",
+    fill: "orange",
+    stroke: "orange",
+    strokeLinejoin: "round",
+    strokeWidth: "2"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4    c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#91C0F8",
+    stroke: "white",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy2Night);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/04/cloudy3Day.js":
+/*!************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/04/cloudy3Day.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy3Day = function Cloudy3Day() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy-day-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(0,16)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-sun"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    strokeWidth: "2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy3Day);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/04/cloudy3Night.js":
+/*!**************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/04/cloudy3Night.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy3Night = function Cloudy3Night() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy-night-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(16,4), scale(0.8)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon-star-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    fill: "orange",
+    points: "3.3,1.5 4,2.7 5.2,3.3 4,4 3.3,5.2 2.7,4 1.5,3.3 2.7,2.7",
+    stroke: "none",
+    strokeMiterlimit: "10",
+    transform: "translate(20,10)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-moon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M14.5,13.2c0-3.7,2-6.9,5-8.7   c-1.5-0.9-3.2-1.3-5-1.3c-5.5,0-10,4.5-10,10s4.5,10,10,10c1.8,0,3.5-0.5,5-1.3C16.5,20.2,14.5,16.9,14.5,13.2z",
+    fill: "orange",
+    stroke: "orange",
+    strokeLinejoin: "round",
+    strokeWidth: "2"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4    c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy3Night);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/09/rainy2Day.js":
+/*!***********************************************************!*\
+  !*** ./frontend/SvgComponents/collection/09/rainy2Day.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Rainy2Day = function Rainy2Day() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "rainy-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(0,16)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-sun"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    strokeWidth: "2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(37,45), rotate(10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-1",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "4,7",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(-6,1)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Rainy2Day);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/09/rainy4night.js":
+/*!*************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/09/rainy4night.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Rainy4Night = function Rainy4Night() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "rainy-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(37,45), rotate(10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-1",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "4,7",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(-6,1)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Rainy4Night);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/10/rainy1day.js":
+/*!***********************************************************!*\
+  !*** ./frontend/SvgComponents/collection/10/rainy1day.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Rainy1Day = function Rainy1Day() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "rainy-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(0,16), scale(1.2)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-sun"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    strokeWidth: "2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.5",
+    transform: "translate(-15,-5), scale(0.85)"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(34,46), rotate(10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-1",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "4,7",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(-6,1)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-2",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "4,7",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,-1)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Rainy1Day);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/10/rainy7night.js":
+/*!*************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/10/rainy7night.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Rainy7Night = function Rainy7Night() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "rainy-7"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(31,46), rotate(10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-1",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "0.1,7",
+    strokeLinecap: "round",
+    strokeWidth: "3",
+    transform: "translate(-5,1)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-2",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "0.1,7",
+    strokeLinecap: "round",
+    strokeWidth: "3",
+    transform: "translate(0,-1)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    className: "am-weather-rain-1",
+    fill: "none",
+    stroke: "#91C0F8",
+    strokeDasharray: "0.1,7",
+    strokeLinecap: "round",
+    strokeWidth: "3",
+    transform: "translate(5,0)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "8"
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Rainy7Night);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/11/thunder.js":
+/*!*********************************************************!*\
+  !*** ./frontend/SvgComponents/collection/11/thunder.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Thunder = function Thunder() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "thunder"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#91C0F8",
+    stroke: "white",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-10,-6), scale(0.6)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(-9,28), scale(1.2)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    className: "am-weather-stroke",
+    fill: "orange",
+    stroke: "white",
+    strokeWidth: "1",
+    points: "14.3,-2.9 20.5,-2.9 16.4,4.3 20.3,4.3 11.5,14.6 14.9,6.9 11.1,6.9"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Thunder);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/13/snowy3day.js":
+/*!***********************************************************!*\
+  !*** ./frontend/SvgComponents/collection/13/snowy3day.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Snowy3Day = function Snowy3Day() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "snowy-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(0,16)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-sun"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(45)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(90)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(135)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(180)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(225)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(270)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "rotate(315)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "orange",
+    strokeLinecap: "round",
+    strokeWidth: "2",
+    transform: "translate(0,9)",
+    x1: "0",
+    x2: "0",
+    y1: "0",
+    y2: "3"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    fill: "orange",
+    r: "5",
+    stroke: "orange",
+    strokeWidth: "2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-snow-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(7,28)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1.2",
+    transform: "translate(0,9), rotate(0)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(45)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(90)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(135)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-snow-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(16,28)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1.2",
+    transform: "translate(0,9), rotate(0)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(45)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(90)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(135)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Snowy3Day);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/13/snowy6night.js":
+/*!*************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/13/snowy6night.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Snowy6Night = function Snowy6Night() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "snowy-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-snow-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(3,28)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1.2",
+    transform: "translate(0,9), rotate(0)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(45)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(90)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(135)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-snow-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(11,28)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1.2",
+    transform: "translate(0,9), rotate(0)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(45)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(90)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(135)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-snow-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,28)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1.2",
+    transform: "translate(0,9), rotate(0)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(45)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(90)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    fill: "none",
+    stroke: "#57A0EE",
+    strokeLinecap: "round",
+    strokeWidth: "1",
+    transform: "translate(0,9), rotate(135)",
+    x1: "0",
+    x2: "0",
+    y1: "-2.5",
+    y2: "2.5"
+  }))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Snowy6Night);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/50/cloudy.js":
+/*!********************************************************!*\
+  !*** ./frontend/SvgComponents/collection/50/cloudy.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Cloudy = function Cloudy() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "64",
+    height: "64",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("filter", {
+    id: "blur",
+    width: "200%",
+    height: "200%"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feGaussianBlur", {
+    "in": "SourceAlpha",
+    stdDeviation: "3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feOffset", {
+    dx: "0",
+    dy: "4",
+    result: "offsetblur"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feComponentTransfer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feFuncA", {
+    type: "linear",
+    slope: "0.05"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMerge", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("feMergeNode", {
+    "in": "SourceGraphic"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    filter: "url(#blur)",
+    id: "cloudy"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    transform: "translate(20,10)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#91C0F8",
+    stroke: "white",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-10,-8), scale(0.6)"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "am-weather-cloud-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z",
+    fill: "#57A0EE",
+    stroke: "#FFFFFF",
+    strokeLinejoin: "round",
+    strokeWidth: "1.2",
+    transform: "translate(-20,-11)"
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Cloudy);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/iconExport.js":
+/*!**********************************************!*\
+  !*** ./frontend/SvgComponents/iconExport.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _collection_01_clearDay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./collection/01/clearDay */ "./frontend/SvgComponents/collection/01/clearDay.js");
+/* harmony import */ var _collection_01_clearNight01n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./collection/01/clearNight01n */ "./frontend/SvgComponents/collection/01/clearNight01n.js");
+/* harmony import */ var _collection_02_cloudyDay_1_02d__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collection/02/cloudyDay-1-02d */ "./frontend/SvgComponents/collection/02/cloudyDay-1-02d.js");
+/* harmony import */ var _collection_02_cloudyNight_1_02n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./collection/02/cloudyNight-1-02n */ "./frontend/SvgComponents/collection/02/cloudyNight-1-02n.js");
+/* harmony import */ var _collection_03_cloudyDay_2_03d__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./collection/03/cloudyDay-2-03d */ "./frontend/SvgComponents/collection/03/cloudyDay-2-03d.js");
+/* harmony import */ var _collection_03_cloudyNight_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./collection/03/cloudyNight-2 */ "./frontend/SvgComponents/collection/03/cloudyNight-2.js");
+/* harmony import */ var _collection_04_cloudy3Day__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./collection/04/cloudy3Day */ "./frontend/SvgComponents/collection/04/cloudy3Day.js");
+/* harmony import */ var _collection_04_cloudy3Night__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./collection/04/cloudy3Night */ "./frontend/SvgComponents/collection/04/cloudy3Night.js");
+/* harmony import */ var _collection_09_rainy2Day__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./collection/09/rainy2Day */ "./frontend/SvgComponents/collection/09/rainy2Day.js");
+/* harmony import */ var _collection_09_rainy4night__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./collection/09/rainy4night */ "./frontend/SvgComponents/collection/09/rainy4night.js");
+/* harmony import */ var _collection_10_rainy1day__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./collection/10/rainy1day */ "./frontend/SvgComponents/collection/10/rainy1day.js");
+/* harmony import */ var _collection_10_rainy7night__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./collection/10/rainy7night */ "./frontend/SvgComponents/collection/10/rainy7night.js");
+/* harmony import */ var _collection_11_thunder__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./collection/11/thunder */ "./frontend/SvgComponents/collection/11/thunder.js");
+/* harmony import */ var _collection_13_snowy3day__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./collection/13/snowy3day */ "./frontend/SvgComponents/collection/13/snowy3day.js");
+/* harmony import */ var _collection_13_snowy6night__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./collection/13/snowy6night */ "./frontend/SvgComponents/collection/13/snowy6night.js");
+/* harmony import */ var _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./collection/50/cloudy */ "./frontend/SvgComponents/collection/50/cloudy.js");
+//01
+
+ //02
+
+
+ //03
+
+
+ //04
+
+
+ //09
+
+
+ //10
+
+
+ //11
+
+ //13
+
+
+ //50
+
+
+var iconComponents = {
+  '01d': _collection_01_clearDay__WEBPACK_IMPORTED_MODULE_0__["default"],
+  '01n': _collection_01_clearNight01n__WEBPACK_IMPORTED_MODULE_1__["default"],
+  '02d': _collection_02_cloudyDay_1_02d__WEBPACK_IMPORTED_MODULE_2__["default"],
+  '02n': _collection_02_cloudyNight_1_02n__WEBPACK_IMPORTED_MODULE_3__["default"],
+  '03d': _collection_03_cloudyDay_2_03d__WEBPACK_IMPORTED_MODULE_4__["default"],
+  '03n': _collection_03_cloudyNight_2__WEBPACK_IMPORTED_MODULE_5__["default"],
+  '04d': _collection_04_cloudy3Day__WEBPACK_IMPORTED_MODULE_6__["default"],
+  '04n': _collection_04_cloudy3Night__WEBPACK_IMPORTED_MODULE_7__["default"],
+  '09d': _collection_09_rainy2Day__WEBPACK_IMPORTED_MODULE_8__["default"],
+  '09n': _collection_09_rainy4night__WEBPACK_IMPORTED_MODULE_9__["default"],
+  '10d': _collection_10_rainy1day__WEBPACK_IMPORTED_MODULE_10__["default"],
+  '10n': _collection_10_rainy7night__WEBPACK_IMPORTED_MODULE_11__["default"],
+  '11d': _collection_11_thunder__WEBPACK_IMPORTED_MODULE_12__["default"],
+  '11n': _collection_11_thunder__WEBPACK_IMPORTED_MODULE_12__["default"],
+  '13d': _collection_13_snowy3day__WEBPACK_IMPORTED_MODULE_13__["default"],
+  '13n': _collection_13_snowy6night__WEBPACK_IMPORTED_MODULE_14__["default"],
+  '50d': _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__["default"],
+  '50n': _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__["default"]
+};
+/* harmony default export */ __webpack_exports__["default"] = (iconComponents); //link to index item for access to icons
+// Icon list
+// Day icon	Night icon	Description
+// 01d.png 	01n.png 	clear sky
+// 02d.png 	02n.png 	few clouds
+// 03d.png 	03n.png 	scattered clouds
+// 04d.png 	04n.png 	broken clouds
+// 09d.png 	09n.png 	shower rain
+// 10d.png 	10n.png 	rain
+// 11d.png 	11n.png 	thunderstorm
+// 13d.png 	13n.png 	snow
+// 50d.png 	50n.png 	mist
+// 02d: cloudy-day-1 02n: cloudy-night-1
+// 03d: cloudy-day-2 03n: cloudy-night-2
+// 04d: cloudy-day-3 04n: cloudy-night-3
+// 09d: rainy-2 09n: rainy-4
+// 10d: rainy-1 10n: rainy-7
+// 11d, 11n: thunder
+// 13d: snowy-3 13n: snowy-6
+
+/***/ }),
+
 /***/ "./frontend/forecast.jsx":
 /*!*******************************!*\
   !*** ./frontend/forecast.jsx ***!
@@ -315,7 +2307,7 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var display;
 
-      if (this.props.currentForecast.weather) {
+      if (this.props.currentForecast.weather && this.props.tomorrowForecast.weather) {
         console.log(this.state);
         console.log("_______");
         console.log(this.props);
@@ -375,6 +2367,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/lib/index.js");
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _SvgComponents_collection_01_clearDay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SvgComponents/collection/01/clearDay */ "./frontend/SvgComponents/collection/01/clearDay.js");
+/* harmony import */ var _frontend_SvgComponents_iconExport__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../frontend/SvgComponents/iconExport */ "./frontend/SvgComponents/iconExport.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -398,6 +2391,9 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
+ //test
+
+ //try importing component obj
 
 
 
@@ -518,6 +2514,11 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
       }
 
       return formatted[0];
+    }
+  }, {
+    key: "gatherIcon",
+    value: function gatherIcon(string) {
+      return _frontend_SvgComponents_iconExport__WEBPACK_IMPORTED_MODULE_3__["default"][string];
     } //need a shouldComponentUpdate 
 
   }, {
@@ -541,13 +2542,16 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
           weather = _this$state.weather,
           windSpeed = _this$state.windSpeed,
           windDirDeg = _this$state.windDirDeg;
+      var TempComponent = this.gatherIcon(weather[0].icon);
       var description = this.format(weather[0].description);
       var direction = this.degreeToCardinal(windDirDeg);
+      console.log(TempComponent);
+      console.log("______");
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SvgComponents_collection_01_clearDay__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempComponent, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "description"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp, "\xB0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"

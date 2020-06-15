@@ -36,7 +36,7 @@ class Forecast extends React.Component {
         
         let display;
 
-        if(this.props.currentForecast.weather){
+        if(this.props.currentForecast.weather && this.props.tomorrowForecast.weather){
             console.log(this.state)
             console.log("_______")
             console.log(this.props)
