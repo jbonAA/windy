@@ -143,17 +143,14 @@ class Root extends React.Component {
         console.log(quadrants)
         console.log(currentForecast)
 
-        let w = document.getElementById('mapDiv').style.width;
-        let h = document.getElementById('mapDiv').style.height;
-
-        const canv = await new Canvas(quadrants, currentForecast, h, w)
+        const canv = await new Canvas(quadrants, currentForecast)
         console.log(canv)
     }
 
     
 
     render() {
-        // console.log(this.state)
+
         const {currentFor, map, location, tomorrowFor, quadrants, windData} = this.state
         
         let display;

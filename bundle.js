@@ -2840,23 +2840,21 @@ var Root = /*#__PURE__*/function (_React$Component) {
     key: "applyWindVisContent",
     value: function () {
       var _applyWindVisContent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(quadrants, currentForecast) {
-        var w, h, canv;
+        var canv;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 console.log(quadrants);
                 console.log(currentForecast);
-                w = document.getElementById('mapDiv').style.width;
-                h = document.getElementById('mapDiv').style.height;
-                _context.next = 6;
-                return new _logic_generateCanvas__WEBPACK_IMPORTED_MODULE_5__["default"](quadrants, currentForecast, h, w);
+                _context.next = 4;
+                return new _logic_generateCanvas__WEBPACK_IMPORTED_MODULE_5__["default"](quadrants, currentForecast);
 
-              case 6:
+              case 4:
                 canv = _context.sent;
                 console.log(canv);
 
-              case 8:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -2875,7 +2873,6 @@ var Root = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      // console.log(this.state)
       var _this$state3 = this.state,
           currentFor = _this$state3.currentFor,
           map = _this$state3.map,
@@ -2941,8 +2938,8 @@ var Canvas = function Canvas(quadrants, forecast, h, w) {
 
   this.quadrants = quadrants;
   this.forecast = forecast;
-  this.height = h;
-  this.width = w;
+  this.height = document.getElementById('mapDiv').clientHeight;
+  this.width = document.getElementById('mapDiv').clientWidth; // this.appendCanvas()
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Canvas);
