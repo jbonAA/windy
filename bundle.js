@@ -2310,9 +2310,9 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
       var display;
 
       if (currentForecast.weather && tomorrowForecast.weather) {
-        console.log(currentForecast);
-        console.log("_______");
-        console.log(tomorrowForecast);
+        // console.log(currentForecast)
+        // console.log("_______")
+        // console.log(tomorrowForecast)
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2680,7 +2680,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../logic/windDirection */ "./logic/windDirection.js");
+/* harmony import */ var _logic_generateCanvas__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../logic/generateCanvas */ "./logic/generateCanvas.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2701,6 +2706,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -2729,9 +2735,11 @@ var Root = /*#__PURE__*/function (_React$Component) {
       location: "",
       currentFor: {},
       tomorrowFor: {},
-      quadrants: {}
+      quadrants: {},
+      windData: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.applyWindVisContent = _this.applyWindVisContent.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2824,17 +2832,69 @@ var Root = /*#__PURE__*/function (_React$Component) {
           quadrants: wind.quadrants
         });
       }, 500);
+      this.setState({
+        windData: true
+      });
     }
+  }, {
+    key: "applyWindVisContent",
+    value: function () {
+      var _applyWindVisContent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(quadrants, currentForecast) {
+        var w, h, canv;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                console.log(quadrants);
+                console.log(currentForecast);
+                w = document.getElementById('mapDiv').style.width;
+                h = document.getElementById('mapDiv').style.height;
+                _context.next = 6;
+                return new _logic_generateCanvas__WEBPACK_IMPORTED_MODULE_5__["default"](quadrants, currentForecast, h, w);
+
+              case 6:
+                canv = _context.sent;
+                console.log(canv);
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function applyWindVisContent(_x, _x2) {
+        return _applyWindVisContent.apply(this, arguments);
+      }
+
+      return applyWindVisContent;
+    }()
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       // console.log(this.state)
       var _this$state3 = this.state,
           currentFor = _this$state3.currentFor,
           map = _this$state3.map,
           location = _this$state3.location,
           tomorrowFor = _this$state3.tomorrowFor,
-          quadrants = _this$state3.quadrants;
+          quadrants = _this$state3.quadrants,
+          windData = _this$state3.windData;
+      var display;
+
+      if (!windData) {
+        display = null;
+      } else {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this4.applyWindVisContent(quadrants, currentFor);
+          }
+        }, "Apply Wind Data");
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2843,7 +2903,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
         id: "headButton"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick
-      }, "Check Local Forecast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Apply Wind Data")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Check Local Forecast"), display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "h2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Bay Area Weather"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "components"
@@ -2862,6 +2922,30 @@ var Root = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./logic/generateCanvas.js":
+/*!*********************************!*\
+  !*** ./logic/generateCanvas.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Canvas = function Canvas(quadrants, forecast, h, w) {
+  _classCallCheck(this, Canvas);
+
+  this.quadrants = quadrants;
+  this.forecast = forecast;
+  this.height = h;
+  this.width = w;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Canvas);
 
 /***/ }),
 

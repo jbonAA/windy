@@ -43,9 +43,9 @@ class Forecast extends React.Component {
 
         if(currentForecast.weather && tomorrowForecast.weather){
 
-            console.log(currentForecast)
-            console.log("_______")
-            console.log(tomorrowForecast)
+            // console.log(currentForecast)
+            // console.log("_______")
+            // console.log(tomorrowForecast)
             display = (
                 <div id="defaultInfo">
                     <div id="forecastTitle">

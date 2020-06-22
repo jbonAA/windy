@@ -4,6 +4,8 @@ import Forecast from './forecast.jsx';
 import { LngLat, Marker } from 'mapbox-gl';
 import WindDirection from '../logic/windDirection';
 
+import Canvas from '../logic/generateCanvas';
+
 const mapboxgl = require('mapbox-gl');
 
 class Root extends React.Component {
@@ -18,11 +20,12 @@ class Root extends React.Component {
             location: "",
             currentFor: {},
             tomorrowFor: {},
-            quadrants: {}
+            quadrants: {},
+            windData: false
         }
 
         this.handleClick = this.handleClick.bind(this)
-
+        this.applyWindVisContent = this.applyWindVisContent.bind(this)
     }
 
     componentDidMount() {
@@ -128,14 +131,43 @@ class Root extends React.Component {
                 quadrants: wind.quadrants
             })
         }, 500)
+
+        this.setState({
+            windData: true
+        })
     
     }
+
    
+    async applyWindVisContent(quadrants, currentForecast) {
+        console.log(quadrants)
+        console.log(currentForecast)
+
+        let w = document.getElementById('mapDiv').style.width;
+        let h = document.getElementById('mapDiv').style.height;
+
+        const canv = await new Canvas(quadrants, currentForecast, h, w)
+        console.log(canv)
+    }
+
+    
 
     render() {
         // console.log(this.state)
-        const {currentFor, map, location, tomorrowFor, quadrants} = this.state
+        const {currentFor, map, location, tomorrowFor, quadrants, windData} = this.state
         
+        let display;
+
+        if(!windData){
+            display = null
+        }else{
+            display = (
+                <button onClick={() => this.applyWindVisContent(quadrants, currentFor)}>Apply Wind Data</button>
+            )
+        }
+
+
+
         return(
             <div id="main">
                 <div id="header">
@@ -144,8 +176,7 @@ class Root extends React.Component {
                         {/* if there is a canvas over the map
                         remove and reapply logic with lnglat from map
                         bounds, use forecast for map start */}
-                        <button>Apply Wind Data</button>
-
+                        {display}
                     </div>
                     <div id="h2">
                         <h2>Bay Area Weather</h2>
