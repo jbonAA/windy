@@ -2290,6 +2290,7 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextState, nextProps) {
       console.log(this.state);
+      console.log(nextState);
 
       if (this.state.weatherStation !== nextState.weatherStation) {
         return true;
@@ -2520,8 +2521,7 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "gatherIcon",
     value: function gatherIcon(string) {
       return _frontend_SvgComponents_iconExport__WEBPACK_IMPORTED_MODULE_3__["default"][string];
-    } //need a shouldComponentUpdate 
-
+    }
   }, {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextState, nextProps) {
@@ -2539,7 +2539,6 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state);
       var _this$state = this.state,
           cloudCover = _this$state.cloudCover,
           feels_like = _this$state.feels_like,
@@ -2550,9 +2549,7 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
           windDirDeg = _this$state.windDirDeg;
       var TempComponent = this.gatherIcon(weather[0].icon);
       var description = this.format(weather[0].description);
-      var direction = this.degreeToCardinal(windDirDeg); // console.log(TempComponent)
-      // console.log("______")
-
+      var direction = this.degreeToCardinal(windDirDeg);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2793,7 +2790,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
       var newLat = marker._lngLat.lat;
       mapObj.jumpTo({
         center: [newLng, newLat],
-        zoom: 9
+        zoom: 10
       });
       var bounds = mapObj.getBounds(); //mapbox object representing corners
       //objectively we can say that the set up for this project
@@ -2801,7 +2798,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
       var nE = bounds.getNorthEast();
       var nW = bounds.getNorthWest();
       var sE = bounds.getSouthEast();
-      var sW = bounds.getSouthWest(); //grab height width of mapDiv for canvas/vis sizing
+      var sW = bounds.getSouthWest();
+      console.log(bounds); //grab height width of mapDiv for canvas/vis sizing
 
       var mD = document.getElementById("mapDiv");
       var infoGather = {
@@ -2845,7 +2843,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
         id: "headButton"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick
-      }, "Check Local Forecast")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Check Local Forecast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Apply Wind Data")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "h2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Bay Area Weather"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "components"

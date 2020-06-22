@@ -81,7 +81,7 @@ class Root extends React.Component {
 
         mapObj.jumpTo({
             center: [newLng, newLat],
-            zoom: 9
+            zoom: 10
         })
 
         let bounds = mapObj.getBounds();
@@ -95,6 +95,8 @@ class Root extends React.Component {
         let nW = bounds.getNorthWest();
         let sE = bounds.getSouthEast();
         let sW = bounds.getSouthWest();
+
+        console.log(bounds)
 
         //grab height width of mapDiv for canvas/vis sizing
 
@@ -142,6 +144,8 @@ class Root extends React.Component {
                         {/* if there is a canvas over the map
                         remove and reapply logic with lnglat from map
                         bounds, use forecast for map start */}
+                        <button>Apply Wind Data</button>
+
                     </div>
                     <div id="h2">
                         <h2>Bay Area Weather</h2>

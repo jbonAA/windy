@@ -107,7 +107,6 @@ class ForecastIndexItem extends React.Component {
         return iconComponents[string]
     }
 
-    //need a shouldComponentUpdate 
     shouldComponentUpdate(nextState, nextProps) {
         console.log("nextStateIndexItem")
         console.log(nextState)
@@ -123,7 +122,6 @@ class ForecastIndexItem extends React.Component {
 
     render() {
 
-        console.log(this.state)
         const {
             cloudCover, feels_like,
             humidity, temp,
@@ -135,13 +133,10 @@ class ForecastIndexItem extends React.Component {
         let description = this.format(weather[0].description);
         let direction = this.degreeToCardinal(windDirDeg);
 
-        // console.log(TempComponent)
-        // console.log("______")
-
         return (
             <div id="forecastItem">
                 <div id="left">
-                    <TempComponent />
+                    <TempComponent/>
                     <div id="description">
                         <ul>
                             <p>{temp}°</p>

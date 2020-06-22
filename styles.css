@@ -110,6 +110,8 @@ h3 {
     justify-content: space-evenly;
 }
 
+
+
 #future {
     height: 3%;
     width: 100%;
@@ -177,6 +179,9 @@ h3 {
 
 #headButton {
     margin-top: 1.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #defaultInfo {
