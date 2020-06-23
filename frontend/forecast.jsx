@@ -18,8 +18,6 @@ class Forecast extends React.Component {
 
 
     shouldComponentUpdate(nextState, nextProps) {
-        console.log(this.state)
-        console.log(nextState)
         if(this.state.weatherStation !== nextState.weatherStation){
             return true
         }else{

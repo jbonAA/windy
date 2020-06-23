@@ -7,6 +7,7 @@ import WindDirection from '../logic/windDirection';
 import Canvas from '../logic/generateCanvas';
 
 const mapboxgl = require('mapbox-gl');
+const d3 = require('d3')
 
 class Root extends React.Component {
     constructor(props){
@@ -21,7 +22,8 @@ class Root extends React.Component {
             currentFor: {},
             tomorrowFor: {},
             quadrants: {},
-            windData: false
+            windData: false,
+            canvas: false
         }
 
         this.handleClick = this.handleClick.bind(this)
@@ -77,10 +79,16 @@ class Root extends React.Component {
     }
 
     handleClick() {
-        const {mapObj, marker} = this.state
+        const {mapObj, marker, canvas} = this.state
 
         let newLng = marker._lngLat.lng;
         let newLat = marker._lngLat.lat;
+
+        if(canvas){
+            console.log("___________")
+            console.log(d3.remove)
+            let svg = d3.select("svg")
+        }
 
         mapObj.jumpTo({
             center: [newLng, newLat],
@@ -98,6 +106,8 @@ class Root extends React.Component {
         let nW = bounds.getNorthWest();
         let sE = bounds.getSouthEast();
         let sW = bounds.getSouthWest();
+        console.log(nE, nW, sE, sW)
+        console.log("ne, nw, se, sw")
 
         console.log(bounds)
 
@@ -119,10 +129,8 @@ class Root extends React.Component {
         // })
 
         const wind = new WindDirection(infoGather)
-        console.log(wind)
 
         setTimeout(() => {
-            // console.log(wind)
             // console.log(wind.forecastTomorrow)
             this.setState({
                 location: wind.weatherStation,
@@ -140,11 +148,14 @@ class Root extends React.Component {
 
    
     async applyWindVisContent(quadrants, currentForecast) {
-        console.log(quadrants)
-        console.log(currentForecast)
+        // console.log(quadrants)
+        // console.log(currentForecast)
 
         const canv = await new Canvas(quadrants, currentForecast)
         console.log(canv)
+        this.setState({
+            canvas: true
+        })
     }
 
     
