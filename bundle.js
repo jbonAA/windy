@@ -2941,11 +2941,13 @@ var Root = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point */ "./logic/point.js");
+/* harmony import */ var _simulation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./simulation */ "./logic/simulation.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -2959,6 +2961,7 @@ var Canvas = /*#__PURE__*/function () {
     this.forecast = forecast;
     this.height = document.getElementById('mapDiv').clientHeight;
     this.width = document.getElementById('mapDiv').clientWidth;
+    this.center = [this.width / 2, this.height / 2];
     this.data = [];
     this.appendCanvas();
     this.modelData(100);
@@ -2977,8 +2980,9 @@ var Canvas = /*#__PURE__*/function () {
         i += 1;
       }
 
-      console.log(this.data);
-    }
+      var simulation = new _simulation__WEBPACK_IMPORTED_MODULE_1__["default"](this.width, this.height, this.center, this.data); //after the data is modeled we should start simulation
+    } //data modeling
+
   }, {
     key: "findQuadrant",
     value: function findQuadrant(x, y, quadObject) {
@@ -3004,7 +3008,6 @@ var Canvas = /*#__PURE__*/function () {
   }, {
     key: "findAndCreatePoint",
     value: function findAndCreatePoint(x, y, quadrantData) {
-      console.log(quadrantData);
       var speed = quadrantData.speed,
           deg = quadrantData.deg;
       var point = new _point__WEBPACK_IMPORTED_MODULE_0__["default"](x, y, speed, deg, 1);
@@ -3014,11 +3017,12 @@ var Canvas = /*#__PURE__*/function () {
     key: "getRandomInt",
     value: function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
-    }
+    } //data modeling
+
   }, {
     key: "appendCanvas",
     value: function appendCanvas() {
-      var canv = d3.select("#mapDiv").append('svg').attr("width", this.width).attr("height", this.height).attr("id", "svg");
+      var canv = d3.select("#mapDiv").append('canvas').attr("width", this.width).attr("height", this.height).attr("id", "canvas");
     }
   }]);
 
@@ -3043,14 +3047,95 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Point = function Point(x, y, speed, dir, radius) {
   _classCallCheck(this, Point);
 
-  this.x = x;
-  this.y = y;
+  this.pos = [x, y];
   this.speed = speed;
-  this.dir = dir;
+  this.angle = dir;
   this.radius = radius;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Point);
+
+/***/ }),
+
+/***/ "./logic/simulation.js":
+/*!*****************************!*\
+  !*** ./logic/simulation.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var d3_quadtree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-quadtree */ "./node_modules/d3-quadtree/src/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Simulation = /*#__PURE__*/function () {
+  function Simulation(w, h, center, data) {
+    _classCallCheck(this, Simulation);
+
+    this.width = w;
+    this.height = h;
+    this.center = center;
+    this.data = data;
+  }
+
+  _createClass(Simulation, [{
+    key: "tick",
+    value: function tick() {
+      var _this = this;
+
+      var quadtree = d3.quadtree().x(function (d) {
+        return d.pos[0];
+      }).y(function (d) {
+        return d.pos[1];
+      }).extent([-1, -1], [this.width + 1, this.height + 1]).addAll(this.data);
+
+      var _loop = function _loop(i, l) {
+        var node = _this.data[i];
+        var r = node.radius;
+        nx1 = node.pos[0] - r;
+        nx2 = node.pos[0] + r;
+        ny1 = node.pos[1] - r;
+        ny2 = node.pos[1] + r;
+        quadtree.visit(function (visited, x1, y1, x2, y2) {
+          if (visited.data && visited.data.index !== node.index) {
+            if (geometric.linelength([node.pos, visited.data.pos]) < node.radius + visited.data.radius) {
+              node.speed = 0;
+            }
+          }
+
+          return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+        }); //detect sides
+
+        var wallVertical = node.pos[0] <= node.radius || node.pos[0] >= _this.width - node.radius,
+            wallHorizontal = node.pos[1] <= node.radius || node.pos[1] >= _this.height - node.radius;
+
+        if (wallVertical || wallHorizontal) {
+          node.speed = 0;
+        }
+      };
+
+      for (var i = 0, l = this.data.length; i < l; i++) {
+        _loop(i, l);
+      }
+    }
+  }, {
+    key: "drawSimulation",
+    value: function drawSimulation() {
+      var wrapper = document.getElementById("simulation");
+    }
+  }]);
+
+  return Simulation;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Simulation);
 
 /***/ }),
 

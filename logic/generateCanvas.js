@@ -1,4 +1,5 @@
 import Point from './point';
+import Simulation from './simulation';
 
 const d3 = require('d3')
 
@@ -8,6 +9,7 @@ class Canvas {
         this.forecast = forecast;
         this.height = document.getElementById('mapDiv').clientHeight;
         this.width = document.getElementById('mapDiv').clientWidth;
+        this.center = [this.width / 2, this.height / 2];
         this.data = [];
 
         this.appendCanvas()
@@ -26,10 +28,11 @@ class Canvas {
             i+=1
         }
 
-        console.log(this.data)
+        const simulation = new Simulation(this.width, this.height, this.center, this.data)
+        //after the data is modeled we should start simulation
 
     }
-
+    //data modeling
     findQuadrant(x, y, quadObject) {
 
         switch(x >= 0){
@@ -53,7 +56,6 @@ class Canvas {
     }
 
     findAndCreatePoint(x, y, quadrantData) {
-        console.log(quadrantData)
         const {speed, deg} = quadrantData
         const point = new Point(x, y, speed, deg, 1)
         return point
@@ -62,13 +64,13 @@ class Canvas {
     getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
-
+    //data modeling
     
     appendCanvas() {
-        const canv = d3.select("#mapDiv").append('svg')
+        const canv = d3.select("#mapDiv").append('canvas')
             .attr("width", this.width)
             .attr("height", this.height)
-            .attr("id", "svg")
+            .attr("id", "canvas")
     }
 }
 

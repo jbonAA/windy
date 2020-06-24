@@ -25,6 +25,7 @@
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
     "d3": "^5.16.0",
+    "d3-quadtree": "^1.0.7",
     "mapbox-gl": "^1.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

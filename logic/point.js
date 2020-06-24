@@ -1,9 +1,8 @@
 class Point {
     constructor(x, y, speed, dir, radius){
-        this.x = x;
-        this.y = y;
+        this.pos = [x, y]
         this.speed = speed;
-        this.dir = dir;
+        this.angle = dir;
         this.radius = radius;
     }
 
