@@ -11,9 +11,10 @@ class Canvas {
         this.width = document.getElementById('mapDiv').clientWidth;
         this.center = [this.width / 2, this.height / 2];
         this.data = [];
+        this.sim = {};
 
         this.appendCanvas()
-        this.modelData(100)
+        this.modelData(5)
     }
 
     modelData(n) {
@@ -30,6 +31,9 @@ class Canvas {
 
         const simulation = new Simulation(this.width, this.height, this.center, this.data)
         //after the data is modeled we should start simulation
+        this.sim = simulation
+        
+        // simulation.drawSimulation()
 
     }
     //data modeling
@@ -72,6 +76,7 @@ class Canvas {
             .attr("height", this.height)
             .attr("id", "canvas")
     }
+
 }
 
 export default Canvas

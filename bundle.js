@@ -2942,7 +2942,6 @@ var Root = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point */ "./logic/point.js");
 /* harmony import */ var _simulation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./simulation */ "./logic/simulation.js");
-/* harmony import */ var _simulation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_simulation__WEBPACK_IMPORTED_MODULE_1__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -2964,8 +2963,9 @@ var Canvas = /*#__PURE__*/function () {
     this.width = document.getElementById('mapDiv').clientWidth;
     this.center = [this.width / 2, this.height / 2];
     this.data = [];
+    this.sim = {};
     this.appendCanvas();
-    this.modelData(100);
+    this.modelData(5);
   }
 
   _createClass(Canvas, [{
@@ -2981,7 +2981,9 @@ var Canvas = /*#__PURE__*/function () {
         i += 1;
       }
 
-      var simulation = new _simulation__WEBPACK_IMPORTED_MODULE_1___default.a(this.width, this.height, this.center, this.data); //after the data is modeled we should start simulation
+      var simulation = new _simulation__WEBPACK_IMPORTED_MODULE_1__["default"](this.width, this.height, this.center, this.data); //after the data is modeled we should start simulation
+
+      this.sim = simulation; // simulation.drawSimulation()
     } //data modeling
 
   }, {
@@ -3062,10 +3064,29 @@ var Point = function Point(x, y, speed, dir, radius) {
 /*!*****************************!*\
   !*** ./logic/simulation.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/jessbon/Desktop/Windy/logic/simulation.js: Unexpected token, expected \")\" (62:54)\n\n\u001b[0m \u001b[90m 60 | \u001b[39m            \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 61 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 | \u001b[39m            \u001b[36mfor\u001b[39m(let i \u001b[33m=\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m l \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mkength\u001b[33m;\u001b[39m i \u001b[33m<\u001b[39m l\u001b[33m;\u001b[39m i\u001b[33m++\u001b[39m){\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 63 | \u001b[39m                \u001b[36mconst\u001b[39m d \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdata[i]\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 64 | \u001b[39m                ctx\u001b[33m.\u001b[39mbeginPath()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 65 | \u001b[39m                ctx\u001b[33m.\u001b[39marc(\u001b[33m...\u001b[39md\u001b[33m.\u001b[39mpos\u001b[33m,\u001b[39m d\u001b[33m.\u001b[39mradius\u001b[33m,\u001b[39m \u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m \u001b[33m*\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39m\u001b[33mPI\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    at Object._raise (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:746:17)\n    at Object.raiseWithData (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:739:17)\n    at Object.raise (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:733:17)\n    at Object.unexpected (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:8807:16)\n    at Object.expect (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:8793:28)\n    at Object.parseFor (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11773:10)\n    at Object.parseForStatement (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11478:19)\n    at Object.parseStatementContent (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11181:21)\n    at Object.parseStatement (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseBlock (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11701:10)\n    at Object.parseFunctionBody (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:10708:24)\n    at Object.parseFunctionBodyAndFinish (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:10691:10)\n    at withTopicForbiddingContext (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11871:12)\n    at Object.withTopicForbiddingContext (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11031:14)\n    at Object.parseFunction (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11870:10)\n    at Object.parseFunctionStatement (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11502:17)\n    at Object.parseStatementContent (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11194:21)\n    at Object.parseStatement (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseBlock (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11701:10)\n    at Object.parseFunctionBody (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:10708:24)\n    at Object.parseFunctionBodyAndFinish (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:10691:10)\n    at Object.parseMethod (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:10653:10)\n    at Object.pushClassMethod (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:12156:30)\n    at Object.parseClassMemberWithIsStatic (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:12073:12)\n    at Object.parseClassMember (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:12015:10)\n    at withTopicForbiddingContext (/Users/jessbon/Desktop/Windy/node_modules/@babel/parser/lib/index.js:11960:14)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var d3_quadtree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3-quadtree */ "./node_modules/d3-quadtree/src/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Simulation = function Simulation(w, h, center, data) {
+  _classCallCheck(this, Simulation);
+
+  this.width = w;
+  this.height = h;
+  this.center = center;
+  this.data = [];
+} //
+;
+
+/* harmony default export */ __webpack_exports__["default"] = (Simulation);
 
 /***/ }),
 
