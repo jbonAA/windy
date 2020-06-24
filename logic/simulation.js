@@ -1,4 +1,5 @@
 import {quadtree} from 'd3-quadtree'
+import { clearStorage } from 'mapbox-gl';
 
 class Simulation {
     constructor(w, h, center, data) {
@@ -45,8 +46,30 @@ class Simulation {
 
     }
 
-    drawSimulation() {
-        const wrapper = document.getElementById("simulation")
+    drawSimulation(w, h) {
+        const wrapper = document.getElementById("mapDiv")
+        const canvas = document.getElementById("canvas")
+        const ctx = canvas.getContext("2d")
+        ctx.fillStyle = "steelblue";
+        ctx.strokeStyle = "white";
+
+        function tick() {
+            requestAnimationFrame(tick)
+            ctx.clearRect(0, 0, this.width, this.height);
+
+            this.tick();
+
+            for(let i = 0; l = this.data.kength; i < l; i++){
+                const d = this.data[i];
+                ctx.beginPath();
+                ctx.arc(...d.pos, d.radius, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+                
+            }
+        }
+
+        tick()
     }
 }
 
