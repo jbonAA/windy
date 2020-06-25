@@ -1,5 +1,6 @@
 import Point from './point';
 import Simulation from './simulation';
+import Path from './path';
 
 const d3 = require('d3')
 
@@ -12,10 +13,33 @@ class Canvas {
         this.center = [this.width / 2, this.height / 2];
         this.data = [];
         this.sim = {};
+        this.pathDataSets = [];
 
         this.appendCanvas()
-        this.modelData(5)
+        this.modelData(10)
     }
+
+    drawBezierCurves(points) {
+        const xScale = d3.scaleLinear()
+            .domain([0, this.width])
+            .range([0, this.width])
+
+        const yScale = d3.scaleLinear()
+            .domain([0, this.height])
+            .range([0, this.height])
+
+        let datum = [];
+
+        points.forEach((point) => {
+            datum.push(new Path(point.controlPoints, point.pos, xScale, yScale))
+        })
+
+        datum.forEach((path) => {
+            path.appendToSvg(path.coords)
+        })
+    }
+
+    //format el point to path by extrapolating xy pairs
 
     modelData(n) {
 
@@ -29,11 +53,24 @@ class Canvas {
             i+=1
         }
 
+        for(let j = 0; j < this.data.length; j++){
+            let point = this.data[j];
+            let [x, y] = [point.pos[0], point.pos[1]]
+
+            console.log("x, y", x, y)
+
+            point.populateControlPoints(x, y, 0)
+            point.endPoint = point.controlPoints.pop()
+        }
+
         const simulation = new Simulation(this.width, this.height, this.center, this.data)
         //after the data is modeled we should start simulation
+        simulation.data = this.data
         this.sim = simulation
         
         // simulation.drawSimulation()
+
+        this.drawBezierCurves(this.data)
 
     }
     //data modeling
@@ -59,9 +96,12 @@ class Canvas {
         }
     }
 
+
+
     findAndCreatePoint(x, y, quadrantData) {
         const {speed, deg} = quadrantData
-        const point = new Point(x, y, speed, deg, 1)
+        const point = new Point(x, y, speed, deg, 1, this.width, this.quadrants)
+
         return point
     }
 
@@ -71,10 +111,10 @@ class Canvas {
     //data modeling
     
     appendCanvas() {
-        const canv = d3.select("#mapDiv").append('canvas')
+        d3.select("#mapDiv").append('svg')
             .attr("width", this.width)
             .attr("height", this.height)
-            .attr("id", "canvas")
+            .attr("id", "svg")
     }
 
 }

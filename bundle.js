@@ -2931,6 +2931,74 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./logic/cardinalReference.js":
+/*!************************************!*\
+  !*** ./logic/cardinalReference.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var ref = function ref(d) {
+  switch (d >= 0) {
+    case d <= 10:
+      return "N";
+
+    case d <= 30:
+      return "NNE";
+
+    case d <= 60:
+      return "NE";
+
+    case d <= 80:
+      return "ENE";
+
+    case d <= 100:
+      return "E";
+
+    case d <= 120:
+      return "ESE";
+
+    case d <= 150:
+      return "SE";
+
+    case d <= 170:
+      return "SSE";
+
+    case d <= 190:
+      return "S";
+
+    case d <= 210:
+      return "SSW";
+
+    case d <= 240:
+      return "SW";
+
+    case d <= 260:
+      return "WSW";
+
+    case d <= 280:
+      return "W";
+
+    case d <= 300:
+      return "WNW";
+
+    case d <= 330:
+      return "NW";
+
+    case d <= 350:
+      return "NNW";
+
+    default:
+      return "N";
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ref);
+
+/***/ }),
+
 /***/ "./logic/generateCanvas.js":
 /*!*********************************!*\
   !*** ./logic/generateCanvas.js ***!
@@ -2942,11 +3010,13 @@ var Root = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point */ "./logic/point.js");
 /* harmony import */ var _simulation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./simulation */ "./logic/simulation.js");
+/* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./path */ "./logic/path.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -2964,11 +3034,26 @@ var Canvas = /*#__PURE__*/function () {
     this.center = [this.width / 2, this.height / 2];
     this.data = [];
     this.sim = {};
+    this.pathDataSets = [];
     this.appendCanvas();
-    this.modelData(5);
+    this.modelData(10);
   }
 
   _createClass(Canvas, [{
+    key: "drawBezierCurves",
+    value: function drawBezierCurves(points) {
+      var xScale = d3.scaleLinear().domain([0, this.width]).range([0, this.width]);
+      var yScale = d3.scaleLinear().domain([0, this.height]).range([0, this.height]);
+      var datum = [];
+      points.forEach(function (point) {
+        datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos, xScale, yScale));
+      });
+      datum.forEach(function (path) {
+        path.appendToSvg(path.coords);
+      });
+    } //format el point to path by extrapolating xy pairs
+
+  }, {
     key: "modelData",
     value: function modelData(n) {
       var i = 0;
@@ -2981,9 +3066,22 @@ var Canvas = /*#__PURE__*/function () {
         i += 1;
       }
 
+      for (var j = 0; j < this.data.length; j++) {
+        var point = this.data[j];
+        var _ref = [point.pos[0], point.pos[1]],
+            _x = _ref[0],
+            _y = _ref[1];
+        console.log("x, y", _x, _y);
+        point.populateControlPoints(_x, _y, 0);
+        point.endPoint = point.controlPoints.pop();
+      }
+
       var simulation = new _simulation__WEBPACK_IMPORTED_MODULE_1__["default"](this.width, this.height, this.center, this.data); //after the data is modeled we should start simulation
 
+      simulation.data = this.data;
       this.sim = simulation; // simulation.drawSimulation()
+
+      this.drawBezierCurves(this.data);
     } //data modeling
 
   }, {
@@ -3013,7 +3111,7 @@ var Canvas = /*#__PURE__*/function () {
     value: function findAndCreatePoint(x, y, quadrantData) {
       var speed = quadrantData.speed,
           deg = quadrantData.deg;
-      var point = new _point__WEBPACK_IMPORTED_MODULE_0__["default"](x, y, speed, deg, 1);
+      var point = new _point__WEBPACK_IMPORTED_MODULE_0__["default"](x, y, speed, deg, 1, this.width, this.quadrants);
       return point;
     }
   }, {
@@ -3025,7 +3123,7 @@ var Canvas = /*#__PURE__*/function () {
   }, {
     key: "appendCanvas",
     value: function appendCanvas() {
-      var canv = d3.select("#mapDiv").append('canvas').attr("width", this.width).attr("height", this.height).attr("id", "canvas");
+      d3.select("#mapDiv").append('svg').attr("width", this.width).attr("height", this.height).attr("id", "svg");
     }
   }]);
 
@@ -3033,6 +3131,68 @@ var Canvas = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Canvas);
+
+/***/ }),
+
+/***/ "./logic/path.js":
+/*!***********************!*\
+  !*** ./logic/path.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var Path = /*#__PURE__*/function () {
+  function Path(cp, pos, xS, yS) {
+    _classCallCheck(this, Path);
+
+    this.tracks = cp;
+    this.start = pos;
+    this.xScale = xS;
+    this.yScale = yS;
+    this.coords = [];
+    this.formatCoords(this.start, this.tracks); //where the element will be created and attributed before added
+  }
+
+  _createClass(Path, [{
+    key: "formatCoords",
+    value: function formatCoords(start, track) {
+      var _this = this;
+
+      this.coords.push({
+        x: start[0],
+        y: start[1]
+      });
+      track.forEach(function (el) {
+        _this.coords.push({
+          x: el[0],
+          y: el[1]
+        });
+      });
+      console.log("coords", this.coords);
+    }
+  }, {
+    key: "appendToSvg",
+    value: function appendToSvg(data) {
+      var line = path;
+    }
+  }]);
+
+  return Path;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Path);
 
 /***/ }),
 
@@ -3045,16 +3205,108 @@ var Canvas = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../logic/cardinalReference */ "./logic/cardinalReference.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Point = function Point(x, y, speed, dir, radius) {
-  _classCallCheck(this, Point);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  this.pos = [x, y];
-  this.speed = speed;
-  this.angle = dir;
-  this.radius = radius;
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+var cardinalSlopes = {
+  "N": [0, 20],
+  "NNW": [5, 15],
+  "NW": [10, 10],
+  "WNW": [15, 5],
+  "W": [20, 0],
+  "WSW": [15, -5],
+  "SW": [10, -10],
+  "SSW": [5, -15],
+  "S": [0, -20],
+  "SSE": [-5, -15],
+  "SE": [-10, -10],
+  "ESE": [-15, -5],
+  "E": [-20, 0],
+  "ENE": [-15, 5],
+  "NE": [-10, 10],
+  "NNE": [-5, 15]
 };
+
+var Point = /*#__PURE__*/function () {
+  function Point(x, y, speed, dir, radius, canvasWidth, quadrants) {
+    _classCallCheck(this, Point);
+
+    this.pos = [x, y];
+    this.speed = speed;
+    this.angle = dir;
+    this.radius = radius;
+    this.canvasWidth = canvasWidth;
+    this.quadrants = quadrants; //control points should be an array of xy coords
+
+    this.controlPoints = [];
+    this.endPoint = [];
+  } //
+  //initially the data is modeled and point objects are returned
+  //develop control adds the points we can use to draw bezier curve
+
+
+  _createClass(Point, [{
+    key: "findQuadrant",
+    value: function findQuadrant(x, y, quadObject) {
+      switch (x >= 0) {
+        case x <= this.width / 2:
+          if (y <= this.height / 2) {
+            return quadObject["0"];
+          } else {
+            return quadObject['2'];
+          }
+
+        case x > this.width / 2:
+          if (y <= this.height / 2) {
+            return quadObject['1'];
+          } else {
+            return quadObject['3'];
+          }
+
+        default:
+          return quadObject['0'];
+      }
+    }
+  }, {
+    key: "outOfBounds",
+    value: function outOfBounds(x, y) {
+      if (x >= this.canvasWidth || x < 0) {
+        return true;
+      }
+
+      if (y >= this.canvasWidth || y < 0) {
+        return true;
+      }
+
+      return false;
+    }
+  }, {
+    key: "populateControlPoints",
+    value: function populateControlPoints(x, y, modifier) {
+      var quad = this.findQuadrant(x, y, this.quadrants); //speed as magnitude will need to play with coeff
+
+      var n = Object(_logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__["default"])(quad.deg);
+      var m = cardinalSlopes[n];
+      var _ref = [Math.floor(x + m[0] + quad.speed * 2), Math.floor(y + m[1] + quad.speed * 2)],
+          x2 = _ref[0],
+          y2 = _ref[1];
+
+      if (this.outOfBounds(x2, y2) || modifier === 20) {
+        return;
+      } else {
+        this.controlPoints.push([x2, y2]);
+        this.populateControlPoints(x2, y2, modifier + 1);
+      }
+    }
+  }]);
+
+  return Point;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (Point);
 
