@@ -86,8 +86,9 @@ class Root extends React.Component {
 
         if(canvas){
             console.log("___________")
-            console.log(d3.remove)
-            let svg = d3.select("svg")
+            console.log("I need to remove NOW!!!!")
+            let oldSvg = document.getElementById("svgToRemove")
+            oldSvg.remove()
         }
 
         mapObj.jumpTo({
@@ -136,7 +137,8 @@ class Root extends React.Component {
                 location: wind.weatherStation,
                 currentFor: wind.forecastNow,
                 tomorrowFor: wind.forecastTomorrow,
-                quadrants: wind.quadrants
+                quadrants: wind.quadrants,
+                canvas: true
             })
         }, 500)
 

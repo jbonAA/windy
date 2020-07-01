@@ -1,6 +1,7 @@
 import Point from './point';
 import Simulation from './simulation';
 import Path from './path';
+import Visual from './visual';
 
 const d3 = require('d3')
 
@@ -15,28 +16,19 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.appendCanvas()
-        this.modelData(10)
+        this.modelData(30)
     }
 
     drawBezierCurves(points) {
-        const xScale = d3.scaleLinear()
-            .domain([0, this.width])
-            .range([0, this.width])
-
-        const yScale = d3.scaleLinear()
-            .domain([0, this.height])
-            .range([0, this.height])
-
         let datum = [];
 
         points.forEach((point) => {
-            datum.push(new Path(point.controlPoints, point.pos, xScale, yScale))
+            datum.push(new Path(point.controlPoints, point.pos))
         })
 
-        datum.forEach((path) => {
-            path.appendToSvg(path.coords)
-        })
+        let newVis = new Visual(datum)
+
+        newVis.visInit(this.width, this.height)
     }
 
     //format el point to path by extrapolating xy pairs
@@ -110,12 +102,7 @@ class Canvas {
     }
     //data modeling
     
-    appendCanvas() {
-        d3.select("#mapDiv").append('svg')
-            .attr("width", this.width)
-            .attr("height", this.height)
-            .attr("id", "svg")
-    }
+   
 
 }
 

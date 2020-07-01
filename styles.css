@@ -201,6 +201,11 @@ h3 {
     margin: 1%;
 }
 
+.path {
+    z-index: 99999;
+    position: relative;
+}
+
 #projectInfo {
     height: 22%;
     width: 96%;

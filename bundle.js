@@ -2800,8 +2800,9 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
       if (canvas) {
         console.log("___________");
-        console.log(d3.remove);
-        var svg = d3.select("svg");
+        console.log("I need to remove NOW!!!!");
+        var oldSvg = document.getElementById("svgToRemove");
+        oldSvg.remove();
       }
 
       mapObj.jumpTo({
@@ -2837,7 +2838,8 @@ var Root = /*#__PURE__*/function (_React$Component) {
           location: wind.weatherStation,
           currentFor: wind.forecastNow,
           tomorrowFor: wind.forecastTomorrow,
-          quadrants: wind.quadrants
+          quadrants: wind.quadrants,
+          canvas: true
         });
       }, 500);
       this.setState({
@@ -3011,11 +3013,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point */ "./logic/point.js");
 /* harmony import */ var _simulation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./simulation */ "./logic/simulation.js");
 /* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./path */ "./logic/path.js");
+/* harmony import */ var _visual__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./visual */ "./logic/visual.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -3035,22 +3039,18 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.appendCanvas();
-    this.modelData(10);
+    this.modelData(30);
   }
 
   _createClass(Canvas, [{
     key: "drawBezierCurves",
     value: function drawBezierCurves(points) {
-      var xScale = d3.scaleLinear().domain([0, this.width]).range([0, this.width]);
-      var yScale = d3.scaleLinear().domain([0, this.height]).range([0, this.height]);
       var datum = [];
       points.forEach(function (point) {
-        datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos, xScale, yScale));
+        datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos));
       });
-      datum.forEach(function (path) {
-        path.appendToSvg(path.coords);
-      });
+      var newVis = new _visual__WEBPACK_IMPORTED_MODULE_3__["default"](datum);
+      newVis.visInit(this.width, this.height);
     } //format el point to path by extrapolating xy pairs
 
   }, {
@@ -3120,11 +3120,6 @@ var Canvas = /*#__PURE__*/function () {
       return Math.floor(Math.random() * Math.floor(max));
     } //data modeling
 
-  }, {
-    key: "appendCanvas",
-    value: function appendCanvas() {
-      d3.select("#mapDiv").append('svg').attr("width", this.width).attr("height", this.height).attr("id", "svg");
-    }
   }]);
 
   return Canvas;
@@ -3143,24 +3138,18 @@ var Canvas = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-
-
-
 var Path = /*#__PURE__*/function () {
-  function Path(cp, pos, xS, yS) {
+  function Path(cp, pos) {
     _classCallCheck(this, Path);
 
     this.tracks = cp;
     this.start = pos;
-    this.xScale = xS;
-    this.yScale = yS;
     this.coords = [];
     this.formatCoords(this.start, this.tracks); //where the element will be created and attributed before added
   }
@@ -3181,11 +3170,6 @@ var Path = /*#__PURE__*/function () {
         });
       });
       console.log("coords", this.coords);
-    }
-  }, {
-    key: "appendToSvg",
-    value: function appendToSvg(data) {
-      var line = path;
     }
   }]);
 
@@ -3339,6 +3323,73 @@ var Simulation = function Simulation(w, h, center, data) {
 ;
 
 /* harmony default export */ __webpack_exports__["default"] = (Simulation);
+
+/***/ }),
+
+/***/ "./logic/visual.js":
+/*!*************************!*\
+  !*** ./logic/visual.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var Visual = /*#__PURE__*/function () {
+  function Visual(datum) {
+    _classCallCheck(this, Visual);
+
+    this.datum = datum;
+  }
+
+  _createClass(Visual, [{
+    key: "visInit",
+    value: function visInit(w, h) {
+      var svg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]("#components").append("svg").attr("id", 'svgToRemove').attr("width", w).attr("height", h);
+
+      for (var i = 0; i < this.datum.length; i++) {
+        // this.formatBez(this.datum[i])
+        console.log(this.datum[i], "datumi");
+        var path = this.datum[i];
+
+        if (path.tracks.length > 4) {
+          var d = this.formatPath(path.start, path.tracks);
+          svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
+        }
+      }
+    }
+  }, {
+    key: "formatPath",
+    value: function formatPath(startPair, tracks) {
+      var quarter = Math.floor(tracks.length / 4);
+      var half = Math.floor(tracks.length / 2);
+      console.log("quarter half", quarter, half);
+      var collection = [];
+      collection.push("M ".concat(startPair[0], " ").concat(startPair[1]));
+      collection.push("C ".concat(tracks[quarter][0], " ").concat(tracks[quarter][1]));
+      collection.push("".concat(tracks[half][0], " ").concat(tracks[half][1]));
+      collection.push("".concat(tracks[tracks.length - 1][0], " ").concat(tracks[tracks.length - 1][1]));
+      console.log("collection", collection.join(" "));
+      return collection.join(" ");
+    }
+  }]);
+
+  return Visual;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Visual);
 
 /***/ }),
 
