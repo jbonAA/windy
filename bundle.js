@@ -2779,6 +2779,13 @@ var Root = /*#__PURE__*/function (_React$Component) {
             marker: marker
           });
         });
+        map.on("move", function () {
+          var hasSvg = document.getElementById("svgToRemove");
+
+          if (hasSvg) {
+            hasSvg.remove();
+          }
+        });
 
         _this2.setState({
           marker: marker,

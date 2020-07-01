@@ -70,6 +70,14 @@ class Root extends React.Component {
                 })
             })
 
+            map.on("move", () => {
+
+                let hasSvg = document.getElementById("svgToRemove")
+                if(hasSvg){
+                    hasSvg.remove()
+                }
+            })
+
             this.setState({
                 marker,
                 mapObj: map
