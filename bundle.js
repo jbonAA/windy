@@ -3370,9 +3370,15 @@ var Visual = /*#__PURE__*/function () {
         var path = this.datum[i];
 
         if (path.tracks.length > 4) {
-          var d = this.formatPath(path.start, path.tracks);
-          console.log("dpath", d);
-          svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
+          var d = this.formatPath(path.start, path.tracks); // console.log("dpath", d) fix error in console
+          //need to fix error in console then consider
+          //adding a 5th quadrant reflecting the direction 
+          //maybe 100 square around center
+          //extra case
+          //may have to rework the formatPath method to include
+          //elements in the center
+
+          var p = svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
         }
       }
     }
@@ -3382,10 +3388,10 @@ var Visual = /*#__PURE__*/function () {
       var quarter = Math.floor(tracks.length / 4);
       var half = Math.floor(tracks.length / 2);
       var collection = [];
-      collection.push("M ".concat(startPair[0], " ").concat(startPair[1]));
-      collection.push("q ".concat(tracks[quarter][0], " ").concat(tracks[quarter][1]));
-      collection.push("".concat(tracks[half][0], " ").concat(tracks[half][1]));
-      collection.push("".concat(tracks[tracks.length - 1][0], " ").concat(tracks[tracks.length - 1][1], " Z"));
+      collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
+      collection.push("Q ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
+      collection.push("".concat(tracks[half][0], ",").concat(tracks[half][1]));
+      collection.push("t ".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
       console.log("collection", collection.join(" "));
       return collection.join(" ");
     }

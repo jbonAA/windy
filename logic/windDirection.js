@@ -53,6 +53,7 @@ class WindDirections {
                 res.city.name,
                 res.list[3].dt_txt
             ]
+            
 
             this.forecastTomorrow = {
                 windSpeed,

@@ -20,14 +20,28 @@ class Visual {
             let path = this.datum[i];
             if(path.tracks.length > 4){
                 let d = this.formatPath(path.start, path.tracks)
-                console.log("dpath", d)
-                    svg.append("path")
-                        .attr("d", d)
-                        .attr("stroke", 'rgb(255, 255, 255)')
-                        .attr("fill", "none")
+                // console.log("dpath", d) fix error in console
+                //need to fix error in console then consider
+                //adding a 5th quadrant reflecting the direction 
+                //maybe 100 square around center
+                //extra case
+                //may have to rework the formatPath method to include
+                //elements in the center
+                let p = svg.append("path")
+                    .attr("d", d)
+                    .attr("stroke", 'rgb(255, 255, 255)')
+                    .attr("fill", "none")
+                
+       
+
+                    
             }
 
+
+           
+            
         }
+
 
     }
 
@@ -36,10 +50,10 @@ class Visual {
         let half = Math.floor(tracks.length / 2)
         let collection = []
 
-        collection.push(`M ${startPair[0]} ${startPair[1]}`)
-        collection.push(`q ${tracks[quarter][0]} ${tracks[quarter][1]}`)
-        collection.push(`${tracks[half][0]} ${tracks[half][1]}`)
-        collection.push(`${tracks[tracks.length - 1][0]} ${tracks[tracks.length - 1][1]} Z`)
+        collection.push(`M ${startPair[0]},${startPair[1]}`)
+        collection.push(`Q ${tracks[quarter][0]},${tracks[quarter][1]}`)
+        collection.push(`${tracks[half][0]},${tracks[half][1]}`)
+        collection.push(`t ${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
 
         console.log("collection", collection.join(" "))
         return collection.join(" ")
