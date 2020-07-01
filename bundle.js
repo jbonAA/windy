@@ -3051,7 +3051,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(30);
+    this.modelData(50);
   }
 
   _createClass(Canvas, [{
@@ -3372,7 +3372,7 @@ var Visual = /*#__PURE__*/function () {
         if (path.tracks.length > 4) {
           var d = this.formatPath(path.start, path.tracks);
           console.log("dpath", d);
-          svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none").attr("easing", "easeInOutQuad").attr("duration", 8000).attr("loop", true).attr("direction", "alternate");
+          svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
         }
       }
     }
@@ -3381,7 +3381,6 @@ var Visual = /*#__PURE__*/function () {
     value: function formatPath(startPair, tracks) {
       var quarter = Math.floor(tracks.length / 4);
       var half = Math.floor(tracks.length / 2);
-      console.log("quarter half", quarter, half);
       var collection = [];
       collection.push("M ".concat(startPair[0], " ").concat(startPair[1]));
       collection.push("q ".concat(tracks[quarter][0], " ").concat(tracks[quarter][1]));

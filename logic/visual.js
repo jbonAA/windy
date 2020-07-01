@@ -14,6 +14,7 @@ class Visual {
             .attr("width", w)
             .attr("height", h)
 
+
         for(let i = 0; i < this.datum.length; i++){
             console.log(this.datum[i], "data to append transitional circle")
             let path = this.datum[i];
@@ -24,10 +25,6 @@ class Visual {
                         .attr("d", d)
                         .attr("stroke", 'rgb(255, 255, 255)')
                         .attr("fill", "none")
-                        .attr("easing", "easeInOutQuad")
-                        .attr("duration", 8000)
-                        .attr("loop", true)
-                        .attr("direction", "alternate")
             }
 
         }
@@ -37,7 +34,6 @@ class Visual {
     formatPath(startPair, tracks) {
         let quarter = Math.floor(tracks.length / 4)
         let half = Math.floor(tracks.length / 2)
-        console.log("quarter half", quarter, half)
         let collection = []
 
         collection.push(`M ${startPair[0]} ${startPair[1]}`)
