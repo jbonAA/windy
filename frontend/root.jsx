@@ -23,7 +23,6 @@ class Root extends React.Component {
             tomorrowFor: {},
             quadrants: {},
             windData: false,
-            canvas: false
         }
 
         this.handleClick = this.handleClick.bind(this)
@@ -72,10 +71,19 @@ class Root extends React.Component {
 
             map.on("move", () => {
 
-                let hasSvg = document.getElementById("svgToRemove")
+                let hasSvg = document.getElementById("svgToRemove");
                 if(hasSvg){
-                    hasSvg.remove()
+                    hasSvg.remove();
                 }
+                
+                //select and remove wind data button to be reinserted on next query
+                let windDataButton = document.getElementById("applyData")
+                if(windDataButton){
+                    this.setState({
+                        windData: false
+                    })
+                }
+
             })
 
             this.setState({
@@ -87,15 +95,13 @@ class Root extends React.Component {
     }
 
     handleClick() {
-        const {mapObj, marker, canvas} = this.state
+        const {mapObj, marker} = this.state
 
         let newLng = marker._lngLat.lng;
         let newLat = marker._lngLat.lat;
 
-        if(canvas){
-            console.log("___________")
-            console.log("I need to remove NOW!!!!")
-            let oldSvg = document.getElementById("svgToRemove")
+        let oldSvg = document.getElementById("svgToRemove")
+        if(oldSvg){
             oldSvg.remove()
         }
 
@@ -146,7 +152,6 @@ class Root extends React.Component {
                 currentFor: wind.forecastNow,
                 tomorrowFor: wind.forecastTomorrow,
                 quadrants: wind.quadrants,
-                canvas: true
             })
         }, 500)
 
@@ -180,7 +185,7 @@ class Root extends React.Component {
             display = null
         }else{
             display = (
-                <button onClick={() => this.applyWindVisContent(quadrants, currentFor)}>Apply Wind Data</button>
+                <button id="applyData" onClick={() => this.applyWindVisContent(quadrants, currentFor)}>Apply Wind Data</button>
             )
         }
 

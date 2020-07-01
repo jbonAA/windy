@@ -2735,8 +2735,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
       currentFor: {},
       tomorrowFor: {},
       quadrants: {},
-      windData: false,
-      canvas: false
+      windData: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.applyWindVisContent = _this.applyWindVisContent.bind(_assertThisInitialized(_this));
@@ -2784,6 +2783,15 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
           if (hasSvg) {
             hasSvg.remove();
+          } //select and remove wind data button to be reinserted on next query
+
+
+          var windDataButton = document.getElementById("applyData");
+
+          if (windDataButton) {
+            _this2.setState({
+              windData: false
+            });
           }
         });
 
@@ -2800,15 +2808,12 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
       var _this$state2 = this.state,
           mapObj = _this$state2.mapObj,
-          marker = _this$state2.marker,
-          canvas = _this$state2.canvas;
+          marker = _this$state2.marker;
       var newLng = marker._lngLat.lng;
       var newLat = marker._lngLat.lat;
+      var oldSvg = document.getElementById("svgToRemove");
 
-      if (canvas) {
-        console.log("___________");
-        console.log("I need to remove NOW!!!!");
-        var oldSvg = document.getElementById("svgToRemove");
+      if (oldSvg) {
         oldSvg.remove();
       }
 
@@ -2845,8 +2850,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
           location: wind.weatherStation,
           currentFor: wind.forecastNow,
           tomorrowFor: wind.forecastTomorrow,
-          quadrants: wind.quadrants,
-          canvas: true
+          quadrants: wind.quadrants
         });
       }, 500);
       this.setState({
@@ -2904,6 +2908,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
         display = null;
       } else {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "applyData",
           onClick: function onClick() {
             return _this4.applyWindVisContent(quadrants, currentFor);
           }
