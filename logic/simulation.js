@@ -1,5 +1,3 @@
-import * as d3 from 'd3';
-import quadtree from 'd3-quadtree';
 
 class Simulation {
     constructor(w, h, center, data) {
@@ -8,11 +6,6 @@ class Simulation {
         this.center = center;
         this.data = [];
     }
-
-    
-
-  
-    //
 
   
 }

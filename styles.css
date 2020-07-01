@@ -62,9 +62,10 @@ body {
 
 #svgToRemove {
     position: absolute;
-    top: 5%;
-    left: 0%;
+    top: 8.5%;
+    left: 2%;
     pointer-events: none;
+    border: 1px solid white;
 }
 
 #forecastDiv {

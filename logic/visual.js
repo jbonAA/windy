@@ -15,15 +15,19 @@ class Visual {
             .attr("height", h)
 
         for(let i = 0; i < this.datum.length; i++){
-            // this.formatBez(this.datum[i])
-            console.log(this.datum[i], "datumi")
+            console.log(this.datum[i], "data to append transitional circle")
             let path = this.datum[i];
             if(path.tracks.length > 4){
                 let d = this.formatPath(path.start, path.tracks)
+                console.log("dpath", d)
                     svg.append("path")
                         .attr("d", d)
                         .attr("stroke", 'rgb(255, 255, 255)')
                         .attr("fill", "none")
+                        .attr("easing", "easeInOutQuad")
+                        .attr("duration", 8000)
+                        .attr("loop", true)
+                        .attr("direction", "alternate")
             }
 
         }
@@ -37,9 +41,9 @@ class Visual {
         let collection = []
 
         collection.push(`M ${startPair[0]} ${startPair[1]}`)
-        collection.push(`C ${tracks[quarter][0]} ${tracks[quarter][1]}`)
+        collection.push(`q ${tracks[quarter][0]} ${tracks[quarter][1]}`)
         collection.push(`${tracks[half][0]} ${tracks[half][1]}`)
-        collection.push(`${tracks[tracks.length - 1][0]} ${tracks[tracks.length - 1][1]}`)
+        collection.push(`${tracks[tracks.length - 1][0]} ${tracks[tracks.length - 1][1]} Z`)
 
         console.log("collection", collection.join(" "))
         return collection.join(" ")

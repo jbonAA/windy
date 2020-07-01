@@ -3317,12 +3317,7 @@ var Point = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var d3_quadtree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3-quadtree */ "./node_modules/d3-quadtree/src/index.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
 
 var Simulation = function Simulation(w, h, center, data) {
   _classCallCheck(this, Simulation);
@@ -3331,8 +3326,7 @@ var Simulation = function Simulation(w, h, center, data) {
   this.height = h;
   this.center = center;
   this.data = [];
-} //
-;
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Simulation);
 
@@ -3372,13 +3366,13 @@ var Visual = /*#__PURE__*/function () {
       var svg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]("#components").append("svg").attr("id", 'svgToRemove').attr("width", w).attr("height", h);
 
       for (var i = 0; i < this.datum.length; i++) {
-        // this.formatBez(this.datum[i])
-        console.log(this.datum[i], "datumi");
+        console.log(this.datum[i], "data to append transitional circle");
         var path = this.datum[i];
 
         if (path.tracks.length > 4) {
           var d = this.formatPath(path.start, path.tracks);
-          svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
+          console.log("dpath", d);
+          svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none").attr("easing", "easeInOutQuad").attr("duration", 8000).attr("loop", true).attr("direction", "alternate");
         }
       }
     }
@@ -3390,9 +3384,9 @@ var Visual = /*#__PURE__*/function () {
       console.log("quarter half", quarter, half);
       var collection = [];
       collection.push("M ".concat(startPair[0], " ").concat(startPair[1]));
-      collection.push("C ".concat(tracks[quarter][0], " ").concat(tracks[quarter][1]));
+      collection.push("q ".concat(tracks[quarter][0], " ").concat(tracks[quarter][1]));
       collection.push("".concat(tracks[half][0], " ").concat(tracks[half][1]));
-      collection.push("".concat(tracks[tracks.length - 1][0], " ").concat(tracks[tracks.length - 1][1]));
+      collection.push("".concat(tracks[tracks.length - 1][0], " ").concat(tracks[tracks.length - 1][1], " Z"));
       console.log("collection", collection.join(" "));
       return collection.join(" ");
     }
