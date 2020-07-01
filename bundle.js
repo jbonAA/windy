@@ -2827,10 +2827,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
       var nE = bounds.getNorthEast();
       var nW = bounds.getNorthWest();
       var sE = bounds.getSouthEast();
-      var sW = bounds.getSouthWest();
-      console.log(nE, nW, sE, sW);
-      console.log("ne, nw, se, sw");
-      console.log(bounds); //grab height width of mapDiv for canvas/vis sizing
+      var sW = bounds.getSouthWest(); //grab height width of mapDiv for canvas/vis sizing
 
       var mD = document.getElementById("mapDiv");
       var infoGather = {
@@ -2844,6 +2841,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
       // })
 
       var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
+      console.log(wind, "wind");
       setTimeout(function () {
         // console.log(wind.forecastTomorrow)
         _this3.setState({
@@ -2871,12 +2869,11 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
               case 2:
                 canv = _context.sent;
-                console.log(canv);
                 this.setState({
                   canvas: true
                 });
 
-              case 5:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -3051,7 +3048,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(50);
+    this.modelData(100);
   }
 
   _createClass(Canvas, [{
@@ -3083,7 +3080,6 @@ var Canvas = /*#__PURE__*/function () {
         var _ref = [point.pos[0], point.pos[1]],
             _x = _ref[0],
             _y = _ref[1];
-        console.log("x, y", _x, _y);
         point.populateControlPoints(_x, _y, 0);
         point.endPoint = point.controlPoints.pop();
       }
@@ -3100,6 +3096,10 @@ var Canvas = /*#__PURE__*/function () {
     key: "findQuadrant",
     value: function findQuadrant(x, y, quadObject) {
       switch (x >= 0) {
+        case x >= this.width / 2 - 50 && x <= this.width / 2 + 50 && y <= this.height / 2 + 50 && y >= this.height / 2 - 50:
+          console.log("boundsThroug");
+          return quadObject["current"];
+
         case x <= this.width / 2:
           if (y <= this.height / 2) {
             return quadObject["0"];
@@ -3181,7 +3181,6 @@ var Path = /*#__PURE__*/function () {
           y: el[1]
         });
       });
-      console.log("coords", this.coords);
     }
   }]);
 
@@ -3265,7 +3264,7 @@ var Point = /*#__PURE__*/function () {
           }
 
         default:
-          return quadObject['0'];
+          return quadObject['current'];
       }
     }
   }, {
@@ -3288,7 +3287,7 @@ var Point = /*#__PURE__*/function () {
 
       var n = Object(_logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__["default"])(quad.deg);
       var m = cardinalSlopes[n];
-      var _ref = [Math.floor(x + m[0] + quad.speed * 2), Math.floor(y + m[1] + quad.speed * 2)],
+      var _ref = [Math.floor(x + m[0]), Math.floor(y + m[1])],
           x2 = _ref[0],
           y2 = _ref[1];
 
@@ -3366,7 +3365,6 @@ var Visual = /*#__PURE__*/function () {
       var svg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]("#components").append("svg").attr("id", 'svgToRemove').attr("width", w).attr("height", h);
 
       for (var i = 0; i < this.datum.length; i++) {
-        console.log(this.datum[i], "data to append transitional circle");
         var path = this.datum[i];
 
         if (path.tracks.length > 4) {
@@ -3389,10 +3387,9 @@ var Visual = /*#__PURE__*/function () {
       var half = Math.floor(tracks.length / 2);
       var collection = [];
       collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
-      collection.push("Q ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
+      collection.push("q ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
       collection.push("".concat(tracks[half][0], ",").concat(tracks[half][1]));
-      collection.push("t ".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
-      console.log("collection", collection.join(" "));
+      collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1], " z"));
       return collection.join(" ");
     }
   }]);
@@ -3571,7 +3568,12 @@ var WindDirections = /*#__PURE__*/function () {
                     weather: weather,
                     name: name
                   };
-                  _this3.weatherStation = res.name;
+                  _this3.weatherStation = res.name; // changesbelow
+
+                  _this3.quadrants["current"] = {
+                    speed: windSpeed,
+                    deg: windDirDeg
+                  };
                 });
 
               case 5:

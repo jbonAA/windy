@@ -16,7 +16,7 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.modelData(50)
+        this.modelData(100)
     }
 
     drawBezierCurves(points) {
@@ -49,7 +49,6 @@ class Canvas {
             let point = this.data[j];
             let [x, y] = [point.pos[0], point.pos[1]]
 
-            console.log("x, y", x, y)
 
             point.populateControlPoints(x, y, 0)
             point.endPoint = point.controlPoints.pop()
@@ -69,6 +68,9 @@ class Canvas {
     findQuadrant(x, y, quadObject) {
 
         switch(x >= 0){
+            case x >= this.width / 2 - 50 && x <= this.width / 2 + 50 && y <= this.height / 2 + 50 && y >= this.height / 2 - 50:
+                console.log("boundsThroug")
+                return quadObject["current"]
             case x <= this.width / 2:
                 if(y <= this.height / 2){
                     return quadObject["0"]
@@ -83,9 +85,8 @@ class Canvas {
                 }
             default:
                 return quadObject['0']
-
-
         }
+
     }
 
 

@@ -14,8 +14,6 @@ class Path {
         track.forEach((el) => {
             this.coords.push({x: el[0], y: el[1]})
         })
-
-        console.log("coords", this.coords)
     }   
 
 }

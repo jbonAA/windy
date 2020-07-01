@@ -55,7 +55,7 @@ class Point {
                     return quadObject['3']
                 }
             default:
-                return quadObject['0']
+                return quadObject['current']
 
 
         }
@@ -83,7 +83,7 @@ class Point {
         let m = cardinalSlopes[n]
 
 
-        let [x2, y2] = [Math.floor(x + m[0] + quad.speed * 2), Math.floor(y + m[1] + quad.speed * 2)]
+        let [x2, y2] = [Math.floor(x + m[0]), Math.floor(y + m[1])]
 
         if(this.outOfBounds(x2, y2) || modifier === 20){
             return;

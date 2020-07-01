@@ -121,10 +121,6 @@ class Root extends React.Component {
         let nW = bounds.getNorthWest();
         let sE = bounds.getSouthEast();
         let sW = bounds.getSouthWest();
-        console.log(nE, nW, sE, sW)
-        console.log("ne, nw, se, sw")
-
-        console.log(bounds)
 
         //grab height width of mapDiv for canvas/vis sizing
 
@@ -144,6 +140,7 @@ class Root extends React.Component {
         // })
 
         const wind = new WindDirection(infoGather)
+        console.log(wind, "wind")
 
         setTimeout(() => {
             // console.log(wind.forecastTomorrow)
@@ -167,7 +164,6 @@ class Root extends React.Component {
         // console.log(currentForecast)
 
         const canv = await new Canvas(quadrants, currentForecast)
-        console.log(canv)
         this.setState({
             canvas: true
         })

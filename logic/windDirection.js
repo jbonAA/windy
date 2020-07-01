@@ -53,7 +53,7 @@ class WindDirections {
                 res.city.name,
                 res.list[3].dt_txt
             ]
-            
+
 
             this.forecastTomorrow = {
                 windSpeed,
@@ -105,8 +105,12 @@ class WindDirections {
                 weather,
                 name
             }
-            this.weatherStation = res.name
 
+            this.weatherStation = res.name
+            
+
+            // changesbelow
+            this.quadrants["current"] = { speed: windSpeed, deg: windDirDeg }
         })
     }
 
