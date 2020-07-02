@@ -68,23 +68,24 @@ class Canvas {
     findQuadrant(x, y, quadObject) {
 
         switch(x >= 0){
-            case x >= this.width / 2 - 50 && x <= this.width / 2 + 50 && y <= this.height / 2 + 50 && y >= this.height / 2 - 50:
-                console.log("boundsThroug")
-                return quadObject["current"]
-            case x <= this.width / 2:
-                if(y <= this.height / 2){
+            case x <= this.width / 2 + 50:
+                if(y < this.height / 2 - 50){
                     return quadObject["0"]
-                }else{
+                }else if(y >this.height / 2 + 50){
                     return quadObject['2']
-                }
-            case x > this.width / 2:
-                if(y <= this.height / 2){
-                    return quadObject['1']
                 }else{
+                    return quadObject['current']
+                }
+            case x > this.width / 2 - 50:
+                if(y <= this.height / 2 - 50){
+                    return quadObject['1']
+                }else if(y >= this.height / 2 + 50){
                     return quadObject['3']
+                }else{
+                    return quadObject['current']
                 }
             default:
-                return quadObject['0']
+                return quadObject['current']
         }
 
     }

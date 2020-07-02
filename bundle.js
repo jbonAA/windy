@@ -3096,26 +3096,26 @@ var Canvas = /*#__PURE__*/function () {
     key: "findQuadrant",
     value: function findQuadrant(x, y, quadObject) {
       switch (x >= 0) {
-        case x >= this.width / 2 - 50 && x <= this.width / 2 + 50 && y <= this.height / 2 + 50 && y >= this.height / 2 - 50:
-          console.log("boundsThroug");
-          return quadObject["current"];
-
-        case x <= this.width / 2:
-          if (y <= this.height / 2) {
+        case x <= this.width / 2 + 50:
+          if (y < this.height / 2 - 50) {
             return quadObject["0"];
-          } else {
+          } else if (y > this.height / 2 + 50) {
             return quadObject['2'];
+          } else {
+            return quadObject['current'];
           }
 
-        case x > this.width / 2:
-          if (y <= this.height / 2) {
+        case x > this.width / 2 - 50:
+          if (y <= this.height / 2 - 50) {
             return quadObject['1'];
-          } else {
+          } else if (y >= this.height / 2 + 50) {
             return quadObject['3'];
+          } else {
+            return quadObject['current'];
           }
 
         default:
-          return quadObject['0'];
+          return quadObject['current'];
       }
     }
   }, {
@@ -3362,21 +3362,65 @@ var Visual = /*#__PURE__*/function () {
   _createClass(Visual, [{
     key: "visInit",
     value: function visInit(w, h) {
-      var svg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]("#components").append("svg").attr("id", 'svgToRemove').attr("width", w).attr("height", h);
+      var _this = this;
+
+      var canv = d3__WEBPACK_IMPORTED_MODULE_0__["select"]("#components").append("svg").attr("id", 'svgToRemove').attr("width", w).attr("height", h);
 
       for (var i = 0; i < this.datum.length; i++) {
-        var path = this.datum[i];
+        var p = this.datum[i];
 
-        if (path.tracks.length > 4) {
-          var d = this.formatPath(path.start, path.tracks); // console.log("dpath", d) fix error in console
-          //need to fix error in console then consider
-          //adding a 5th quadrant reflecting the direction 
-          //maybe 100 square around center
-          //extra case
-          //may have to rework the formatPath method to include
-          //elements in the center
+        if (p.tracks.length > 4) {
+          (function () {
+            var circleTransition = function circleTransition() {
+              var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 8);
+              repeat();
 
-          var p = svg.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
+              function repeat() {
+                timeCircle.attr('cx', 25) // position the circle at 40 on the x axis
+                .attr('cy', 25) // position the circle at 250 on the y axis
+                .attr("opacity", 1).transition() // apply a transition
+                .duration(3000) // apply it over 2000 milliseconds
+                .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
+                  return pathTween(path);
+                }).transition().duration(100).attr("opacity", 0).transition().duration(200).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
+                  return reverseTween(path);
+                }).on("end", repeat); // console.log(timeCircle)
+
+                function reverseTween(path) {
+                  var length = path.node().getTotalLength();
+                  var r = d3__WEBPACK_IMPORTED_MODULE_0__["interpolate"](length, 0);
+                  return function (t) {
+                    var point = path.node().getPointAtLength(r(t));
+                    d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr("cx", point.x).attr("cy", point.y);
+                  };
+                }
+
+                function pathTween(path) {
+                  var length = path.node().getTotalLength();
+                  var r = d3__WEBPACK_IMPORTED_MODULE_0__["interpolate"](0, length);
+                  return function (t) {
+                    var point = path.node().getPointAtLength(r(t));
+                    d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr("cx", point.x).attr("cy", point.y);
+                  };
+                }
+              }
+
+              ;
+            };
+
+            var d = _this.formatPath(p.start, p.tracks); // console.log("dpath", d) fix error in console
+            //need to fix error in console then consider
+            //adding a 5th quadrant reflecting the direction 
+            //maybe 100 square around center
+            //extra case
+            //may have to rework the formatPath method to include
+            //elements in the center
+
+
+            var path = canv.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
+            ;
+            circleTransition();
+          })();
         }
       }
     }
