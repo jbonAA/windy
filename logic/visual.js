@@ -35,9 +35,10 @@ class Visual {
                     .attr("d", d)
                     .attr("stroke", 'rgb(255, 255, 255)')
                     .attr("fill", "none")
+                    .attr("stroke-width", '1')
                 
        
-                function circleTransition(speed, start) {
+                function circleTransition(speed, start, length) {
 
                     var timeCircle = canv.append("circle")
                         .attr("fill", "white")
@@ -50,7 +51,7 @@ class Visual {
                             .attr('cy', start[1])     // position the circle at 250 on the y axis
                             .attr("opacity", 1)
                             .transition()        // apply a transition
-                            .duration(6000 - Math.floor(200 * speed))      // apply it over 2000 milliseconds
+                            .duration(4000 - Math.floor(200 * speed))      // apply it over 2000 milliseconds
                             .ease(d3.easeLinear)
                             .tween("pathTween", function () { return pathTween(path) })
                             .transition()
@@ -92,7 +93,7 @@ class Visual {
 
                 };
 
-                circleTransition(p.speed, p.start);
+                circleTransition(p.speed, p.start, p.tracks.length);
 
                 }
                     
@@ -108,7 +109,6 @@ class Visual {
      
 
         collection.push(`M ${startPair[0]},${startPair[1]}`)
-        collection.push(`t ${tracks[1][0]},${tracks[1][1]}`)
         collection.push(`q ${tracks[half][0]},${tracks[half][1]}`)
         collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
 
