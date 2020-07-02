@@ -3295,7 +3295,7 @@ var Point = /*#__PURE__*/function () {
           x2 = _ref[0],
           y2 = _ref[1];
 
-      if (this.outOfBounds(x2, y2) || modifier === 40) {
+      if (this.outOfBounds(x2, y2) || modifier === 30) {
         return;
       } else {
         this.controlPoints.push([x2, y2]);
