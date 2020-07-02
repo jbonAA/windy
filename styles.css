@@ -189,6 +189,11 @@ h3 {
     width: 12%;
 }
 
+#icons svg {
+    height: 100%;
+    width: 100%;
+}
+
 #h2 h2 {
     margin-bottom: 0%;
 }

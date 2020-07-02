@@ -96,12 +96,12 @@ class Forecast extends React.Component {
 
                 <div id="links">
                     <div id="icons">
-                        <TempGit id="iconSizing"/>
+                        <TempGit/>
                         {/* githubIconAsTemporaryComponent */}
                     </div>
                     <p>Repo Available on Github and LinkedIn</p>
                     <div id="icons">
-                        <TempIn id="iconSizing"/>
+                        <TempIn/>
                         {/* linkedInIconAsTempComponent */}
                     </div>
                 </div>

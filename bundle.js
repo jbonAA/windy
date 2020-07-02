@@ -2415,13 +2415,9 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
         id: "links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempGit, {
-        id: "iconSizing"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Repo Available on Github and LinkedIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempGit, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Repo Available on Github and LinkedIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempIn, {
-        id: "iconSizing"
-      }))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempIn, null))));
     }
   }]);
 
@@ -3517,7 +3513,7 @@ var Visual = /*#__PURE__*/function () {
       var half = Math.floor(tracks.length / 2);
       var collection = [];
       collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
-      collection.push("t ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
+      collection.push("t ".concat(tracks[1][0], ",").concat(tracks[1][1]));
       collection.push("q ".concat(tracks[half][0], ",").concat(tracks[half][1]));
       collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
       console.log("collect", collection.join(" "));
