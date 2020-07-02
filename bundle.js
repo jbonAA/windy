@@ -3048,7 +3048,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(30);
+    this.modelData(50);
   }
 
   _createClass(Canvas, [{
@@ -3056,7 +3056,7 @@ var Canvas = /*#__PURE__*/function () {
     value: function drawBezierCurves(points) {
       var datum = [];
       points.forEach(function (point) {
-        datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos));
+        datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos, point.speed));
       });
       var newVis = new _visual__WEBPACK_IMPORTED_MODULE_3__["default"](datum);
       newVis.visInit(this.width, this.height);
@@ -3157,12 +3157,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var Path = /*#__PURE__*/function () {
-  function Path(cp, pos) {
+  function Path(cp, pos, speed) {
     _classCallCheck(this, Path);
 
     this.tracks = cp;
     this.start = pos;
     this.coords = [];
+    this.speed = speed;
     this.formatCoords(this.start, this.tracks); //where the element will be created and attributed before added
   }
 
@@ -3379,7 +3380,7 @@ var Visual = /*#__PURE__*/function () {
 
           if (d) {
             (function () {
-              var circleTransition = function circleTransition() {
+              var circleTransition = function circleTransition(speed) {
                 var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 4);
                 repeat();
 
@@ -3387,10 +3388,10 @@ var Visual = /*#__PURE__*/function () {
                   timeCircle.attr('cx', 25) // position the circle at 40 on the x axis
                   .attr('cy', 25) // position the circle at 250 on the y axis
                   .attr("opacity", 1).transition() // apply a transition
-                  .duration(3000) // apply it over 2000 milliseconds
+                  .duration(5000 - 100 * speed) // apply it over 2000 milliseconds
                   .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
                     return pathTween(path);
-                  }).transition().duration(100).attr("opacity", 0).transition().duration(200).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
+                  }).transition().duration(100).attr("opacity", 0).transition().duration(100).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
                     return reverseTween(path);
                   }).on("end", repeat); // console.log(timeCircle)
 
@@ -3418,7 +3419,7 @@ var Visual = /*#__PURE__*/function () {
 
               var path = canv.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
               ;
-              circleTransition();
+              circleTransition(p.speed);
             })();
           }
         }

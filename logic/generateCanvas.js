@@ -16,14 +16,14 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.modelData(30)
+        this.modelData(50)
     }
 
     drawBezierCurves(points) {
         let datum = [];
 
         points.forEach((point) => {
-            datum.push(new Path(point.controlPoints, point.pos))
+            datum.push(new Path(point.controlPoints, point.pos, point.speed))
         })
 
         let newVis = new Visual(datum)

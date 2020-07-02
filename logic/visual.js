@@ -37,7 +37,7 @@ class Visual {
                     .attr("fill", "none")
                 
        
-                function circleTransition() {
+                function circleTransition(speed) {
 
                     var timeCircle = canv.append("circle")
                         .attr("fill", "white")
@@ -50,14 +50,14 @@ class Visual {
                             .attr('cy', 25)     // position the circle at 250 on the y axis
                             .attr("opacity", 1)
                             .transition()        // apply a transition
-                            .duration(3000)      // apply it over 2000 milliseconds
+                            .duration(5000 - (100 * speed))      // apply it over 2000 milliseconds
                             .ease(d3.easeLinear)
                             .tween("pathTween", function () { return pathTween(path) })
                             .transition()
                             .duration(100)
                             .attr("opacity", 0)
                             .transition()
-                            .duration(200)
+                            .duration(100)
                             .ease(d3.easeLinear)
                             .tween("reverseTween", function () { return reverseTween(path) })
                             .on("end", repeat)
@@ -92,7 +92,7 @@ class Visual {
 
                 };
 
-                circleTransition();
+                circleTransition(p.speed);
 
                 }
                     

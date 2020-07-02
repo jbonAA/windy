@@ -1,8 +1,9 @@
 class Path {
-    constructor(cp, pos){
+    constructor(cp, pos, speed){
         this.tracks = cp;
         this.start = pos;
-        this.coords = []
+        this.coords = [];
+        this.speed = speed
 
         this.formatCoords(this.start, this.tracks)
         //where the element will be created and attributed before added
