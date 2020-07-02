@@ -3143,6 +3143,7 @@ var Canvas = /*#__PURE__*/function () {
         datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos, point.speed));
       });
       var newVis = new _visual__WEBPACK_IMPORTED_MODULE_3__["default"](datum);
+      console.log(newVis, "newVis");
       newVis.visInit(this.width, this.height);
     } //format el point to path by extrapolating xy pairs
 
@@ -3373,9 +3374,19 @@ var Point = /*#__PURE__*/function () {
 
       var n = Object(_logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__["default"])(quad.deg);
       var m = cardinalSlopes[n];
-      var _ref = [Math.floor(x + m[0]), Math.floor(y + m[1])],
-          x2 = _ref[0],
-          y2 = _ref[1];
+      var x2, y2;
+
+      if (m[0] > 0) {
+        x2 = Math.floor(x + m[0]);
+      } else {
+        x2 = Math.floor(x - Math.abs(m[0]));
+      }
+
+      if (m[1] > 0) {
+        y2 = Math.floor(y + m[1]);
+      } else {
+        y2 = Math.floor(y - Math.abs(m[1]));
+      }
 
       if (this.outOfBounds(x2, y2) || modifier === 30) {
         return;
@@ -3443,6 +3454,7 @@ var Visual = /*#__PURE__*/function () {
     _classCallCheck(this, Visual);
 
     this.datum = datum;
+    console.log(this.datum);
   }
 
   _createClass(Visual, [{
@@ -3473,7 +3485,7 @@ var Visual = /*#__PURE__*/function () {
                   timeCircle.attr('cx', start[0]) // position the circle at 40 on the x axis
                   .attr('cy', start[1]) // position the circle at 250 on the y axis
                   .attr("opacity", 1).transition() // apply a transition
-                  .duration(6000 - Math.floor(200 * speed + length * 10)) // apply it over 2000 milliseconds
+                  .duration(4000 - Math.floor(10 * speed + length)) // apply it over 2000 milliseconds
                   .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
                     return pathTween(path);
                   }).transition().duration(100).attr("opacity", 0).transition().duration(100).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
@@ -3516,8 +3528,15 @@ var Visual = /*#__PURE__*/function () {
       var quarter = Math.floor(tracks.length / 4);
       var half = Math.floor(tracks.length / 2);
       var collection = [];
-      collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
-      collection.push("q ".concat(tracks[half][0], ",").concat(tracks[half][1]));
+
+      if (tracks[0][0] > tracks[tracks.length - 1][0]) {
+        tracks = tracks.reverse();
+      } //my issue is that I have the tracks ordered from first to last
+      //so when I'm asking the program to draw 
+
+
+      collection.push("M ".concat(tracks[0][0], ",").concat(tracks[0][1]));
+      collection.push("q ".concat(tracks[1][0], ",").concat(tracks[1][1]));
       collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
       console.log("collect", collection.join(" "));
       return collection.join(" ");

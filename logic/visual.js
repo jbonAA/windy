@@ -5,6 +5,8 @@ import React from 'react'
 class Visual {
     constructor(datum){
         this.datum = datum;
+
+        console.log(this.datum)
     }
 
 
@@ -14,6 +16,8 @@ class Visual {
             .attr("id", 'svgToRemove')
             .attr("width", w)
             .attr("height", h)
+
+
 
 
         for(let i = 0; i < this.datum.length; i++){
@@ -51,7 +55,7 @@ class Visual {
                             .attr('cy', start[1])     // position the circle at 250 on the y axis
                             .attr("opacity", 1)
                             .transition()        // apply a transition
-                            .duration(6000 - Math.floor(200 * speed + (length * 10)))      // apply it over 2000 milliseconds
+                            .duration(4000 - Math.floor(10 * speed + length))      // apply it over 2000 milliseconds
                             .ease(d3.easeLinear)
                             .tween("pathTween", function () { return pathTween(path) })
                             .transition()
@@ -106,10 +110,16 @@ class Visual {
         let quarter = Math.floor(tracks.length / 4)
         let half = Math.floor(tracks.length / 2)
         let collection = []
-     
 
-        collection.push(`M ${startPair[0]},${startPair[1]}`)
-        collection.push(`q ${tracks[half][0]},${tracks[half][1]}`)
+        if(tracks[0][0] > tracks[tracks.length - 1][0]){
+            tracks = tracks.reverse()
+        }
+
+        //my issue is that I have the tracks ordered from first to last
+        //so when I'm asking the program to draw 
+     
+        collection.push(`M ${tracks[0][0]},${tracks[0][1]}`)
+        collection.push(`q ${ tracks[1][0] },${ tracks[1][1] }`)
         collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
 
         console.log("collect",collection.join(" "))

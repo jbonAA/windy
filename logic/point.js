@@ -82,8 +82,20 @@ class Point {
         let n = ref(quad.deg)
         let m = cardinalSlopes[n]
 
+        let x2, y2;
 
-        let [x2, y2] = [Math.floor(x + m[0]), Math.floor(y + m[1])]
+        if(m[0] > 0){
+            x2 = Math.floor(x + m[0])
+        }else{
+            x2 = Math.floor(x - Math.abs(m[0]))
+        }
+
+        if(m[1] > 0){
+            y2 = Math.floor(y + m[1])
+        }else{
+            y2 = Math.floor(y - Math.abs(m[1]))
+        }
+
 
         if(this.outOfBounds(x2, y2) || modifier === 30){
             return;

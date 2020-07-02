@@ -28,6 +28,8 @@ class Canvas {
 
         let newVis = new Visual(datum)
 
+        console.log(newVis, "newVis")
+
         newVis.visInit(this.width, this.height)
     }
 
