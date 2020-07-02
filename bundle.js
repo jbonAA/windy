@@ -3048,7 +3048,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(50);
+    this.modelData(30);
   }
 
   _createClass(Canvas, [{
@@ -3291,7 +3291,7 @@ var Point = /*#__PURE__*/function () {
           x2 = _ref[0],
           y2 = _ref[1];
 
-      if (this.outOfBounds(x2, y2) || modifier === 15) {
+      if (this.outOfBounds(x2, y2) || modifier === 20) {
         return;
       } else {
         this.controlPoints.push([x2, y2]);
@@ -3366,6 +3366,7 @@ var Visual = /*#__PURE__*/function () {
 
       for (var i = 0; i < this.datum.length; i++) {
         var p = this.datum[i];
+        console.log(p, "_______p");
 
         if (p.tracks.length > 4) {
           var d = this.formatPath(p.start, p.tracks); // console.log("dpath", d) fix error in console
@@ -3431,7 +3432,7 @@ var Visual = /*#__PURE__*/function () {
       var collection = [];
       collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
       collection.push("t ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
-      collection.push("q ".concat(tracks[half][0], ", ").concat(tracks[half][1]));
+      collection.push("q ".concat(tracks[half][0], ",").concat(tracks[half][1]));
       collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
       console.log("collect", collection.join(" "));
       return collection.join(" ");

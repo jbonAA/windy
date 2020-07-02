@@ -18,6 +18,7 @@ class Visual {
 
         for(let i = 0; i < this.datum.length; i++){
             let p = this.datum[i];
+            console.log(p, "_______p")
             if(p.tracks.length > 4){
                 let d = this.formatPath(p.start, p.tracks)
                 // console.log("dpath", d) fix error in console
@@ -108,7 +109,7 @@ class Visual {
 
         collection.push(`M ${startPair[0]},${startPair[1]}`)
         collection.push(`t ${tracks[quarter][0]},${tracks[quarter][1]}`)
-        collection.push(`q ${tracks[half][0]}, ${tracks[half][1]}`)
+        collection.push(`q ${tracks[half][0]},${tracks[half][1]}`)
         collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
 
         console.log("collect",collection.join(" "))
