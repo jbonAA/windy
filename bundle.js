@@ -2186,6 +2186,7 @@ __webpack_require__.r(__webpack_exports__);
 
  //50
 
+ //import components for github and linkedin
 
 var iconComponents = {
   '01d': _collection_01_clearDay__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2553,9 +2554,13 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
         id: "forecastItem"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempComponent, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "iconTemp"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempComponent, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "tempMain"
+      }, temp, "\xB0")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "description"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp, "\xB0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cloud Cover: ", cloudCover, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Humidity: ", humidity, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Speed: ", windSpeed), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Direction: ", direction))));
     }
@@ -3383,13 +3388,13 @@ var Visual = /*#__PURE__*/function () {
 
           if (d) {
             (function () {
-              var circleTransition = function circleTransition(speed) {
+              var circleTransition = function circleTransition(speed, start) {
                 var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 5);
                 repeat();
 
                 function repeat() {
-                  timeCircle.attr('cx', 25) // position the circle at 40 on the x axis
-                  .attr('cy', 25) // position the circle at 250 on the y axis
+                  timeCircle.attr('cx', start[0]) // position the circle at 40 on the x axis
+                  .attr('cy', start[1]) // position the circle at 250 on the y axis
                   .attr("opacity", 1).transition() // apply a transition
                   .duration(6000 - Math.floor(200 * speed)) // apply it over 2000 milliseconds
                   .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
@@ -3422,7 +3427,7 @@ var Visual = /*#__PURE__*/function () {
 
               var path = canv.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
               ;
-              circleTransition(p.speed);
+              circleTransition(p.speed, p.start);
             })();
           }
         }

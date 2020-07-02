@@ -24,6 +24,8 @@ import Snowy6Night from './collection/13/snowy6night'
 //50
 import Cloudy from './collection/50/cloudy'
 
+//import components for github and linkedin
+
 const iconComponents = {
     '01d': ClearDay,
     '01n': ClearNight,

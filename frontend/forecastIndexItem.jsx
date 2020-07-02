@@ -136,14 +136,13 @@ class ForecastIndexItem extends React.Component {
         return (
             <div id="forecastItem">
                 <div id="left">
-                    <TempComponent/>
+                    <div id="iconTemp">
+                        <TempComponent/>
+                        <p id="tempMain">{temp}°</p>
+                    </div>
                     <div id="description">
-                        <ul>
-                            <p>{temp}°</p>
-                            <p>{description}</p>
-                            <p>Feels Like: {Math.floor(feels_like)}°</p>
-
-                        </ul>
+                        <p>{description}</p>
+                        <p>Feels Like: {Math.floor(feels_like)}°</p>
                     </div>
                 </div>
                 <div id="right">
