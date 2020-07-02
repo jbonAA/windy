@@ -1,6 +1,9 @@
 import React from 'react';
 import ForecastIndexItem from './forecastIndexItem';
 
+import iconComponents from '../frontend/SvgComponents/iconExport';
+
+
 class Forecast extends React.Component {
     constructor(props){
         super(props)
@@ -36,6 +39,9 @@ class Forecast extends React.Component {
             tomorrowForecast,
             weatherStation
         } = this.props;
+
+        let TempGit = iconComponents["Github"]
+        let TempIn = iconComponents["LinkedIn"]
 
         let display;
 
@@ -90,10 +96,12 @@ class Forecast extends React.Component {
 
                 <div id="links">
                     <div id="icons">
+                        <TempGit/>
                         {/* githubIconAsTemporaryComponent */}
                     </div>
                     <p>Repo Available on Github and LinkedIn</p>
                     <div id="icons">
+                        <TempIn/>
                         {/* linkedInIconAsTempComponent */}
                     </div>
                 </div>

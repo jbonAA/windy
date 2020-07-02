@@ -2311,6 +2311,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forecastIndexItem */ "./frontend/forecastIndexItem.jsx");
+/* harmony import */ var _frontend_SvgComponents_iconExport__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../frontend/SvgComponents/iconExport */ "./frontend/SvgComponents/iconExport.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2332,6 +2333,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -2374,6 +2376,8 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
           currentForecast = _this$props.currentForecast,
           tomorrowForecast = _this$props.tomorrowForecast,
           weatherStation = _this$props.weatherStation;
+      var TempGit = _frontend_SvgComponents_iconExport__WEBPACK_IMPORTED_MODULE_2__["default"]["Github"];
+      var TempIn = _frontend_SvgComponents_iconExport__WEBPACK_IMPORTED_MODULE_2__["default"]["LinkedIn"];
       var display;
 
       if (currentForecast.weather && tomorrowForecast.weather) {
@@ -2411,9 +2415,9 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
         id: "links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Repo Available on Github and LinkedIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempGit, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Repo Available on Github and LinkedIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
-      })));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempIn, null))));
     }
   }]);
 
