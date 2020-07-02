@@ -219,8 +219,14 @@ h3 {
     height: 22%;
     width: 96%;
     margin: 2%;
-    border: 1px solid black;
     background-color: white;
+}
+
+#descript {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
