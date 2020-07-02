@@ -25,6 +25,8 @@ import Snowy6Night from './collection/13/snowy6night'
 import Cloudy from './collection/50/cloudy'
 
 //import components for github and linkedin
+import Github from '../SvgComponents/collection/github/github';
+import LinkedIn from '../SvgComponents/collection/linkedIn/linkedin-round'
 
 const iconComponents = {
     '01d': ClearDay,
@@ -45,6 +47,8 @@ const iconComponents = {
     '13n': Snowy6Night,
     '50d': Cloudy,
     '50n': Cloudy,
+    'Github': Github,
+    "LinkedIn": LinkedIn
 }
 
 export default iconComponents

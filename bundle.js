@@ -2137,6 +2137,69 @@ var Cloudy = function Cloudy() {
 
 /***/ }),
 
+/***/ "./frontend/SvgComponents/collection/github/github.js":
+/*!************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/github/github.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Github = function Github() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlnsXlink: "http://www.w3.org/1999/xlink",
+    version: "1.1",
+    id: "Layer_1",
+    x: "0px",
+    y: "0px",
+    viewBox: "0 0 24 24",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M14.5 23.862a.5.5 0 0 1-.5-.5v-3.72c0-.899-.115-1.537-.363-2.005a.5.5 0 0 1 .329-.72C16.93 16.233 19 14.064 19 11.642c0-1.2-.493-2.345-1.425-3.312a.5.5 0 0 1-.094-.558c.372-.802.293-1.894-.148-2.549-.583.228-1.34.705-1.832 1.289a.496.496 0 0 1-.554.147 8.67 8.67 0 0 0-5.893 0 .5.5 0 0 1-.554-.146c-.492-.584-1.249-1.061-1.833-1.289-.441.655-.52 1.747-.148 2.549a.498.498 0 0 1-.094.557C5.493 9.297 5 10.443 5 11.642c0 2.307 1.863 4.385 4.636 5.17a.501.501 0 0 1 .364.482v.349c0 .626-.251.979-.462 1.166-.452.397-1.036.337-1.1.33h-.01c-.824 0-1.444-.459-2.043-.903-.301-.223-.606-.45-.961-.638.077.104.153.211.23.318.75 1.043 1.599 2.226 2.847 2.226h1a.5.5 0 0 1 .5.5v2.72a.5.5 0 0 1-.608.488C3.95 22.642 0 17.719 0 12.142c0-6.617 5.383-12 12-12s12 5.383 12 12c0 5.576-3.95 10.5-9.392 11.708a.497.497 0 0 1-.108.012zm.258-6.121c.164.517.242 1.137.242 1.901v3.078c4.671-1.326 8-5.677 8-10.578 0-6.065-4.935-11-11-11s-11 4.935-11 11c0 4.901 3.329 9.252 8 10.578v-1.578h-.5c-1.76 0-2.813-1.465-3.659-2.643-.479-.667-.975-1.357-1.341-1.357a.5.5 0 0 1 0-1c1.74 0 2.705.715 3.48 1.29.536.397.958.71 1.52.71.056.003.263.018.379-.086.095-.086.119-.257.121-.392-3.006-.987-5-3.368-5-6.021 0-1.364.512-2.66 1.484-3.766-.429-1.243-.164-2.761.662-3.588a.494.494 0 0 1 .481-.13c.668.177 1.66.696 2.401 1.451a9.706 9.706 0 0 1 5.941 0c.741-.755 1.733-1.274 2.401-1.451a.493.493 0 0 1 .481.13c.827.827 1.091 2.345.662 3.587C19.488 8.983 20 10.279 20 11.642c0 2.728-2.127 5.17-5.242 6.099z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("metadata", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("rdfRDF", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("rdfDescription", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dcCreator", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("rdfBag", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("rdfLi", null, " Icon54 ")))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Github);
+
+/***/ }),
+
+/***/ "./frontend/SvgComponents/collection/linkedIn/linkedin-round.js":
+/*!**********************************************************************!*\
+  !*** ./frontend/SvgComponents/collection/linkedIn/linkedin-round.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var LinkedIn = function LinkedIn() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 3333 3333",
+    "shape-rendering": "geometricPrecision",
+    "text-rendering": "geometricPrecision",
+    "image-rendering": "optimizeQuality",
+    "fill-rule": "evenodd",
+    "clip-rule": "evenodd"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M1667 0c920 0 1667 746 1667 1667 0 920-746 1667-1667 1667C747 3334 0 2588 0 1667 0 747 746 0 1667 0zm-215 1336h342v175h5c48-86 164-175 338-175 361 0 428 225 428 517v596h-357v-528c0-126-3-288-186-288-186 0-214 137-214 279v537h-357V1336zm-247-309c0 102-83 186-186 186-102 0-186-83-186-186 0-102 83-186 186-186 102 0 186 83 186 186zm-371 309h371v1113H834V1336z"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LinkedIn);
+
+/***/ }),
+
 /***/ "./frontend/SvgComponents/iconExport.js":
 /*!**********************************************!*\
   !*** ./frontend/SvgComponents/iconExport.js ***!
@@ -2162,6 +2225,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _collection_13_snowy3day__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./collection/13/snowy3day */ "./frontend/SvgComponents/collection/13/snowy3day.js");
 /* harmony import */ var _collection_13_snowy6night__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./collection/13/snowy6night */ "./frontend/SvgComponents/collection/13/snowy6night.js");
 /* harmony import */ var _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./collection/50/cloudy */ "./frontend/SvgComponents/collection/50/cloudy.js");
+/* harmony import */ var _SvgComponents_collection_github_github__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../SvgComponents/collection/github/github */ "./frontend/SvgComponents/collection/github/github.js");
+/* harmony import */ var _SvgComponents_collection_linkedIn_linkedin_round__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../SvgComponents/collection/linkedIn/linkedin-round */ "./frontend/SvgComponents/collection/linkedIn/linkedin-round.js");
 //01
 
  //02
@@ -2188,6 +2253,8 @@ __webpack_require__.r(__webpack_exports__);
 
  //import components for github and linkedin
 
+
+
 var iconComponents = {
   '01d': _collection_01_clearDay__WEBPACK_IMPORTED_MODULE_0__["default"],
   '01n': _collection_01_clearNight01n__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -2206,7 +2273,9 @@ var iconComponents = {
   '13d': _collection_13_snowy3day__WEBPACK_IMPORTED_MODULE_13__["default"],
   '13n': _collection_13_snowy6night__WEBPACK_IMPORTED_MODULE_14__["default"],
   '50d': _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__["default"],
-  '50n': _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__["default"]
+  '50n': _collection_50_cloudy__WEBPACK_IMPORTED_MODULE_15__["default"],
+  'Github': _SvgComponents_collection_github_github__WEBPACK_IMPORTED_MODULE_16__["default"],
+  "LinkedIn": _SvgComponents_collection_linkedIn_linkedin_round__WEBPACK_IMPORTED_MODULE_17__["default"]
 };
 /* harmony default export */ __webpack_exports__["default"] = (iconComponents); //link to index item for access to icons
 // Icon list
