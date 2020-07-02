@@ -3473,7 +3473,7 @@ var Visual = /*#__PURE__*/function () {
                   timeCircle.attr('cx', start[0]) // position the circle at 40 on the x axis
                   .attr('cy', start[1]) // position the circle at 250 on the y axis
                   .attr("opacity", 1).transition() // apply a transition
-                  .duration(4000 - Math.floor(200 * speed)) // apply it over 2000 milliseconds
+                  .duration(6000 - Math.floor(200 * speed + length * 10)) // apply it over 2000 milliseconds
                   .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
                     return pathTween(path);
                   }).transition().duration(100).attr("opacity", 0).transition().duration(100).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
