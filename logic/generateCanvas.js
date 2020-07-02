@@ -16,7 +16,7 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.modelData(50)
+        this.modelData(70)
     }
 
     drawBezierCurves(points) {
@@ -34,7 +34,7 @@ class Canvas {
     //format el point to path by extrapolating xy pairs
 
     modelData(n) {
-
+        console.log("this.quadrants", this.quadrants)
         let i = 0
 
         while(i < n){

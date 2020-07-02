@@ -41,7 +41,7 @@ class Visual {
 
                     var timeCircle = canv.append("circle")
                         .attr("fill", "white")
-                        .attr("r", 4);
+                        .attr("r", 5);
                     repeat();
 
                     function repeat() {
@@ -50,7 +50,7 @@ class Visual {
                             .attr('cy', 25)     // position the circle at 250 on the y axis
                             .attr("opacity", 1)
                             .transition()        // apply a transition
-                            .duration(5000 - (100 * speed))      // apply it over 2000 milliseconds
+                            .duration(6000 - Math.floor(200 * speed))      // apply it over 2000 milliseconds
                             .ease(d3.easeLinear)
                             .tween("pathTween", function () { return pathTween(path) })
                             .transition()

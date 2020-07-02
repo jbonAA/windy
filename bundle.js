@@ -3048,7 +3048,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(50);
+    this.modelData(70);
   }
 
   _createClass(Canvas, [{
@@ -3065,6 +3065,7 @@ var Canvas = /*#__PURE__*/function () {
   }, {
     key: "modelData",
     value: function modelData(n) {
+      console.log("this.quadrants", this.quadrants);
       var i = 0;
 
       while (i < n) {
@@ -3381,14 +3382,14 @@ var Visual = /*#__PURE__*/function () {
           if (d) {
             (function () {
               var circleTransition = function circleTransition(speed) {
-                var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 4);
+                var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 5);
                 repeat();
 
                 function repeat() {
                   timeCircle.attr('cx', 25) // position the circle at 40 on the x axis
                   .attr('cy', 25) // position the circle at 250 on the y axis
                   .attr("opacity", 1).transition() // apply a transition
-                  .duration(5000 - 100 * speed) // apply it over 2000 milliseconds
+                  .duration(6000 - Math.floor(200 * speed)) // apply it over 2000 milliseconds
                   .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
                     return pathTween(path);
                   }).transition().duration(100).attr("opacity", 0).transition().duration(100).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
