@@ -3048,7 +3048,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(100);
+    this.modelData(50);
   }
 
   _createClass(Canvas, [{
@@ -3291,7 +3291,7 @@ var Point = /*#__PURE__*/function () {
           x2 = _ref[0],
           y2 = _ref[1];
 
-      if (this.outOfBounds(x2, y2) || modifier === 20) {
+      if (this.outOfBounds(x2, y2) || modifier === 25) {
         return;
       } else {
         this.controlPoints.push([x2, y2]);
@@ -3372,7 +3372,7 @@ var Visual = /*#__PURE__*/function () {
         if (p.tracks.length > 4) {
           (function () {
             var circleTransition = function circleTransition() {
-              var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 8);
+              var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 4);
               repeat();
 
               function repeat() {
@@ -3432,7 +3432,7 @@ var Visual = /*#__PURE__*/function () {
       var collection = [];
       collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
       collection.push("q ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
-      collection.push("".concat(tracks[half][0], ",").concat(tracks[half][1]));
+      collection.push("".concat(tracks[tracks.length - 5][0], ",").concat(tracks[tracks.length - 5][1]));
       collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1], " z"));
       return collection.join(" ");
     }

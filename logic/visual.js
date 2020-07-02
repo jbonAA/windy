@@ -36,7 +36,7 @@ class Visual {
 
                     var timeCircle = canv.append("circle")
                         .attr("fill", "white")
-                        .attr("r", 8);
+                        .attr("r", 4);
                     repeat();
 
                     function repeat() {
@@ -103,7 +103,7 @@ class Visual {
 
         collection.push(`M ${startPair[0]},${startPair[1]}`)
         collection.push(`q ${tracks[quarter][0]},${tracks[quarter][1]}`)
-        collection.push(`${tracks[half][0]},${tracks[half][1]}`)
+        collection.push(`${tracks[tracks.length - 5][0]},${tracks[tracks.length - 5][1]}`)
         collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]} z`)
 
         return collection.join(" ")
