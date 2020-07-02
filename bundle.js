@@ -3291,7 +3291,7 @@ var Point = /*#__PURE__*/function () {
           x2 = _ref[0],
           y2 = _ref[1];
 
-      if (this.outOfBounds(x2, y2) || modifier === 25) {
+      if (this.outOfBounds(x2, y2) || modifier === 15) {
         return;
       } else {
         this.controlPoints.push([x2, y2]);
@@ -3362,65 +3362,64 @@ var Visual = /*#__PURE__*/function () {
   _createClass(Visual, [{
     key: "visInit",
     value: function visInit(w, h) {
-      var _this = this;
-
       var canv = d3__WEBPACK_IMPORTED_MODULE_0__["select"]("#components").append("svg").attr("id", 'svgToRemove').attr("width", w).attr("height", h);
 
       for (var i = 0; i < this.datum.length; i++) {
         var p = this.datum[i];
 
         if (p.tracks.length > 4) {
-          (function () {
-            var circleTransition = function circleTransition() {
-              var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 4);
-              repeat();
+          var d = this.formatPath(p.start, p.tracks); // console.log("dpath", d) fix error in console
+          //need to fix error in console then consider
+          //adding a 5th quadrant reflecting the direction 
+          //maybe 100 square around center
+          //extra case
+          //may have to rework the formatPath method to include
+          //elements in the center
 
-              function repeat() {
-                timeCircle.attr('cx', 25) // position the circle at 40 on the x axis
-                .attr('cy', 25) // position the circle at 250 on the y axis
-                .attr("opacity", 1).transition() // apply a transition
-                .duration(3000) // apply it over 2000 milliseconds
-                .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
-                  return pathTween(path);
-                }).transition().duration(100).attr("opacity", 0).transition().duration(200).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
-                  return reverseTween(path);
-                }).on("end", repeat); // console.log(timeCircle)
+          if (d) {
+            (function () {
+              var circleTransition = function circleTransition() {
+                var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 4);
+                repeat();
 
-                function reverseTween(path) {
-                  var length = path.node().getTotalLength();
-                  var r = d3__WEBPACK_IMPORTED_MODULE_0__["interpolate"](length, 0);
-                  return function (t) {
-                    var point = path.node().getPointAtLength(r(t));
-                    d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr("cx", point.x).attr("cy", point.y);
-                  };
+                function repeat() {
+                  timeCircle.attr('cx', 25) // position the circle at 40 on the x axis
+                  .attr('cy', 25) // position the circle at 250 on the y axis
+                  .attr("opacity", 1).transition() // apply a transition
+                  .duration(3000) // apply it over 2000 milliseconds
+                  .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
+                    return pathTween(path);
+                  }).transition().duration(100).attr("opacity", 0).transition().duration(200).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
+                    return reverseTween(path);
+                  }).on("end", repeat); // console.log(timeCircle)
+
+                  function reverseTween(path) {
+                    var length = path.node().getTotalLength();
+                    var r = d3__WEBPACK_IMPORTED_MODULE_0__["interpolate"](length, 0);
+                    return function (t) {
+                      var point = path.node().getPointAtLength(r(t));
+                      d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr("cx", point.x).attr("cy", point.y);
+                    };
+                  }
+
+                  function pathTween(path) {
+                    var length = path.node().getTotalLength();
+                    var r = d3__WEBPACK_IMPORTED_MODULE_0__["interpolate"](0, length);
+                    return function (t) {
+                      var point = path.node().getPointAtLength(r(t));
+                      d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr("cx", point.x).attr("cy", point.y);
+                    };
+                  }
                 }
 
-                function pathTween(path) {
-                  var length = path.node().getTotalLength();
-                  var r = d3__WEBPACK_IMPORTED_MODULE_0__["interpolate"](0, length);
-                  return function (t) {
-                    var point = path.node().getPointAtLength(r(t));
-                    d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr("cx", point.x).attr("cy", point.y);
-                  };
-                }
-              }
+                ;
+              };
 
+              var path = canv.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
               ;
-            };
-
-            var d = _this.formatPath(p.start, p.tracks); // console.log("dpath", d) fix error in console
-            //need to fix error in console then consider
-            //adding a 5th quadrant reflecting the direction 
-            //maybe 100 square around center
-            //extra case
-            //may have to rework the formatPath method to include
-            //elements in the center
-
-
-            var path = canv.append("path").attr("d", d).attr("stroke", 'rgb(255, 255, 255)').attr("fill", "none");
-            ;
-            circleTransition();
-          })();
+              circleTransition();
+            })();
+          }
         }
       }
     }
@@ -3431,9 +3430,10 @@ var Visual = /*#__PURE__*/function () {
       var half = Math.floor(tracks.length / 2);
       var collection = [];
       collection.push("M ".concat(startPair[0], ",").concat(startPair[1]));
-      collection.push("q ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
-      collection.push("".concat(tracks[tracks.length - 5][0], ",").concat(tracks[tracks.length - 5][1]));
-      collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1], " z"));
+      collection.push("t ".concat(tracks[quarter][0], ",").concat(tracks[quarter][1]));
+      collection.push("q ".concat(tracks[half][0], ", ").concat(tracks[half][1]));
+      collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
+      console.log("collect", collection.join(" "));
       return collection.join(" ");
     }
   }]);

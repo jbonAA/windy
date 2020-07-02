@@ -7,6 +7,7 @@ class Visual {
         this.datum = datum;
     }
 
+
     visInit(w, h) {
         const canv = d3.select("#components")
             .append("svg")
@@ -26,6 +27,9 @@ class Visual {
                 //extra case
                 //may have to rework the formatPath method to include
                 //elements in the center
+                if(d){
+
+        
                 let path = canv.append("path")
                     .attr("d", d)
                     .attr("stroke", 'rgb(255, 255, 255)')
@@ -89,6 +93,7 @@ class Visual {
 
                 circleTransition();
 
+                }
                     
             }   
         }
@@ -102,10 +107,11 @@ class Visual {
      
 
         collection.push(`M ${startPair[0]},${startPair[1]}`)
-        collection.push(`q ${tracks[quarter][0]},${tracks[quarter][1]}`)
-        collection.push(`${tracks[tracks.length - 5][0]},${tracks[tracks.length - 5][1]}`)
-        collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]} z`)
+        collection.push(`t ${tracks[quarter][0]},${tracks[quarter][1]}`)
+        collection.push(`q ${tracks[half][0]}, ${tracks[half][1]}`)
+        collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
 
+        console.log("collect",collection.join(" "))
         return collection.join(" ")
     }
 
