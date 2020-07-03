@@ -3492,6 +3492,7 @@ var Visual = /*#__PURE__*/function () {
               var circleTransition = function circleTransition(speed, start, length) {
                 var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 5);
                 repeat();
+                console.log("start", start);
 
                 function repeat() {
                   timeCircle.attr('cx', start[0]) // position the circle at 40 on the x axis
@@ -3539,7 +3540,8 @@ var Visual = /*#__PURE__*/function () {
     value: function formatPath(startPair, tracks) {
       var half = Math.floor(tracks.length / 2);
       var quarter = Math.floor(tracks.length / 4);
-      var collection = []; //my issue is that I have the tracks ordered from first to last
+      var collection = [];
+      console.log("tracks", tracks); //my issue is that I have the tracks ordered from first to last
       //so when I'm asking the program to draw 
 
       collection.push("M ".concat(tracks[0][0], ",").concat(tracks[0][1]));

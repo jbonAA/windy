@@ -49,6 +49,8 @@ class Visual {
                         .attr("r", 5);
                     repeat();
 
+                    console.log("start", start)
+
                     function repeat() {
                         timeCircle
                             .attr('cx', start[0])      // position the circle at 40 on the x axis
@@ -111,6 +113,7 @@ class Visual {
         let quarter = Math.floor(tracks.length / 4)
         let collection = []
 
+        console.log("tracks", tracks)
         //my issue is that I have the tracks ordered from first to last
         //so when I'm asking the program to draw 
      
