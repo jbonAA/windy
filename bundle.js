@@ -3035,54 +3035,55 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//11, 23, 23, 23, 23, 
 var ref = function ref(d) {
   switch (d >= 0) {
-    case d <= 10:
+    case d <= 11.25:
       return "N";
 
-    case d <= 30:
+    case d <= 33.75:
       return "NNE";
 
-    case d <= 60:
+    case d <= 56.25:
       return "NE";
 
-    case d <= 80:
+    case d <= 78.75:
       return "ENE";
 
-    case d <= 100:
+    case d <= 101.25:
       return "E";
 
-    case d <= 120:
+    case d <= 123.75:
       return "ESE";
 
-    case d <= 150:
+    case d <= 146.25:
       return "SE";
 
-    case d <= 170:
+    case d <= 168.75:
       return "SSE";
 
-    case d <= 190:
+    case d <= 191.75:
       return "S";
 
-    case d <= 210:
+    case d <= 213.75:
       return "SSW";
 
-    case d <= 240:
+    case d <= 236.25:
       return "SW";
 
-    case d <= 260:
+    case d <= 258.75:
       return "WSW";
 
-    case d <= 280:
+    case d <= 281.25:
       return "W";
 
-    case d <= 300:
+    case d <= 303.75:
       return "WNW";
 
-    case d <= 330:
+    case d <= 326.25:
       return "NW";
 
-    case d <= 350:
+    case d <= 348.75:
       return "NNW";
 
     default:
@@ -3209,7 +3210,7 @@ var Canvas = /*#__PURE__*/function () {
     value: function findAndCreatePoint(x, y, quadrantData) {
       var speed = quadrantData.speed,
           deg = quadrantData.deg;
-      var point = new _point__WEBPACK_IMPORTED_MODULE_0__["default"](x, y, speed, deg, 1, this.width, this.quadrants);
+      var point = new _point__WEBPACK_IMPORTED_MODULE_0__["default"](x, y, speed, deg, 1, this.width, this.height, this.quadrants);
       return point;
     }
   }, {
@@ -3294,8 +3295,28 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+ // const cardinalSlopes = {
+//     "N": [0, 20],
+//     "NNW": [5, 15],
+//     "NW": [10, 10],
+//     "WNW": [15, 5],
+//     "W": [20, 0],
+//     "WSW": [15, -5],
+//     "SW": [10, -10],
+//     "SSW": [5, -15],
+//     "S": [0, -20],
+//     "SSE": [-5, -15],
+//     "SE": [-10, -10],
+//     "ESE": [-15, -5],
+//     "E": [-20, 0],
+//     "ENE": [-15, 5],
+//     "NE": [-10, 10],
+//     "NNE": [-5, 15]
+// }
 
 var cardinalSlopes = {
+  //top left is 0, 0
+  //bottom right is max, max
   "N": [0, 20],
   "NNW": [5, 15],
   "NW": [10, 10],
@@ -3315,7 +3336,7 @@ var cardinalSlopes = {
 };
 
 var Point = /*#__PURE__*/function () {
-  function Point(x, y, speed, dir, radius, canvasWidth, quadrants) {
+  function Point(x, y, speed, dir, radius, canvasWidth, canvasHeight, quadrants) {
     _classCallCheck(this, Point);
 
     this.pos = [x, y];
@@ -3323,6 +3344,7 @@ var Point = /*#__PURE__*/function () {
     this.angle = dir;
     this.radius = radius;
     this.canvasWidth = canvasWidth;
+    this.canvasHeight = canvasHeight;
     this.quadrants = quadrants; //control points should be an array of xy coords
 
     this.controlPoints = [];
@@ -3336,15 +3358,15 @@ var Point = /*#__PURE__*/function () {
     key: "findQuadrant",
     value: function findQuadrant(x, y, quadObject) {
       switch (x >= 0) {
-        case x <= this.width / 2:
-          if (y <= this.height / 2) {
+        case x <= this.canvasWidth / 2:
+          if (y <= this.canvasHeight / 2) {
             return quadObject["0"];
           } else {
             return quadObject['2'];
           }
 
-        case x > this.width / 2:
-          if (y <= this.height / 2) {
+        case x > this.canvasWidth / 2:
+          if (y <= this.canvasHeight / 2) {
             return quadObject['1'];
           } else {
             return quadObject['3'];
@@ -3374,19 +3396,9 @@ var Point = /*#__PURE__*/function () {
 
       var n = Object(_logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__["default"])(quad.deg);
       var m = cardinalSlopes[n];
-      var x2, y2;
-
-      if (m[0] > 0) {
-        x2 = Math.floor(x + m[0]);
-      } else {
-        x2 = Math.floor(x - Math.abs(m[0]));
-      }
-
-      if (m[1] > 0) {
-        y2 = Math.floor(y + m[1]);
-      } else {
-        y2 = Math.floor(y - Math.abs(m[1]));
-      }
+      var _ref = [Math.floor(m[0] + x), Math.floor(m[1] + y)],
+          x2 = _ref[0],
+          y2 = _ref[1];
 
       if (this.outOfBounds(x2, y2) || modifier === 30) {
         return;
@@ -3525,18 +3537,13 @@ var Visual = /*#__PURE__*/function () {
   }, {
     key: "formatPath",
     value: function formatPath(startPair, tracks) {
-      var quarter = Math.floor(tracks.length / 4);
       var half = Math.floor(tracks.length / 2);
-      var collection = [];
-
-      if (tracks[0][0] > tracks[tracks.length - 1][0]) {
-        tracks = tracks.reverse();
-      } //my issue is that I have the tracks ordered from first to last
+      var quarter = Math.floor(tracks.length / 4);
+      var collection = []; //my issue is that I have the tracks ordered from first to last
       //so when I'm asking the program to draw 
 
-
       collection.push("M ".concat(tracks[0][0], ",").concat(tracks[0][1]));
-      collection.push("q ".concat(tracks[1][0], ",").concat(tracks[1][1]));
+      collection.push("q ".concat(tracks[0][0], ",").concat(tracks[0][1]));
       collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
       console.log("collect", collection.join(" "));
       return collection.join(" ");

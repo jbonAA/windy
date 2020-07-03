@@ -96,7 +96,7 @@ class Canvas {
 
     findAndCreatePoint(x, y, quadrantData) {
         const {speed, deg} = quadrantData
-        const point = new Point(x, y, speed, deg, 1, this.width, this.quadrants)
+        const point = new Point(x, y, speed, deg, 1, this.width, this.height, this.quadrants)
 
         return point
     }

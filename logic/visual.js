@@ -107,20 +107,17 @@ class Visual {
     }
 
     formatPath(startPair, tracks) {
-        let quarter = Math.floor(tracks.length / 4)
         let half = Math.floor(tracks.length / 2)
+        let quarter = Math.floor(tracks.length / 4)
         let collection = []
-
-        if(tracks[0][0] > tracks[tracks.length - 1][0]){
-            tracks = tracks.reverse()
-        }
 
         //my issue is that I have the tracks ordered from first to last
         //so when I'm asking the program to draw 
      
         collection.push(`M ${tracks[0][0]},${tracks[0][1]}`)
-        collection.push(`q ${ tracks[1][0] },${ tracks[1][1] }`)
+        collection.push(`q ${ tracks[0][0] },${ tracks[0][1] }`)
         collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
+
 
         console.log("collect",collection.join(" "))
         return collection.join(" ")
