@@ -3,6 +3,8 @@ import Simulation from './simulation';
 import Path from './path';
 import Visual from './visual';
 
+import findQuadrant from '../logic/findQuadrant';
+
 const d3 = require('d3')
 
 class Canvas {
@@ -16,7 +18,7 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.modelData(70)
+        this.modelData(50)
     }
 
     drawBezierCurves(points) {
@@ -42,7 +44,8 @@ class Canvas {
         while(i < n){
             let x = this.getRandomInt(this.width)
             let y = this.getRandomInt(this.height)
-            let tempP = this.findAndCreatePoint(x, y, this.findQuadrant(x, y, this.quadrants)) 
+            let quad = findQuadrant(x, y, this.width, this.height, this.quadrants)
+            let tempP = this.findAndCreatePoint(x, y, quad) 
             this.data.push(tempP)
             i+=1
         }
@@ -64,31 +67,6 @@ class Canvas {
         // simulation.drawSimulation()
 
         this.drawBezierCurves(this.data)
-
-    }
-    //data modeling
-    findQuadrant(x, y, quadObject) {
-
-        switch(x >= 0){
-            case x <= this.width / 2 + 50:
-                if(y < this.height / 2 - 50){
-                    return quadObject["0"]
-                }else if(y >this.height / 2 + 50){
-                    return quadObject['2']
-                }else{
-                    return quadObject['current']
-                }
-            case x > this.width / 2 - 50:
-                if(y <= this.height / 2 - 50){
-                    return quadObject['1']
-                }else if(y >= this.height / 2 + 50){
-                    return quadObject['3']
-                }else{
-                    return quadObject['current']
-                }
-            default:
-                return quadObject['current']
-        }
 
     }
 

@@ -1,24 +1,6 @@
 
 import ref from '../logic/cardinalReference';
-
-// const cardinalSlopes = {
-//     "N": [0, 20],
-//     "NNW": [5, 15],
-//     "NW": [10, 10],
-//     "WNW": [15, 5],
-//     "W": [20, 0],
-//     "WSW": [15, -5],
-//     "SW": [10, -10],
-//     "SSW": [5, -15],
-//     "S": [0, -20],
-//     "SSE": [-5, -15],
-//     "SE": [-10, -10],
-//     "ESE": [-15, -5],
-//     "E": [-20, 0],
-//     "ENE": [-15, 5],
-//     "NE": [-10, 10],
-//     "NNE": [-5, 15]
-// }
+import findQuadrant from '../logic/findQuadrant';
 
 const cardinalSlopes = {
     //top left is 0, 0
@@ -59,32 +41,6 @@ class Point {
         this.endPoint = [];
     }
 
-    //
-    //initially the data is modeled and point objects are returned
-    //develop control adds the points we can use to draw bezier curve
-
-    findQuadrant(x, y, quadObject) {
-
-        switch (x >= 0) {
-            case x <= this.canvasWidth / 2:
-                if (y <= this.canvasHeight / 2) {
-                    return quadObject["0"]
-                } else {
-                    return quadObject['2']
-                }
-            case x > this.canvasWidth / 2:
-                if (y <= this.canvasHeight / 2) {
-                    return quadObject['1']
-                } else {
-                    return quadObject['3']
-                }
-            default:
-                return quadObject['current']
-
-
-        }
-    }
-
     outOfBounds(x, y) {
 
         if(x >= this.canvasWidth || x < 0){
@@ -101,7 +57,7 @@ class Point {
 
     populateControlPoints(x, y, modifier) {
 
-        let quad = this.findQuadrant(x, y, this.quadrants)
+        let quad = findQuadrant(x, y, this.canvasWidth, this.canvasHeight, this.quadrants)
         //speed as magnitude will need to play with coeff
         let n = ref(quad.deg)
         let m = cardinalSlopes[n]
@@ -110,7 +66,7 @@ class Point {
         let [x2, y2] = [Math.floor(m[0] + x), Math.floor(m[1] + y)]
 
 
-        if(this.outOfBounds(x2, y2) || modifier === 30){
+        if(this.outOfBounds(x2, y2) || modifier === 20){
             return;
         }else{
             this.controlPoints.push([x2, y2])

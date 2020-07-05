@@ -3095,6 +3095,44 @@ var ref = function ref(d) {
 
 /***/ }),
 
+/***/ "./logic/findQuadrant.js":
+/*!*******************************!*\
+  !*** ./logic/findQuadrant.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var findQuadrant = function findQuadrant(x, y, width, height, quadObject) {
+  switch (x >= 0) {
+    case x <= width / 2 + 50:
+      if (y < height / 2 - 50) {
+        return quadObject["0"];
+      } else if (y > height / 2 + 50) {
+        return quadObject['2'];
+      } else {
+        return quadObject['current'];
+      }
+
+    case x > width / 2 - 50:
+      if (y <= height / 2 - 50) {
+        return quadObject['1'];
+      } else if (y >= height / 2 + 50) {
+        return quadObject['3'];
+      } else {
+        return quadObject['current'];
+      }
+
+    default:
+      return quadObject['current'];
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (findQuadrant);
+
+/***/ }),
+
 /***/ "./logic/generateCanvas.js":
 /*!*********************************!*\
   !*** ./logic/generateCanvas.js ***!
@@ -3108,11 +3146,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _simulation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./simulation */ "./logic/simulation.js");
 /* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./path */ "./logic/path.js");
 /* harmony import */ var _visual__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./visual */ "./logic/visual.js");
+/* harmony import */ var _logic_findQuadrant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../logic/findQuadrant */ "./logic/findQuadrant.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -3133,7 +3173,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(70);
+    this.modelData(50);
   }
 
   _createClass(Canvas, [{
@@ -3157,7 +3197,8 @@ var Canvas = /*#__PURE__*/function () {
       while (i < n) {
         var x = this.getRandomInt(this.width);
         var y = this.getRandomInt(this.height);
-        var tempP = this.findAndCreatePoint(x, y, this.findQuadrant(x, y, this.quadrants));
+        var quad = Object(_logic_findQuadrant__WEBPACK_IMPORTED_MODULE_4__["default"])(x, y, this.width, this.height, this.quadrants);
+        var tempP = this.findAndCreatePoint(x, y, quad);
         this.data.push(tempP);
         i += 1;
       }
@@ -3177,33 +3218,6 @@ var Canvas = /*#__PURE__*/function () {
       this.sim = simulation; // simulation.drawSimulation()
 
       this.drawBezierCurves(this.data);
-    } //data modeling
-
-  }, {
-    key: "findQuadrant",
-    value: function findQuadrant(x, y, quadObject) {
-      switch (x >= 0) {
-        case x <= this.width / 2 + 50:
-          if (y < this.height / 2 - 50) {
-            return quadObject["0"];
-          } else if (y > this.height / 2 + 50) {
-            return quadObject['2'];
-          } else {
-            return quadObject['current'];
-          }
-
-        case x > this.width / 2 - 50:
-          if (y <= this.height / 2 - 50) {
-            return quadObject['1'];
-          } else if (y >= this.height / 2 + 50) {
-            return quadObject['3'];
-          } else {
-            return quadObject['current'];
-          }
-
-        default:
-          return quadObject['current'];
-      }
     }
   }, {
     key: "findAndCreatePoint",
@@ -3289,30 +3303,14 @@ var Path = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../logic/cardinalReference */ "./logic/cardinalReference.js");
+/* harmony import */ var _logic_findQuadrant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../logic/findQuadrant */ "./logic/findQuadrant.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
- // const cardinalSlopes = {
-//     "N": [0, 20],
-//     "NNW": [5, 15],
-//     "NW": [10, 10],
-//     "WNW": [15, 5],
-//     "W": [20, 0],
-//     "WSW": [15, -5],
-//     "SW": [10, -10],
-//     "SSW": [5, -15],
-//     "S": [0, -20],
-//     "SSE": [-5, -15],
-//     "SE": [-10, -10],
-//     "ESE": [-15, -5],
-//     "E": [-20, 0],
-//     "ENE": [-15, 5],
-//     "NE": [-10, 10],
-//     "NNE": [-5, 15]
-// }
+
 
 var cardinalSlopes = {
   //top left is 0, 0
@@ -3349,34 +3347,9 @@ var Point = /*#__PURE__*/function () {
 
     this.controlPoints = [];
     this.endPoint = [];
-  } //
-  //initially the data is modeled and point objects are returned
-  //develop control adds the points we can use to draw bezier curve
-
+  }
 
   _createClass(Point, [{
-    key: "findQuadrant",
-    value: function findQuadrant(x, y, quadObject) {
-      switch (x >= 0) {
-        case x <= this.canvasWidth / 2:
-          if (y <= this.canvasHeight / 2) {
-            return quadObject["0"];
-          } else {
-            return quadObject['2'];
-          }
-
-        case x > this.canvasWidth / 2:
-          if (y <= this.canvasHeight / 2) {
-            return quadObject['1'];
-          } else {
-            return quadObject['3'];
-          }
-
-        default:
-          return quadObject['current'];
-      }
-    }
-  }, {
     key: "outOfBounds",
     value: function outOfBounds(x, y) {
       if (x >= this.canvasWidth || x < 0) {
@@ -3392,7 +3365,7 @@ var Point = /*#__PURE__*/function () {
   }, {
     key: "populateControlPoints",
     value: function populateControlPoints(x, y, modifier) {
-      var quad = this.findQuadrant(x, y, this.quadrants); //speed as magnitude will need to play with coeff
+      var quad = Object(_logic_findQuadrant__WEBPACK_IMPORTED_MODULE_1__["default"])(x, y, this.canvasWidth, this.canvasHeight, this.quadrants); //speed as magnitude will need to play with coeff
 
       var n = Object(_logic_cardinalReference__WEBPACK_IMPORTED_MODULE_0__["default"])(quad.deg);
       var m = cardinalSlopes[n];
@@ -3400,7 +3373,7 @@ var Point = /*#__PURE__*/function () {
           x2 = _ref[0],
           y2 = _ref[1];
 
-      if (this.outOfBounds(x2, y2) || modifier === 30) {
+      if (this.outOfBounds(x2, y2) || modifier === 20) {
         return;
       } else {
         this.controlPoints.push([x2, y2]);
