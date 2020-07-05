@@ -2394,7 +2394,7 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
           station: weatherStation
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           id: "future"
-        }, "Tomorrow's Conditions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, "Tomorrow's Forecast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecastIndexItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: tomorrowForecast.temp,
           weather: tomorrowForecast,
           station: weatherStation
@@ -3158,7 +3158,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(100);
+    this.modelData(60);
   }
 
   _createClass(Canvas, [{
@@ -3354,7 +3354,7 @@ var Point = /*#__PURE__*/function () {
           x2 = _ref[0],
           y2 = _ref[1];
 
-      if (this.outOfBounds(x2, y2) || modifier === 20) {
+      if (this.outOfBounds(x2, y2) || modifier === 30) {
         return;
       } else {
         this.controlPoints.push([x2, y2]);

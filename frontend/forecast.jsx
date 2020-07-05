@@ -56,7 +56,7 @@ class Forecast extends React.Component {
                         <h3>Current Conditions near {weatherStation}</h3>
                     </div>
                     <ForecastIndexItem key={currentForecast.temp} weather={currentForecast} station={weatherStation}/>
-                        <h3 id="future">Tomorrow's Conditions</h3>
+                        <h3 id="future">Tomorrow's Forecast</h3>
                     <ForecastIndexItem key={tomorrowForecast.temp} weather={tomorrowForecast} station={weatherStation}/>
                 </div>
             )

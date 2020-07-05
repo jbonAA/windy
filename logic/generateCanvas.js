@@ -18,7 +18,7 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.modelData(100)
+        this.modelData(60)
     }
 
     drawBezierCurves(points) {

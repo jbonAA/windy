@@ -66,7 +66,7 @@ class Point {
         let [x2, y2] = [Math.floor(m[0] + x), Math.floor(m[1] + y)]
 
 
-        if(this.outOfBounds(x2, y2) || modifier === 20){
+        if(this.outOfBounds(x2, y2) || modifier === 30){
             return;
         }else{
             this.controlPoints.push([x2, y2])
