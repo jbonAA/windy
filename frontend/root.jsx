@@ -76,7 +76,7 @@ class Root extends React.Component {
                     hasSvg.remove();
                 }
                 
-                //select and remove wind data button to be reinserted on next query
+                
                 let windDataButton = document.getElementById("applyData")
                 if(windDataButton){
                     this.setState({
@@ -112,20 +112,13 @@ class Root extends React.Component {
 
         let bounds = mapObj.getBounds();
 
-        //mapbox object representing corners
-        
-        //objectively we can say that the set up for this project
-
 
         let nE = bounds.getNorthEast();
         let nW = bounds.getNorthWest();
         let sE = bounds.getSouthEast();
         let sW = bounds.getSouthWest();
 
-        //grab height width of mapDiv for canvas/vis sizing
-
         let mD = document.getElementById("mapDiv")
-        
 
         const infoGather = {
             allStations: [nE, nW, sE, sW],
@@ -134,16 +127,9 @@ class Root extends React.Component {
             height: mD.clientHeight
         }
 
-        //create initial Wind Object
-        // const wind = new Promise((resolve, reject) => {
-        //     resolve(new WindDirection(infoGather))
-        // })
-
         const wind = new WindDirection(infoGather)
-        console.log(wind, "wind")
 
         setTimeout(() => {
-            // console.log(wind.forecastTomorrow)
             this.setState({
                 location: wind.weatherStation,
                 currentFor: wind.forecastNow,

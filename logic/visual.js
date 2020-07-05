@@ -5,8 +5,6 @@ import React from 'react'
 class Visual {
     constructor(datum){
         this.datum = datum;
-
-        console.log(this.datum)
     }
 
 
@@ -22,7 +20,6 @@ class Visual {
 
         for(let i = 0; i < this.datum.length; i++){
             let p = this.datum[i];
-            console.log(p, "_______p")
             if(p.tracks.length > 4){
                 let d = this.formatPath(p.start, p.tracks)
                 // console.log("dpath", d) fix error in console
@@ -49,15 +46,13 @@ class Visual {
                         .attr("r", 5);
                     repeat();
 
-                    console.log("start", start)
-
                     function repeat() {
                         timeCircle
                             .attr('cx', start[0])      // position the circle at 40 on the x axis
                             .attr('cy', start[1])     // position the circle at 250 on the y axis
                             .attr("opacity", 1)
                             .transition()        // apply a transition
-                            .duration(4000 - Math.floor(10 * speed + length))      // apply it over 2000 milliseconds
+                            .duration(4000 - Math.floor(40 * 2 * speed))      // apply it over 2000 milliseconds
                             .ease(d3.easeLinear)
                             .tween("pathTween", function () { return pathTween(path) })
                             .transition()
@@ -110,19 +105,15 @@ class Visual {
 
     formatPath(startPair, tracks) {
         let half = Math.floor(tracks.length / 2)
-        let quarter = Math.floor(tracks.length / 4)
         let collection = []
-
-        console.log("tracks", tracks)
         //my issue is that I have the tracks ordered from first to last
         //so when I'm asking the program to draw 
      
         collection.push(`M ${tracks[0][0]},${tracks[0][1]}`)
-        collection.push(`q ${ tracks[0][0] },${ tracks[0][1] }`)
+        collection.push(`C ${ tracks[0][0] },${ tracks[0][1] }`)
+        collection.push(`${tracks[half][0]},${tracks[half][1]}`)
         collection.push(`${tracks[tracks.length - 1][0]},${tracks[tracks.length - 1][1]}`)
 
-
-        console.log("collect",collection.join(" "))
         return collection.join(" ")
     }
 

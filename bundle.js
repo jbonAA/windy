@@ -2602,11 +2602,6 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextState, nextProps) {
-      console.log("nextStateIndexItem");
-      console.log(nextState);
-      console.log("this.state");
-      console.log(this.state);
-
       if (this.state.station !== nextState.station) {
         return true;
       } else {
@@ -2867,8 +2862,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
 
           if (hasSvg) {
             hasSvg.remove();
-          } //select and remove wind data button to be reinserted on next query
-
+          }
 
           var windDataButton = document.getElementById("applyData");
 
@@ -2905,29 +2899,20 @@ var Root = /*#__PURE__*/function (_React$Component) {
         center: [newLng, newLat],
         zoom: 10
       });
-      var bounds = mapObj.getBounds(); //mapbox object representing corners
-      //objectively we can say that the set up for this project
-
+      var bounds = mapObj.getBounds();
       var nE = bounds.getNorthEast();
       var nW = bounds.getNorthWest();
       var sE = bounds.getSouthEast();
-      var sW = bounds.getSouthWest(); //grab height width of mapDiv for canvas/vis sizing
-
+      var sW = bounds.getSouthWest();
       var mD = document.getElementById("mapDiv");
       var infoGather = {
         allStations: [nE, nW, sE, sW],
         center: [newLng, newLat],
         width: mD.clientWidth,
         height: mD.clientHeight
-      }; //create initial Wind Object
-      // const wind = new Promise((resolve, reject) => {
-      //     resolve(new WindDirection(infoGather))
-      // })
-
+      };
       var wind = new _logic_windDirection__WEBPACK_IMPORTED_MODULE_4__["default"](infoGather);
-      console.log(wind, "wind");
       setTimeout(function () {
-        // console.log(wind.forecastTomorrow)
         _this3.setState({
           location: wind.weatherStation,
           currentFor: wind.forecastNow,
@@ -3173,7 +3158,7 @@ var Canvas = /*#__PURE__*/function () {
     this.data = [];
     this.sim = {};
     this.pathDataSets = [];
-    this.modelData(50);
+    this.modelData(100);
   }
 
   _createClass(Canvas, [{
@@ -3184,14 +3169,12 @@ var Canvas = /*#__PURE__*/function () {
         datum.push(new _path__WEBPACK_IMPORTED_MODULE_2__["default"](point.controlPoints, point.pos, point.speed));
       });
       var newVis = new _visual__WEBPACK_IMPORTED_MODULE_3__["default"](datum);
-      console.log(newVis, "newVis");
       newVis.visInit(this.width, this.height);
-    } //format el point to path by extrapolating xy pairs
+    } //format el point to path by extrapolating xy pairs data modeling
 
   }, {
     key: "modelData",
     value: function modelData(n) {
-      console.log("this.quadrants", this.quadrants);
       var i = 0;
 
       while (i < n) {
@@ -3212,11 +3195,9 @@ var Canvas = /*#__PURE__*/function () {
         point.endPoint = point.controlPoints.pop();
       }
 
-      var simulation = new _simulation__WEBPACK_IMPORTED_MODULE_1__["default"](this.width, this.height, this.center, this.data); //after the data is modeled we should start simulation
-
+      var simulation = new _simulation__WEBPACK_IMPORTED_MODULE_1__["default"](this.width, this.height, this.center, this.data);
       simulation.data = this.data;
-      this.sim = simulation; // simulation.drawSimulation()
-
+      this.sim = simulation;
       this.drawBezierCurves(this.data);
     }
   }, {
@@ -3439,7 +3420,6 @@ var Visual = /*#__PURE__*/function () {
     _classCallCheck(this, Visual);
 
     this.datum = datum;
-    console.log(this.datum);
   }
 
   _createClass(Visual, [{
@@ -3449,7 +3429,6 @@ var Visual = /*#__PURE__*/function () {
 
       for (var i = 0; i < this.datum.length; i++) {
         var p = this.datum[i];
-        console.log(p, "_______p");
 
         if (p.tracks.length > 4) {
           var d = this.formatPath(p.start, p.tracks); // console.log("dpath", d) fix error in console
@@ -3465,13 +3444,12 @@ var Visual = /*#__PURE__*/function () {
               var circleTransition = function circleTransition(speed, start, length) {
                 var timeCircle = canv.append("circle").attr("fill", "white").attr("r", 5);
                 repeat();
-                console.log("start", start);
 
                 function repeat() {
                   timeCircle.attr('cx', start[0]) // position the circle at 40 on the x axis
                   .attr('cy', start[1]) // position the circle at 250 on the y axis
                   .attr("opacity", 1).transition() // apply a transition
-                  .duration(4000 - Math.floor(10 * speed + length)) // apply it over 2000 milliseconds
+                  .duration(4000 - Math.floor(40 * 2 * speed)) // apply it over 2000 milliseconds
                   .ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("pathTween", function () {
                     return pathTween(path);
                   }).transition().duration(100).attr("opacity", 0).transition().duration(100).ease(d3__WEBPACK_IMPORTED_MODULE_0__["easeLinear"]).tween("reverseTween", function () {
@@ -3512,15 +3490,13 @@ var Visual = /*#__PURE__*/function () {
     key: "formatPath",
     value: function formatPath(startPair, tracks) {
       var half = Math.floor(tracks.length / 2);
-      var quarter = Math.floor(tracks.length / 4);
-      var collection = [];
-      console.log("tracks", tracks); //my issue is that I have the tracks ordered from first to last
+      var collection = []; //my issue is that I have the tracks ordered from first to last
       //so when I'm asking the program to draw 
 
       collection.push("M ".concat(tracks[0][0], ",").concat(tracks[0][1]));
-      collection.push("q ".concat(tracks[0][0], ",").concat(tracks[0][1]));
+      collection.push("C ".concat(tracks[0][0], ",").concat(tracks[0][1]));
+      collection.push("".concat(tracks[half][0], ",").concat(tracks[half][1]));
       collection.push("".concat(tracks[tracks.length - 1][0], ",").concat(tracks[tracks.length - 1][1]));
-      console.log("collect", collection.join(" "));
       return collection.join(" ");
     }
   }]);

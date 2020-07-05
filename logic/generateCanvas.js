@@ -18,7 +18,7 @@ class Canvas {
         this.sim = {};
         this.pathDataSets = [];
 
-        this.modelData(50)
+        this.modelData(100)
     }
 
     drawBezierCurves(points) {
@@ -30,15 +30,12 @@ class Canvas {
 
         let newVis = new Visual(datum)
 
-        console.log(newVis, "newVis")
-
         newVis.visInit(this.width, this.height)
     }
 
-    //format el point to path by extrapolating xy pairs
+    //format el point to path by extrapolating xy pairs data modeling
 
     modelData(n) {
-        console.log("this.quadrants", this.quadrants)
         let i = 0
 
         while(i < n){
@@ -60,12 +57,8 @@ class Canvas {
         }
 
         const simulation = new Simulation(this.width, this.height, this.center, this.data)
-        //after the data is modeled we should start simulation
         simulation.data = this.data
         this.sim = simulation
-        
-        // simulation.drawSimulation()
-
         this.drawBezierCurves(this.data)
 
     }

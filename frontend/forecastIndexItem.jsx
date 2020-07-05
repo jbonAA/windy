@@ -108,10 +108,6 @@ class ForecastIndexItem extends React.Component {
     }
 
     shouldComponentUpdate(nextState, nextProps) {
-        console.log("nextStateIndexItem")
-        console.log(nextState)
-        console.log("this.state")
-        console.log(this.state)
         
         if(this.state.station !== nextState.station){
             return true
