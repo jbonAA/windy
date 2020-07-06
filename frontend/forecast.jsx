@@ -85,10 +85,9 @@ class Forecast extends React.Component {
 
                         <br/>
                         Points are generated and used to model paths based on the
-                        conditions of the wind within a particular quadrant in the map, of
-                        which, there are 5. Each path's collection of control points are mapped
-                        to a quadratic bezier curve reflecting change in slope; assuming minimal
-                        projection distortion with this nearly conformal map projection.
+                        wind conditions in the subset of regions the path may travel. These collections of control points are mapped
+                        to a bezier curve reflecting change in slope over time; assuming minimal
+                        map distortion with this nearly conformal map projection.
                         <br/>
 
                     </span>
