@@ -209,8 +209,21 @@ h3 {
     margin-bottom: 2%;
     margin-left: 2%;
     margin-right: 2%;
-    border: 1px solid black;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#infoSpan {
+    width: 80%;
+    height: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+#instructions {
+    font-size: 130%;
 }
 
 #forecastIndex {

@@ -63,9 +63,13 @@ class Forecast extends React.Component {
         }else{
             display = (
                 <div id="defaultInfo">
-                    <span>
-                        Nagivate around the map, marker will center the data and can be adjusted by clicking desired location on map.
-                    </span>
+                    <div id="infoSpan">
+                        <span id="instructions">
+                            Nagivate around the map, click to place marker. 
+                            <br/>  
+                            Check local forecast automatically centers map allowing correlated wind data to be applied within the region.
+                        </span>
+                    </div>
                 </div>
             )
         }   
