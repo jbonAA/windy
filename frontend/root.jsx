@@ -151,6 +151,7 @@ class Root extends React.Component {
 
         const canv = await new Canvas(quadrants, currentForecast)
         this.setState({
+            windData: false,
             canvas: true
         })
     }

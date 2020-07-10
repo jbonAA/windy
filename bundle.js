@@ -2939,6 +2939,7 @@ var Root = /*#__PURE__*/function (_React$Component) {
               case 2:
                 canv = _context.sent;
                 this.setState({
+                  windData: false,
                   canvas: true
                 });
 
