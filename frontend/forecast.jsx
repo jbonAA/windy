@@ -46,10 +46,6 @@ class Forecast extends React.Component {
         let display;
 
         if(currentForecast.weather && tomorrowForecast.weather){
-
-            // console.log(currentForecast)
-            // console.log("_______")
-            // console.log(tomorrowForecast)
             display = (
                 <div id="defaultInfo">
                     <div id="forecastTitle">
@@ -63,12 +59,13 @@ class Forecast extends React.Component {
         }else{
             display = (
                 <div id="defaultInfo">
-                    <div id="infoSpan">
-                        <span id="instructions">
-                            Nagivate around the map, click to place marker. 
-                            <br/>  
+                    <div id="infoSpan">  
+                        <div className="msg2">
+                            Navigate around the map, click to place marker.
+                        </div>
+                        <div className="msg2">
                             Check local forecast automatically centers map allowing correlated wind data to be applied within the region.
-                        </span>
+                        </div>
                     </div>
                 </div>
             )
@@ -81,20 +78,19 @@ class Forecast extends React.Component {
                 {display}
 
                 <div id="projectInfo">
-                    <span id="descript">
+                    <div className="msg">
                         D3 Visualization allows user to find forecasts and view
                         a representation of current wind conditions in a particular area.
                         Click desired location on map then Check Local Forecast extracts
-                        lat/lng coords from marker's location, bounds from the map, returning API data. 
-
-                        <br/>
+                        lat/lng coords from marker's location, bounds from the map, returning API data.
+                    </div>
+                    
+                    <div className="msg">
                         Points are generated and used to model paths based on the
                         wind conditions in the subset of regions the path may travel. These collections of control points are mapped
                         to a bezier curve reflecting change in slope over time; assuming minimal
                         map distortion with this nearly conformal map projection.
-                        <br/>
-
-                    </span>
+                    </div>
                 </div>
 
                 <div id="links">

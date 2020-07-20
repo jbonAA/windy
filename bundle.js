@@ -2381,9 +2381,6 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
       var display;
 
       if (currentForecast.weather && tomorrowForecast.weather) {
-        // console.log(currentForecast)
-        // console.log("_______")
-        // console.log(tomorrowForecast)
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2404,18 +2401,22 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
           id: "defaultInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "infoSpan"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          id: "instructions"
-        }, "Nagivate around the map, click to place marker.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Check local forecast automatically centers map allowing correlated wind data to be applied within the region.")));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "msg2"
+        }, "Navigate around the map, click to place marker."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "msg2"
+        }, "Check local forecast automatically centers map allowing correlated wind data to be applied within the region.")));
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "forecastDiv"
       }, display, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "projectInfo"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        id: "descript"
-      }, "D3 Visualization allows user to find forecasts and view a representation of current wind conditions in a particular area. Click desired location on map then Check Local Forecast extracts lat/lng coords from marker's location, bounds from the map, returning API data.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Points are generated and used to model paths based on the wind conditions in the subset of regions the path may travel. These collections of control points are mapped to a bezier curve reflecting change in slope over time; assuming minimal map distortion with this nearly conformal map projection.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "msg"
+      }, "D3 Visualization allows user to find forecasts and view a representation of current wind conditions in a particular area. Click desired location on map then Check Local Forecast extracts lat/lng coords from marker's location, bounds from the map, returning API data."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "msg"
+      }, "Points are generated and used to model paths based on the wind conditions in the subset of regions the path may travel. These collections of control points are mapped to a bezier curve reflecting change in slope over time; assuming minimal map distortion with this nearly conformal map projection.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
