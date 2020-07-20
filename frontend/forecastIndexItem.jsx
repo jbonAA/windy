@@ -136,17 +136,17 @@ class ForecastIndexItem extends React.Component {
                         <TempComponent/>
                         <p id="tempMain">{temp}°</p>
                     </div>
-                    <div id="description">
+                    <ul>
                         <p>{description}</p>
                         <p>Feels Like: {Math.floor(feels_like)}°</p>
-                    </div>
+                        <p>Wind Direction: {direction}</p>
+                    </ul>
                 </div>
                 <div id="right">
                     <ul>
                         <p>Cloud Cover: {cloudCover}%</p>
                         <p>Humidity: {humidity}%</p>
                         <p>Wind Speed: {windSpeed}</p>
-                        <p>Wind Direction: {direction}</p>
                     </ul>
                 </div>
             </div>

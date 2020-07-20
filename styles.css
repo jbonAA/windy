@@ -45,12 +45,11 @@ body {
 #components {
     display: flex;
     flex-direction: row;
+    height: 95%;
 }
 
 #mapDiv {
     border-radius: 5px;
-    min-height: 88vh;
-    max-height: 88vh;
     width: 52%;
     border: 1px solid black;
     margin: 2%;
@@ -102,7 +101,8 @@ h3 {
     background-color: white;
     display: flex;
     flex-direction: row;
-
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -110,7 +110,6 @@ h3 {
 #left {
     height: 96%;
     width: 58%;
-    border-right: 1px solid black;
     margin-top: 1%;
     margin-bottom: 1%;
     display: flex;
@@ -153,8 +152,8 @@ h3 {
 #right {
     height: 96%;
     width: 42%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
 }
 
 #links {
@@ -289,13 +288,19 @@ h3 {
 /**
 selectors to change frontend classes
 **/
+
+ul {
+
+}
+
+
 .msg {
     border-radius: 3px;
     border: 1px solid rgb(85, 85, 85);
     background-color: #e5e5e5;
     text-align: center;
-    padding: 1em;
-    margin: 0.5em;
+    padding: 1%;
+    margin: 1%;
     align-self: center;
     align-items: center;
     box-shadow: 0px 0px 14px 0px rgb(122, 122, 122, 1);
@@ -314,34 +319,6 @@ selectors to change frontend classes
     align-self: center;
     align-items: center;
     box-shadow: 0px 0px 5px 0px rgba(122, 122, 122, 1)
-}
-
-.btn {
-    cursor: pointer;
-    display: inline-block;
-    min-height: 1em;
-    outline: 0;
-    border: 1px solid black;
-    vertical-align: baseline;
-    background: #e0e1e2 none;
-    color: rgba(0 0 0 0.6);
-    font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
-    margin: 0 0.25em 0 0;
-    padding: 0.78571429em 1.5em;
-    text-transform: none;
-    text-shadow: none;
-    font-weight: 700;
-    line-height: 1em;
-    font-style: normal;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 028571429rem;
-}
-
-.btn:hover {
-    background-color: rgb(79, 86, 126);
-    transition: 0.1s ease-in-out all;
-    color: aliceblue;
 }
 
 /* @media only screen and (max-width : 100px){

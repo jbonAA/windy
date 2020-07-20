@@ -2414,9 +2414,7 @@ var Forecast = /*#__PURE__*/function (_React$Component) {
         id: "projectInfo"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "msg"
-      }, "D3 Visualization allows user to find forecasts and view a representation of current wind conditions in a particular area. Click desired location on map then Check Local Forecast extracts lat/lng coords from marker's location, bounds from the map, returning API data."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "msg"
-      }, "Points are generated and used to model paths based on the wind conditions in the subset of regions the path may travel. These collections of control points are mapped to a bezier curve reflecting change in slope over time; assuming minimal map distortion with this nearly conformal map projection.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "D3 Visualization allows user to find forecasts and view a representation of current wind conditions in a particular area. Lat/Lng coords are extracted and utilized from both marker position and map bounds.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Points are generated and used to model paths based on the wind conditions in the subset of regions the path may travel. These collections of control points are mapped to a bezier curve reflecting change in slope over time; assuming minimal map distortion with this nearly conformal map projection.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "icons"
@@ -2635,11 +2633,9 @@ var ForecastIndexItem = /*#__PURE__*/function (_React$Component) {
         id: "iconTemp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TempComponent, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "tempMain"
-      }, temp, "\xB0")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "description"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, temp, "\xB0")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feels Like: ", Math.floor(feels_like), "\xB0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Direction: ", direction))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cloud Cover: ", cloudCover, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Humidity: ", humidity, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Speed: ", windSpeed), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Direction: ", direction))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cloud Cover: ", cloudCover, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Humidity: ", humidity, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Wind Speed: ", windSpeed))));
     }
   }]);
 

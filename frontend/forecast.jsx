@@ -81,11 +81,9 @@ class Forecast extends React.Component {
                     <div className="msg">
                         D3 Visualization allows user to find forecasts and view
                         a representation of current wind conditions in a particular area.
-                        Click desired location on map then Check Local Forecast extracts
-                        lat/lng coords from marker's location, bounds from the map, returning API data.
-                    </div>
-                    
-                    <div className="msg">
+                        Lat/Lng coords are extracted and utilized from both marker position and map bounds.
+                        <br/>
+                        <br/>
                         Points are generated and used to model paths based on the
                         wind conditions in the subset of regions the path may travel. These collections of control points are mapped
                         to a bezier curve reflecting change in slope over time; assuming minimal
